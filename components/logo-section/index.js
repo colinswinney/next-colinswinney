@@ -10,7 +10,7 @@ const LogoSection = ({ children, logos }) => {
             <FlexContainer>
                 <TextWrap>
                     <h2>Clients</h2>
-                    <p>It's been my pleasure to work with the following Wisconsin area companies.</p>
+                    <p>It&apos;s been my pleasure to work with the following Wisconsin area companies.</p>
                 </TextWrap>
                 
                 <ImageWrap className="linnemans" imageObj={logos.logoLRI} transparent grayscale/>

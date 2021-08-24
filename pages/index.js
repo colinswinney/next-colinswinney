@@ -39,7 +39,7 @@ const Home = ({ logos }) => {
                 <br/>
                 Swinney
               </Jumbotron.Heading>
-              <Jumbotron.SubHeading>I'm a web developer from Milwaukee, WI.  Let's make some music.</Jumbotron.SubHeading>
+              <Jumbotron.SubHeading>I&apos;m a web developer from Milwaukee, WI.  Let&apos;s make some music.</Jumbotron.SubHeading>
               <Link href="/projects">
                 <AnchorButton>
                   See My Work

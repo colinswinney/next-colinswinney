@@ -34,7 +34,7 @@ const About = ({aboutData}) => {
               <Jumbotron.Heading>
                 <GradientText>About</GradientText> Me
               </Jumbotron.Heading>
-              <Jumbotron.SubHeading>I'm a cowboy coder.</Jumbotron.SubHeading>
+              <Jumbotron.SubHeading>I&apos;m a cowboy coder.</Jumbotron.SubHeading>
             </Jumbotron.Left>
 
             <Jumbotron.Right>

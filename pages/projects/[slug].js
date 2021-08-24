@@ -88,7 +88,7 @@ export async function getStaticPaths() {
 
     return {
         paths: allProjectsWithSlug.edges.map(({node}) => `/projects/${node.slug}`) || [],
-        fallback: true
+        fallback: false
     }
 }
 

@@ -1,10 +1,25 @@
+import { useEffect, useContext } from 'react'
+import Image from 'next/image'
 import Head from 'next/head'
-import PageHeader from '../components/pageHeader/PageHeader'
-import Main from '../components/main/Main'
-import { GradientText } from '../global-styles'
+import Link from 'next/link'
+import { ThemeContext } from 'styled-components';
+import Jumbotron from '../components/jumbotron'
+import ImageWrap from '../components/image-wrap'
+import Card from '../components/card'
+import { GradientText } from '../styles/global-styles'
+import { Header, FlexMain } from '../styles/projects'
 import { getAllProjects } from '../lib/api'
 
 const Projects = ({ allProjects: { edges }}) => {
+
+    const themeContext = useContext(ThemeContext);
+
+    useEffect( () => { 
+        document.querySelector("body").className = "";
+        document.querySelector("body").classList.add("projects") 
+    } );
+
+
   return (
     <>
         <Head>
@@ -13,16 +28,54 @@ const Projects = ({ allProjects: { edges }}) => {
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <PageHeader align="right">
-            Web <GradientText>Projects</GradientText>
-        </PageHeader>      
+        <Jumbotron>
+          <Jumbotron.Container>
 
-        <Main>
-            {console.log(edges)}
+            <Jumbotron.Left>
+              <Jumbotron.Heading>
+                <GradientText>Web</GradientText>
+                <br/>
+                Projects
+              </Jumbotron.Heading>
+              <Jumbotron.SubHeading>What have I done?!</Jumbotron.SubHeading>
+            </Jumbotron.Left>
+
+            <Jumbotron.Right>
+                {/* <BlobScreamer />
+                <Screamer /> */}
+                <ImageWrap transparent>
+                    <Image
+                        src={themeContext.projectsImg}
+                        height={631}
+                        width={1016}
+                        alt="Man screaming at his computer"
+                    />
+                </ImageWrap>
+            </Jumbotron.Right>
+
+          </Jumbotron.Container>
+        </Jumbotron>
+
+        <FlexMain>
             {edges.map( (project, i) => (
-                <p key={i}><a href={`/projects/${project.node.slug}`}>{project.node.title}</a></p>
+                <Link href={`/projects/${project.node.slug}`} key={i}>
+                    
+                    <a>
+                        <Card>
+                            <Card.Top>
+                                <Card.TopBg bgImg={project.node.featuredImage.node.sourceUrl} />
+                            </Card.Top>
+                            <Card.Bottom>
+                                <Card.Title>{project.node.title}</Card.Title>
+                            </Card.Bottom>
+                        </Card>
+                        {/* <Card project={project}/> */}
+                    </a>
+                    
+                </Link>
+                        
             ))}
-        </Main>
+        </FlexMain>
     </>
   )
 }

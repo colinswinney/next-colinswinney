@@ -1,9 +1,15 @@
+import { useEffect } from 'react'
 import Head from 'next/head'
-import PageHeader from '../components/pageHeader/PageHeader'
-import Main from '../components/main/Main'
-import { GradientText } from '../global-styles'
+import ContactForm from '../components/form'
+import { MainPadded, Heading } from '../styles/contact'
 
 const Contact = () => {
+
+  useEffect( () => { 
+    document.querySelector("body").className = "";
+    document.querySelector("body").classList.add("contact") 
+  } );
+
   return (
     <>
         <Head>
@@ -11,14 +17,11 @@ const Contact = () => {
             <meta name="description" content="Freelance Web Developer" />
             <link rel="icon" href="/favicon.ico" />
         </Head>
-
-        <PageHeader align="right">
-            <GradientText>Contact</GradientText> Me
-        </PageHeader>      
-
-        <Main>
-            contact info
-        </Main>
+            
+        <MainPadded>
+            <Heading>Contact Me</Heading>
+            <ContactForm />
+        </MainPadded>
     </>
   )
 }

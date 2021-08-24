@@ -1,5 +1,5 @@
 import styled from 'styled-components'
 
 export const MainEl = styled.main`
-    min-height: 100vh;
+    padding: 2rem 0;
 `

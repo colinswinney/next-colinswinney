@@ -1,10 +1,16 @@
 import styled from 'styled-components'
-import { Container } from '../../../global-styles'
+import { vars } from '../../../styles/global-styles'
 
-export const FlexContainer = styled(Container)`
-    display: flex;
+export const Header = styled.header`
+    background: ${({ theme }) => theme.gradient};
+    text-align: center;
 `
 
 export const HeadingOne = styled.h1`
-    margin-top: 4rem;
+    margin: 2rem auto;
+    color: ${vars.light};
+`
+
+export const Triangle = styled.div`
+    
 `

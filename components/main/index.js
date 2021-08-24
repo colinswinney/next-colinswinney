@@ -1,12 +1,10 @@
-import { Container } from '../../global-styles'
+import { Container } from '../../styles/global-styles'
 import { MainEl } from './styles/main'
 
 const Main = ({ children }) => {
     return (
         <MainEl>
-            <Container>
                 { children }
-            </Container>
         </MainEl>
     )
 }

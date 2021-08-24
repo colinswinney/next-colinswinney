@@ -1,4 +1,4 @@
-import { Container } from '../../global-styles'
+import { Container } from '../../styles/global-styles'
 import { FooterEl } from './styles/footer'
 
 const Footer = () => {

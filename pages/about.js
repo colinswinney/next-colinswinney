@@ -1,9 +1,24 @@
+import { useEffect, useContext } from 'react'
 import Head from 'next/head'
-import PageHeader from '../components/pageHeader/PageHeader'
-import Main from '../components/main/Main'
-import { GradientText } from '../global-styles'
+import Image from 'next/image'
+import { ThemeContext } from 'styled-components';
+import Jumbotron from '../components/jumbotron'
+import Main from '../components/main'
+import ArticleLayout from '../components/article-layout'
+import Widget from '../components/widget'
+import ImageWrap from '../components/image-wrap'
+import { Container, GradientText } from '../styles/global-styles'
+import { getAboutMe } from '../lib/api'
 
-const About = () => {
+const About = ({aboutData}) => {
+
+  const themeContext = useContext(ThemeContext);
+
+  useEffect( () => { 
+    document.querySelector("body").className = "";
+    document.querySelector("body").classList.add("about") 
+  } );
+
   return (
     <>
         <Head>
@@ -12,15 +27,62 @@ const About = () => {
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <PageHeader align="right">
-            <GradientText>About</GradientText> Me
-        </PageHeader>      
+        <Jumbotron>
+          <Jumbotron.Container>
+
+            <Jumbotron.Left>
+              <Jumbotron.Heading>
+                <GradientText>About</GradientText> Me
+              </Jumbotron.Heading>
+              <Jumbotron.SubHeading>I'm a cowboy coder.</Jumbotron.SubHeading>
+            </Jumbotron.Left>
+
+            <Jumbotron.Right>
+                <ImageWrap transparent>
+                    <Image
+                        src={themeContext.aboutImg}
+                        height={533}
+                        width={800}
+                        alt="Colin the Cowboy"
+                    />
+                </ImageWrap>
+            </Jumbotron.Right>
+
+          </Jumbotron.Container>
+        </Jumbotron>
 
         <Main>
-            about info
+
+          <ArticleLayout>
+
+            <ArticleLayout.Article>
+                <ArticleLayout.Content dangerouslySetInnerHTML={{ __html: aboutData.content} } />
+            </ArticleLayout.Article>
+
+            <ArticleLayout.Aside>
+
+                <Widget>
+                    <Widget.Heading>Skillz</Widget.Heading>
+                </Widget>
+                
+                
+
+            </ArticleLayout.Aside>
+
+          </ArticleLayout>
+
         </Main>
     </>
   )
 }
 
 export default About
+
+export async function getStaticProps() {
+  const aboutData = await getAboutMe();
+  return {
+      props: {
+        aboutData: aboutData.page
+      }
+  };
+}

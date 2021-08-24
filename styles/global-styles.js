@@ -102,10 +102,6 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 1.2rem;
     }
 
-    body.nav-menu-active {
-        overflow: hidden;
-    }
-
     * {
         box-sizing: border-box;
     }

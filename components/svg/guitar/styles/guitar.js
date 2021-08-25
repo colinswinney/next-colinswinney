@@ -7,7 +7,11 @@ export const GuitarEl = styled.svg`
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-miterlimit: 1.5;
-    transform: rotate(-75deg);
+`
+
+export const Blob = styled.path`
+    fill: ${({ theme }) => theme.blobColor};
+    fill-rule: nonzero;
 `
 
 export const PathGuitarBody = styled.path`

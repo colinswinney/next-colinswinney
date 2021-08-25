@@ -5,19 +5,18 @@ import { motion } from 'framer-motion'
 
 export const CardWrap = styled(motion.div)`
     text-align: center;
-    width: 300px;
-    margin: 1rem;
+    width: 18.75rem;
     padding-top: 0.375rem;
     border-radius: 0.5rem;
     overflow: hidden;
     position: relative;
     background: ${({ theme }) => theme.gradient};
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 0.0625rem .1875rem rgba(0,0,0,0.12), 0 0.0625rem .125rem rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
     a &:hover, 
     a &:focus {
-        box-shadow: 0 4px 12px rgba(0,0,0,0.25), 0 4px 8px rgba(0,0,0,0.22);
+        box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.25), 0 0.25rem 0.5rem rgba(0,0,0,0.22);
     }
 `
 

@@ -1,5 +1,6 @@
 import { useForm, ValidationError } from '@formspree/react'
-import { Form, Legend, Input, Label, TextArea, SubmitButton } from './styles/form'
+import { Form, Legend, Input, Label, TextArea, SubmitWrap, SubmitButton } from './styles/form'
+import { AnchorButton } from '../../styles/global-styles'
 
 const ContactForm = () => {
 
@@ -66,6 +67,21 @@ const ContactForm = () => {
         errors={state.errors}
         />
 
+        
+        <Input
+        id="company"
+        type="text" 
+        name="company"
+        placeholder="Company"
+        />
+
+
+        <ValidationError 
+        prefix="company" 
+        field="company"
+        errors={state.errors}
+        />
+
         <Label htmlFor="message">
         Message
         </Label>
@@ -82,9 +98,12 @@ const ContactForm = () => {
         errors={state.errors}
         />
 
-        <SubmitButton type="submit" disabled={state.submitting}>
-        <span>Submit</span>
-        </SubmitButton>
+        <SubmitWrap>
+          <SubmitButton type="submit" disabled={state.submitting}>
+            <span>Submit</span>
+          </SubmitButton>
+        </SubmitWrap>
+        
     </Form>
   );
 }

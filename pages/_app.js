@@ -7,7 +7,7 @@ import { lightTheme, darkTheme, GlobalStyles, ThemeButton } from '../styles/glob
 
 function MyApp({ Component, pageProps }) {
   
-  const [theme, setTheme] = useState('light') 
+  const [theme, setTheme] = useState('dark') 
 
   const setMode = mode => {
     window.localStorage.setItem('theme', mode)

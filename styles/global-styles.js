@@ -40,7 +40,7 @@ export const lightTheme = {
 export const darkTheme = {
     bodyBgColor: `#121212`,
     bodyBgColorInverse: `#fefefe`,
-    textColor: c.grey300,
+    textColor: c.grey400,
     textAccent: c.grey500,
     accentColorOne: c.purple300,
     accentColorTwo: c.purple600,
@@ -193,12 +193,6 @@ export const GlobalStyles = createGlobalStyle`
             font-size: 2.5rem;
         }
     }
-
-    body.contact {
-        background-image: url('${({ theme }) => theme.contactImg}');
-        background-size: cover;
-        background-position: center center;
-    }
 `
 
 export const ThemeButton = styled.button`
@@ -246,6 +240,7 @@ export const GradientText = styled.span`
     -webkit-text-fill-color: transparent; 
     -moz-text-fill-color: transparent;
 `
+
 export const AnchorButton = styled.a`
     padding: .5rem 1.5rem;
     margin-bottom: 4rem;

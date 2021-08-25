@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import Head from 'next/head'
-import ContactForm from '../components/form'
-import { MainPadded, Heading } from '../styles/contact'
+import ContactWrap from '../components/contact'
+import Main from '../components/main'
 
 const Contact = () => {
 
@@ -18,10 +18,11 @@ const Contact = () => {
             <link rel="icon" href="/favicon.ico" />
         </Head>
             
-        <MainPadded>
-            <Heading>Contact Me</Heading>
-            <ContactForm />
-        </MainPadded>
+        <Main noPadding>
+            {/* <ContactWrap>
+              <ContactWrap.HeadingOne>Contact</ContactWrap.HeadingOne>
+            </ContactWrap> */}
+        </Main>
     </>
   )
 }

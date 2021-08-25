@@ -33,7 +33,8 @@ export const FlexMain = styled(MainEl)`
     justify-content: center;
     max-width: 1000px;
     margin: auto;
-    padding: 2rem 0;
+    padding: 2rem 1rem;
+    gap: 2rem;
 
     a {
         font-weight: bold;

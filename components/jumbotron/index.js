@@ -27,12 +27,12 @@ Jumbotron.Left = function JumbotronLeft( { children, ...restProps } ) {
 
     return (
         <Left
-            variants={variantsLeft} // Pass the variant object into Framer Motion 
-            initial="hidden" // Set the initial state to variants.hidden
-            animate="enter" // Animated state to variants.enter
-            exit="exit" // Exit state (used later) to variants.exit
-            transition={{ type: 'linear' }} // Set the transition to linear
-            {...restProps}
+            // variants={variantsLeft} // Pass the variant object into Framer Motion 
+            // initial="hidden" // Set the initial state to variants.hidden
+            // animate="enter" // Animated state to variants.enter
+            // exit="exit" // Exit state (used later) to variants.exit
+            // transition={{ type: 'linear' }} // Set the transition to linear
+            // {...restProps}
         >
             {children}
         </Left>
@@ -49,12 +49,12 @@ Jumbotron.Right = function JumbotronRight( { children, ...restProps } ) {
 
     return (
         <Right
-            variants={variantsRight} // Pass the variant object into Framer Motion 
-            initial="hidden" // Set the initial state to variants.hidden
-            animate="enter" // Animated state to variants.enter
-            exit="exit" // Exit state (used later) to variants.exit
-            transition={{ type: 'linear' }} // Set the transition to linear
-            className=""
+            // variants={variantsRight} // Pass the variant object into Framer Motion 
+            // initial="hidden" // Set the initial state to variants.hidden
+            // animate="enter" // Animated state to variants.enter
+            // exit="exit" // Exit state (used later) to variants.exit
+            // transition={{ type: 'linear' }} // Set the transition to linear
+            // className=""
             {...restProps}
         >
             {children}

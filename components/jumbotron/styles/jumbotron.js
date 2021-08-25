@@ -5,45 +5,33 @@ import { GuitarEl } from '../../../components/svg/guitar/styles/guitar'
 import { motion } from 'framer-motion'
 
 export const JumbotronWrapper = styled.div`
-    padding: 1rem 0;
+    padding: 1rem;
+
+    &.home-jumbotron {
+        min-height: calc(100vh - 6.25rem);
+    }
 `
 
 export const Container = styled(FlexContainer)`
 `
 
 export const Left = styled(motion.div)`
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 `
 
 export const Right = styled(motion.div)`
-        width: 50%;
-        position: relative;
-        display: flex;
-        align-items: center;
-
-        ${GuitarEl} {
-            position: absolute;
-            width: 100%;
-            top: 1rem;
-            bottom: 0;
-            right: 1rem;
-            z-index: 2;
-
-            @media (min-width: 900px) {
-                width: 75%;
-                right: 17.5%;
-            }
-        }
+    width: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
 `
 
 export const Heading = styled.h1`
     margin: 3rem 0 0;
-    font-size: clamp(2.5rem, 3vw + 2.5rem, 5.5rem);
-
-    
+    font-size: clamp(1.5rem,4vw + 1.5rem,5.5rem);
 `
 
 export const SubHeading = styled.h2`

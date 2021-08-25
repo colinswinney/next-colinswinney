@@ -2,12 +2,8 @@ import styled from 'styled-components'
 import { vars } from '../../../styles/global-styles'
 
 export const WidgetWrapper = styled.div`
-    margin-top: 3rem;
+    margin-top: 0;
     margin-bottom: 3rem;
-
-    ~ .Widget {
-        margin-top: 0;
-    }
 `
 
 export const Heading = styled.h4`

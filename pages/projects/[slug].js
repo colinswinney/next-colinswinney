@@ -46,14 +46,22 @@ const Project = ( { projectData } ) => {
 
                 <ArticleLayout.Aside>
 
-                    <ImageWrap imageObj={projectData.projectsPostType.logo} maxWidth="300px"/>
-
+                    <Widget>
+                        <ImageWrap imageObj={projectData.projectsPostType.logo} />
+                    </Widget>
+                    
+                    {projectData.projectsPostType.websiteUrl 
+                    ?
                     <Widget>
                         <Widget.Heading>Address</Widget.Heading>
                         <AddressWrap>
                             <Icon className="material-icons">language</Icon> <a href={projectData.projectsPostType.websiteUrl}>{projectData.projectsPostType.websiteName}</a>
                         </AddressWrap>
                     </Widget>
+                    :
+                    ``
+                    }
+                    
                     
                     <Widget>
                         <Widget.Heading>Tools</Widget.Heading>

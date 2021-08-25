@@ -4,7 +4,6 @@ import ImageWrap from '../image-wrap'
 
 const LogoSection = ({ children, logos }) => {
 
-    console.log(logos)
     return (
         <Section>
             <FlexContainer>

@@ -1,9 +1,8 @@
-import { Container } from '../../styles/global-styles'
 import { MainEl } from './styles/main'
 
-const Main = ({ children }) => {
+const Main = ({ children, ...restProps }) => {
     return (
-        <MainEl>
+        <MainEl {...restProps}>
                 { children }
         </MainEl>
     )

@@ -1,16 +1,14 @@
 import { useEffect, useContext } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import Image from 'next/image'
 import { ThemeContext } from 'styled-components';
 import { GradientText, AnchorButton } from '../styles/global-styles'
 import Jumbotron from '../components/jumbotron'
-import ImageWrap from '../components/image-wrap'
 import Main from '../components/main'
 import LogoSection from '../components/logo-section'
 import Services from '../components/services'
 import Guitar from '../components/svg/guitar'
-import Blob from '../components/svg/blob'
+import Form from '../components/form'
 import { getLogos } from '../lib/api'
 
 const Home = ({ logos }) => {
@@ -30,7 +28,7 @@ const Home = ({ logos }) => {
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Jumbotron>
+        <Jumbotron className="home-jumbotron">
           <Jumbotron.Container>
 
             <Jumbotron.Left>
@@ -47,16 +45,8 @@ const Home = ({ logos }) => {
               </Link>
             </Jumbotron.Left>
 
-            <Jumbotron.Right>
+            <Jumbotron.Right className="home-right">
               <Guitar />
-              <ImageWrap transparent>
-                  <Image
-                      src={themeContext.homeImg}
-                      height={800}
-                      width={800}
-                      alt="Just a blob shape"
-                  />
-              </ImageWrap>
             </Jumbotron.Right>
 
           </Jumbotron.Container>
@@ -79,6 +69,7 @@ const Home = ({ logos }) => {
           <p>text</p>
 
           <LogoSection logos={logos}/>
+          <Form />
         </Main>
     </>
   )

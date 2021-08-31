@@ -55,7 +55,7 @@ const Nav = ({ children }) => {
         else {
             document.querySelector("body").classList.remove("nav-menu-active")
         }
-    })
+    }, [])
     // if (isNavActive) {
     //     useEffect( () => { document.querySelector("body").classList.add("nav-menu-active") } );
     // }
@@ -83,7 +83,7 @@ const Nav = ({ children }) => {
                         </ListItem>
 
                         <ListItem>
-                            <Link href="/projects">
+                            <Link href="/projects" passHref>
                                 <a className={router.pathname == "/" ? "active" : ""}>
                                     Projects
                                 </a>
@@ -91,7 +91,7 @@ const Nav = ({ children }) => {
                         </ListItem>
 
                         <ListItem>
-                            <Link href="/about">
+                            <Link href="/about" passHref>
                                 <a className={router.pathname == "/about" ? "active" : ""}>
                                     About
                                 </a>
@@ -99,7 +99,7 @@ const Nav = ({ children }) => {
                         </ListItem>
 
                         <ListItem>
-                            <Link href="/contact">
+                            <Link href="/contact" passHref>
                                 <a className={router.pathname == "/contact" ? "active" : ""}>
                                     Contact
                                 </a>

@@ -1,14 +1,15 @@
 import styled from 'styled-components'
 import { vars } from '../../../styles/global-styles'
 
-export const Form = styled.form`
+export const FormEl = styled.form`
     display: flex;
     flex-direction: column;
     padding: 3.5rem 3rem 5.75rem;
-    background: ${({ theme }) => theme.contactFormBg};
-    max-width: 37.5rem;
     margin: auto;
+    width: 100%;
     font-size: 1rem;
+    max-width: 37.5rem;
+    background: ${({ theme }) => theme.bodyBgColorLight};
     box-shadow: 0 0.0625rem 0.1875rem rgba(0,0,0,0.12), 0 0.0625rem 0.125rem rgba(0,0,0,0.24);
     border-radius: 0.5rem;
     overflow: hidden;
@@ -32,6 +33,7 @@ export const Legend = styled.legend`
 
 export const Input = styled.input`
     margin: 2rem 0 0;
+    padding: 0;
     border: none;
     border-radius: 0;
     background: none;
@@ -107,12 +109,12 @@ export const SubmitWrap = styled.div`
 
 export const SubmitButton = styled.button`
     padding: .5rem 1.5rem;
-    margin-bottom: 4rem;
+    margin-bottom: 1.5rem;
     width: max-content;
     color: ${vars.light};
     background: ${({ theme }) => theme.gradient};
     display: inline-block;
-    font-size: 0.75rem;
+    font-size: 1rem;
     box-sizing: content-box;
     position: relative;
     font-weight: 900;
@@ -137,20 +139,12 @@ export const SubmitButton = styled.button`
         right: 0.125rem;
         bottom: 0.125rem;
         left: 0.125rem;
-        background: ${({ theme }) => theme.contactFormBg};
+        background: ${({ theme }) => theme.bodyBgColorLight};
         z-index: -1;
     }
 
-    @media (min-width: 500px) {
-        font-size: 1rem;
-    }
-
-    @media (min-width: 700px) {
+    @media (min-width: ${vars.breakpoint}) {
         font-size: 1.25rem;
-    }
-
-    @media (min-width: 900px) {
-        margin-bottom: 1.5rem;
     }
 
     &:hover {

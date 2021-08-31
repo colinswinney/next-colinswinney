@@ -1,15 +1,14 @@
 import { useForm, ValidationError } from '@formspree/react'
-import { Form, Legend, Input, Label, TextArea, SubmitWrap, SubmitButton } from './styles/form'
-import { AnchorButton } from '../../styles/global-styles'
+import { FormEl, Legend, Input, Label, TextArea, SubmitWrap, SubmitButton } from './styles/form'
 
-const ContactForm = () => {
+const Form = () => {
 
   const [state, handleSubmit] = useForm("mzbjezon");
   if (state.succeeded) {
       return <p>Thank you, I will be in touch as soon as possible!</p>;
   }
   return (
-    <Form onSubmit={handleSubmit}>
+    <FormEl onSubmit={handleSubmit}>
         
         <Legend>Email me at <a href="mailto:colinjswinney@gmail.com?subject=Hi Colin!">colinjswinney@gmail.com</a><br/>or send a message below!</Legend>
 
@@ -104,8 +103,8 @@ const ContactForm = () => {
           </SubmitButton>
         </SubmitWrap>
         
-    </Form>
+    </FormEl>
   );
 }
 
-export default ContactForm;
+export default Form;

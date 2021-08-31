@@ -5,9 +5,10 @@ import Link from 'next/link'
 import { ThemeContext } from 'styled-components';
 import Jumbotron from '../components/jumbotron'
 import ImageWrap from '../components/image-wrap'
+import Main from '../components/main'
 import Card from '../components/card'
 import { GradientText } from '../styles/global-styles'
-import { Header, FlexMain } from '../styles/projects'
+import { FlexContainerProjects, Anchor } from '../styles/projects'
 import { getAllProjects } from '../lib/api'
 
 const Projects = ({ allProjects: { edges }}) => {
@@ -46,8 +47,8 @@ const Projects = ({ allProjects: { edges }}) => {
                 <ImageWrap transparent>
                     <Image
                         src={themeContext.projectsImg}
-                        height={631}
-                        width={1016}
+                        height={600}
+                        width={600}
                         alt="Man screaming at his computer"
                     />
                 </ImageWrap>
@@ -56,11 +57,12 @@ const Projects = ({ allProjects: { edges }}) => {
           </Jumbotron.Container>
         </Jumbotron>
 
-        <FlexMain>
+        <Main>
+            <FlexContainerProjects>
             {edges.map( (project, i) => (
-                <Link href={`/projects/${project.node.slug}`} key={i}>
+                <Link href={`/projects/${project.node.slug}`} key={project.node.title} passHref>
                     
-                    <a>
+                    <Anchor>
                         <Card>
                             <Card.Top>
                                 <Card.TopBg bgImg={project.node.featuredImage.node.sourceUrl} />
@@ -69,13 +71,13 @@ const Projects = ({ allProjects: { edges }}) => {
                                 <Card.Title>{project.node.title}</Card.Title>
                             </Card.Bottom>
                         </Card>
-                        {/* <Card project={project}/> */}
-                    </a>
+                    </Anchor>
                     
                 </Link>
                         
             ))}
-        </FlexMain>
+            </FlexContainerProjects>
+        </Main>
     </>
   )
 }

@@ -44,7 +44,7 @@ export const List = styled.ul`
         z-index: 999;
     }
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: ${vars.breakpoint}) {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -58,7 +58,7 @@ export const ListItem = styled.li`
     display: flex;
     align-items: center;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: ${vars.breakpoint}) {
         margin: 0 0 0 2.5rem;
 
         &.theme-btn {
@@ -67,7 +67,7 @@ export const ListItem = styled.li`
     }
 
     &.mobile-logo {
-        @media screen and (min-width: 768px) {
+        @media (min-width: ${vars.breakpoint}) {
             display: none;
         }
     }
@@ -80,7 +80,7 @@ export const NavToggle = styled.span`
     z-index: 9999;
     cursor: pointer;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: ${vars.breakpoint}) {
         display: none;
     }
 `
@@ -100,7 +100,7 @@ export const AnchorButtonCircle = styled(AnchorButton)`
         border-radius: 100%;
     }
 
-    @media (min-width:700px) {
+    @media (min-width: ${vars.breakpoint}) {
         width: 3.25rem;
         height: 3.25rem;
     }

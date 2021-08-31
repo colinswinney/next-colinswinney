@@ -1,19 +1,18 @@
 import { useEffect, useContext } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { ThemeContext } from 'styled-components';
 import { GradientText, AnchorButton } from '../styles/global-styles'
 import Jumbotron from '../components/jumbotron'
 import Main from '../components/main'
-import LogoSection from '../components/logo-section'
-import Services from '../components/services'
+import AboutSection from '../components/home/about-section'
+import ProjectsSection from '../components/home/projects-section'
+import LogoSection from '../components/home/logo-section'
 import Guitar from '../components/svg/guitar'
+import ContactSection from '../components/home/contact-section'
 import Form from '../components/form'
-import { getLogos } from '../lib/api'
+import { getLogos, getHomeProjects } from '../lib/api'
 
-const Home = ({ logos }) => {
-
-  const themeContext = useContext(ThemeContext);
+const Home = ({ logos, projects }) => {
 
   useEffect( () => { 
       document.querySelector("body").className = "";
@@ -38,7 +37,7 @@ const Home = ({ logos }) => {
                 Swinney
               </Jumbotron.Heading>
               <Jumbotron.SubHeading>I&apos;m a web developer from Milwaukee, WI.  Let&apos;s make some music.</Jumbotron.SubHeading>
-              <Link href="/projects">
+              <Link href="/projects" passHref>
                 <AnchorButton>
                   See My Work
                 </AnchorButton>
@@ -54,22 +53,15 @@ const Home = ({ logos }) => {
 
         
 
-        <Main>
+        <Main noPadding>
 
-          <Services>
-          </Services>
-          
-          <h2><GradientText>About</GradientText></h2>
-          <p>text</p>
+          <AboutSection/>
 
-          <h2><GradientText>Projects</GradientText></h2>
-          <p>text</p>
-
-          <h2><GradientText>Contact</GradientText></h2>
-          <p>text</p>
+          <ProjectsSection projects={projects}/>
 
           <LogoSection logos={logos}/>
-          <Form />
+          
+          <ContactSection />
         </Main>
     </>
   )
@@ -79,9 +71,11 @@ export default Home
 
 export async function getStaticProps() {
   const logos = await getLogos();
+  const projects = await getHomeProjects();
   return {
       props: {
-          logos: logos
+          logos: logos,
+          projects: projects
       }
   };
 }

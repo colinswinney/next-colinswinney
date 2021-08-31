@@ -12,7 +12,7 @@ export const CardWrap = styled(motion.div)`
     position: relative;
     background: ${({ theme }) => theme.gradient};
     box-shadow: 0 0.0625rem .1875rem rgba(0,0,0,0.12), 0 0.0625rem .125rem rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    transition: ${vars.transition};
 
     a &:hover, 
     a &:focus {
@@ -35,7 +35,7 @@ export const TopBg = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     background-image: url('${props => props.bgImg}');
-    transition: 0.3s ease;
+    transition: ${vars.transition};
 
     a ${CardWrap}:hover &,
     a ${CardWrap}:focus & {

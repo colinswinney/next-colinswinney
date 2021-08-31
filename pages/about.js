@@ -34,15 +34,16 @@ const About = ({aboutData}) => {
               <Jumbotron.Heading>
                 <GradientText>About</GradientText> Me
               </Jumbotron.Heading>
-              <Jumbotron.SubHeading>I ain&apos;t no cowboy coder.</Jumbotron.SubHeading>
-            </Jumbotron.Left>
+              {/* <Jumbotron.SubHeading>I ain&apos;t no cowboy coder.</Jumbotron.SubHeading> */}
+              <Jumbotron.SubHeading>Sometimes I play dress up with my band.</Jumbotron.SubHeading>
+              </Jumbotron.Left>
 
             <Jumbotron.Right>
                 <ImageWrap transparent>
                     <Image
                         src={themeContext.aboutImg}
-                        height={533}
-                        width={800}
+                        height={600}
+                        width={600}
                         alt="Colin the Cowboy"
                     />
                 </ImageWrap>

@@ -7,6 +7,7 @@ export const GuitarEl = styled.svg`
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-miterlimit: 1.5;
+    width: 100%;
 `
 
 export const Blob = styled.path`

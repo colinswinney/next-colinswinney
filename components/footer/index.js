@@ -1,12 +1,11 @@
-import { Container } from '../../styles/global-styles'
-import { FooterEl } from './styles/footer'
+import { FooterEl, FlexContainerFooter, Text } from './styles/footer'
 
 const Footer = () => {
     return (
         <FooterEl>
-            <Container>
-                <p>Colin</p>
-            </Container>
+            <FlexContainerFooter>
+                <Text>&copy; Copyright {(new Date().getFullYear())}, Colin Swinney </Text>
+            </FlexContainerFooter>
         </FooterEl>
     )
 }

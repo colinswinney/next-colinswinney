@@ -2,9 +2,9 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Link from 'next/link'
-import { AnchorButton } from '../../styles/global-styles'
-import { AddressWrap, List, ListItem, Icon, BackBtnContainer } from '../../styles/projects-slug'
-import PageHeader from '../../components/pageHeader'
+import { Container, AnchorButton } from '../../styles/global-styles'
+import { AddressWrap, List, ListItem, Icon } from '../../styles/projects-slug'
+import SlugHeader from '../../components/slugHeader'
 import ArticleLayout from '../../components/article-layout'
 import Widget from '../../components/widget'
 import Main from '../../components/main'
@@ -34,7 +34,7 @@ const Project = ( { projectData } ) => {
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <PageHeader title={projectData.title} />
+        <SlugHeader title={projectData.title} />
 
         <Main>
 
@@ -68,7 +68,7 @@ const Project = ( { projectData } ) => {
                         <List>
                             {projectData.projectsPostType.techStack.map((item, i) => {
                                 return (
-                                    <ListItem key={i}>
+                                    <ListItem key={item}>
                                         <Icon className="material-icons">build</Icon> {item}
                                     </ListItem>
                                 )
@@ -79,11 +79,11 @@ const Project = ( { projectData } ) => {
                 </ArticleLayout.Aside>
             </ArticleLayout>
 
-            <BackBtnContainer>
-                <Link href="/projects">
+            <Container>
+                <Link href="/projects" passHref>
                     <AnchorButton>Back to Projects</AnchorButton>
                 </Link>
-            </BackBtnContainer>
+            </Container>
 
         </Main>
         

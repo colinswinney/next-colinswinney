@@ -19,9 +19,9 @@ export default function Card({ children, ...restProps }) {
     }, [controls, inView])
 
     const variants = {
-        hidden: { scale: 0 },
+        hidden: { opacity: 0 },
         visible: { 
-            scale: 1,
+            opacity: 1,
             transition: {
                 duration: 0.5,
             }

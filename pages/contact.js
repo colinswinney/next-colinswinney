@@ -6,16 +6,11 @@ import Main from '../components/main'
 import Form from '../components/form'
 import Jumbotron from '../components/jumbotron'
 import ImageWrap from '../components/image-wrap'
-import { GradientText } from '../styles/global-styles'
+import { GradientText, Container } from '../styles/global-styles'
 
 const Contact = () => {
 
   const themeContext = useContext(ThemeContext);
-
-  useEffect( () => { 
-    document.querySelector("body").className = "";
-    document.querySelector("body").classList.add("contact") 
-  } );
 
   return (
     <>
@@ -28,31 +23,27 @@ const Contact = () => {
         <Jumbotron>
             <Jumbotron.Container>
 
-              <Jumbotron.Left>
                 <Jumbotron.Heading>
                   <GradientText>Contact</GradientText> Me
                 </Jumbotron.Heading>
                 <Jumbotron.SubHeading>I&apos;d love to hear from you.</Jumbotron.SubHeading>
-              </Jumbotron.Left>
 
-              <Jumbotron.Right>
-                  <ImageWrap transparent>
-                      <Image
-                          src={themeContext.contactImg}
-                          height={600}
-                          width={600}
-                          alt="Old telephone in a blob"
-                      />
-                  </ImageWrap>
-              </Jumbotron.Right>
+                <ImageWrap transparent>
+                    <Image
+                        src={themeContext.contactImg}
+                        height={600}
+                        width={600}
+                        alt="Old telephone in a blob"
+                    />
+                </ImageWrap>
 
             </Jumbotron.Container>
           </Jumbotron>
             
         <Main>
-
-          <Form />
-
+          <Container>
+            <Form />
+          </Container>
         </Main>
     </>
   )

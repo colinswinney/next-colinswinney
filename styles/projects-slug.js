@@ -23,6 +23,6 @@ export const AddressWrap = styled.div`
         position: absolute;
         margin: auto;
         left: 0;
-        top: 0.375rem;
+        top: 0.3175rem;
     }
 `

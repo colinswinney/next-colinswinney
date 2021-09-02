@@ -17,7 +17,7 @@ export default function ContactSection({ children, ...restProps }) {
                     <HeadingTwo>
                         <GradientText>Contact Me</GradientText>
                     </HeadingTwo>
-                    <p>I&apos;d love to hear from you.</p>
+                    {/* <p>I&apos;d love to hear from you.</p> */}
                     <ImageWrap transparent>
                         <Image
                           src={themeContext.contactImg}

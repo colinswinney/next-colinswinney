@@ -144,7 +144,7 @@ export const SubmitButton = styled.button`
     }
 
     @media (min-width: ${vars.breakpoint}) {
-        font-size: 1.25rem;
+        font-size: 1.33rem;
     }
 
     &:hover {

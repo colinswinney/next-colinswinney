@@ -14,11 +14,6 @@ const About = ({aboutData}) => {
 
   const themeContext = useContext(ThemeContext);
 
-  useEffect( () => { 
-    document.querySelector("body").className = "";
-    document.querySelector("body").classList.add("about") 
-  } );
-
   return (
     <>
         <Head>
@@ -30,24 +25,20 @@ const About = ({aboutData}) => {
         <Jumbotron>
           <Jumbotron.Container>
 
-            <Jumbotron.Left>
               <Jumbotron.Heading>
                 <GradientText>About</GradientText> Me
               </Jumbotron.Heading>
               {/* <Jumbotron.SubHeading>I ain&apos;t no cowboy coder.</Jumbotron.SubHeading> */}
               <Jumbotron.SubHeading>Sometimes I play dress up with my band.</Jumbotron.SubHeading>
-              </Jumbotron.Left>
 
-            <Jumbotron.Right>
-                <ImageWrap transparent>
-                    <Image
-                        src={themeContext.aboutImg}
-                        height={600}
-                        width={600}
-                        alt="Colin the Cowboy"
-                    />
-                </ImageWrap>
-            </Jumbotron.Right>
+              <ImageWrap transparent>
+                  <Image
+                      src={themeContext.aboutImg}
+                      height={600}
+                      width={600}
+                      alt="Colin the Cowboy"
+                  />
+              </ImageWrap>
 
           </Jumbotron.Container>
         </Jumbotron>

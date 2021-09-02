@@ -14,11 +14,6 @@ import { getLogos, getHomeProjects } from '../lib/api'
 
 const Home = ({ logos, projects }) => {
 
-  useEffect( () => { 
-      document.querySelector("body").className = "";
-      document.querySelector("body").classList.add("home") 
-  } );
-
   return (
     <>
         <Head>
@@ -30,23 +25,19 @@ const Home = ({ logos, projects }) => {
         <Jumbotron className="home-jumbotron">
           <Jumbotron.Container>
 
-            <Jumbotron.Left>
               <Jumbotron.Heading>
-                <GradientText>Colin</GradientText>
-                <br/>
-                Swinney
+                <GradientText>Colin</GradientText> Swinney
               </Jumbotron.Heading>
-              <Jumbotron.SubHeading>I&apos;m a web developer from Milwaukee, WI.  Let&apos;s make some music.</Jumbotron.SubHeading>
+              <Jumbotron.SubHeading>I&apos;m a web developer from Milwaukee, WI.  Let&apos;s make some music.
               <Link href="/projects" passHref>
                 <AnchorButton>
                   See My Work
                 </AnchorButton>
               </Link>
-            </Jumbotron.Left>
+              </Jumbotron.SubHeading>
+              
 
-            <Jumbotron.Right className="home-right">
               <Guitar />
-            </Jumbotron.Right>
 
           </Jumbotron.Container>
         </Jumbotron>

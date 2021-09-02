@@ -7,8 +7,7 @@ export const ProjectsSectionWrap = styled.section`
 `
 
 export const FlexBar = styled(FlexContainer)`
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 0 1rem;
 
     &.right-align {
         justify-content: flex-end;
@@ -16,7 +15,6 @@ export const FlexBar = styled(FlexContainer)`
 `
 
 export const Heading = styled.h2`
-    margin: 0;
 `
 
 export const Text = styled.p`
@@ -25,7 +23,8 @@ export const Text = styled.p`
 export const GridContainerProjects = styled(GridContainer)`
     padding-top: 0;
     padding-bottom: 0;
-    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    font-size: 1.33rem;
     text-align: center;
     grid-template-columns: repeat(4, minmax(1fr));
     grid-template-areas:
@@ -37,7 +36,7 @@ export const GridContainerProjects = styled(GridContainer)`
         "h h d d";
 
     @media (min-width: ${vars.breakpoint}) {
-        font-size: 1.5rem;
+        font-size: 1.77rem;
     } 
 
     @media (min-width: ${vars.breakpointLarge}) {

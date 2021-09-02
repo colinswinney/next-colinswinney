@@ -119,13 +119,14 @@ const AboutSection = () => {
         <AboutSectionWrap>
             <Container>
                 <Text>I really <strong>love</strong> working with...</Text>
-            </Container>
-            <GridContainerAbout>
                 <LoopTextWrap className="loop-text">
                     {images.map((image) => (
                         <LoopTextHeading key={image.title} className="cycle-text"><GradientText>{image.title}</GradientText></LoopTextHeading>
                     ))}
                 </LoopTextWrap>
+            </Container>
+            <GridContainerAbout>
+                
             {/* <FlexContainerAboutSection> */}
                 {images.map((image) => (
                     

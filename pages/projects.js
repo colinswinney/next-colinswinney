@@ -15,13 +15,7 @@ const Projects = ({ allProjects: { edges }}) => {
 
     const themeContext = useContext(ThemeContext);
 
-    useEffect( () => { 
-        document.querySelector("body").className = "";
-        document.querySelector("body").classList.add("projects") 
-    } );
-
-
-  return (
+    return (
     <>
         <Head>
             <title>Colin Swinney</title>
@@ -32,27 +26,19 @@ const Projects = ({ allProjects: { edges }}) => {
         <Jumbotron>
           <Jumbotron.Container>
 
-            <Jumbotron.Left>
               <Jumbotron.Heading>
-                <GradientText>Web</GradientText>
-                <br/>
-                Projects
+                <GradientText>Web</GradientText> Projects
               </Jumbotron.Heading>
               <Jumbotron.SubHeading>What have I done?!</Jumbotron.SubHeading>
-            </Jumbotron.Left>
 
-            <Jumbotron.Right>
-                {/* <BlobScreamer />
-                <Screamer /> */}
-                <ImageWrap transparent>
-                    <Image
-                        src={themeContext.projectsImg}
-                        height={600}
-                        width={600}
-                        alt="Man screaming at his computer"
-                    />
-                </ImageWrap>
-            </Jumbotron.Right>
+            <ImageWrap transparent>
+                <Image
+                    src={themeContext.projectsImg}
+                    height={600}
+                    width={600}
+                    alt="Man screaming at his computer"
+                />
+            </ImageWrap>
 
           </Jumbotron.Container>
         </Jumbotron>

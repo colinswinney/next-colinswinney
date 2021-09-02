@@ -13,11 +13,6 @@ import { getAllProjectsWithSlug, getProject } from "../../lib/api"
 
 const Project = ( { projectData } ) => {
 
-    useEffect( () => { 
-        document.querySelector("body").className = "";
-        document.querySelector("body").classList.add(projectData.slug) 
-    } );
-
     projectData.projectsPostType.techStack.sort()
 
     const router = useRouter();

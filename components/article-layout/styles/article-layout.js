@@ -29,7 +29,7 @@ export const Content = styled.div`
 export const Aside = styled.aside`
     padding: 1rem;
     max-width: 18.75rem;
-    margin: 0;
+    margin: 0 0 2rem 0;
     border-radius: 1rem;
     background: ${({ theme }) => theme.bodyBgColorLight};
     box-shadow: 0 0.0625rem .1875rem rgba(0,0,0,0.12), 0 0.0625rem .125rem rgba(0,0,0,0.24);

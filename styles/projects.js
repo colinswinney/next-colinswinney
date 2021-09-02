@@ -1,10 +1,14 @@
 import styled from 'styled-components'
-import { FlexContainer } from './global-styles'
+import { vars, FlexContainer } from './global-styles'
 
 export const FlexContainerProjects = styled(FlexContainer)`
     flex-wrap: wrap;
     justify-content: center;
-    gap: 6rem;
+    gap: 3rem;
+
+    @media (min-width: ${vars.breakpoint}) {
+        gap: 6rem;
+    }
 `
 
 export const Anchor = styled.a`

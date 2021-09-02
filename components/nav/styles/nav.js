@@ -3,7 +3,7 @@ import { vars, Container, AnchorButton } from '../../../styles/global-styles'
 
 export const Navbar = styled.nav`
     background: ${({ theme }) => theme.navBgColor};
-    font-size: 1.2rem;
+    font-size: 1.33rem;
 
     ${Container} {
         box-sizing: border-box;
@@ -35,8 +35,8 @@ export const List = styled.ul`
         align-items: center;
         position: fixed;
         background: ${({ theme }) => theme.bodyBgColor};
-        height: 100vh;
-        width: 100vw;
+        min-height: 100vh;
+        min-width: 100vw;
         top: 0;
         left: 0;
         right: 0;

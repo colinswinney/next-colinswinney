@@ -7,7 +7,7 @@ export const Header = styled.header`
 `
 
 export const SlugHeaderContainer = styled(Container)`
-    background: ${({ theme }) => theme.blobColor};
+    background: ${({ theme }) => theme.gradient};
 `
 
 export const HeadingOne = styled.h1`

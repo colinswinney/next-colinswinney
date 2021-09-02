@@ -50,18 +50,13 @@ const Nav = ({ children }) => {
 
     useEffect(() => {
         if (isNavActive) {
-            document.querySelector("body").classList.add("nav-menu-active") 
+            document.querySelector("body").classList.add("nav-menu-active")
+            console.log('active')
         }
         else {
             document.querySelector("body").classList.remove("nav-menu-active")
         }
-    }, [])
-    // if (isNavActive) {
-    //     useEffect( () => { document.querySelector("body").classList.add("nav-menu-active") } );
-    // }
-    // else {
-    //     useEffect( () => { document.querySelector("body").classList.remove("nav-menu-active") } );
-    // }
+    })
 
     return (
         <Navbar>

@@ -23,13 +23,14 @@ export const lightTheme = {
     linkColor: c.indigo600,
     linkColorHover: c.indigo300,
     blobColor: c.orange200,
-    guitarFillOne: '#470326',
+    guitarFillOne: c.indigo800,
     guitarFillTwo: c.deeporangeA700,
-    guitarFillThree: c.indigo800,
+    guitarFillThree: `#470326`,
     bodyBgColorLight: `#fff`,
     contactFormBg: `rgba(255,255,255, 0.95)`,
     contactImg: `/images/milwaukee-daylight.jpeg`,
     gradient: `linear-gradient(30deg, ${c.indigo800}, ${c.indigo300})`,
+    aboutSectionBorderColor: `rgba(232, 234, 246, .3)`,
     aboutSectionBg: `linear-gradient(rgba(232, 234, 246, .3) .1em, transparent .1em), linear-gradient(90deg, rgba(232, 234, 246, .3) .1em, transparent .1em)`,
     logoSectionBg: c.grey100,
     homeImg: "/images/headers/blob-home.png",
@@ -46,7 +47,7 @@ export const darkTheme = {
     textAccent: c.grey500,
     accentColorOne: c.purple300,
     accentColorTwo: c.purple600,
-    linkColor: c.purple200,
+    linkColor: c.purple300,
     linkColorHover: c.purple100,
     blobColor: c.teal200,
     guitarFillOne: c.purple800,
@@ -56,6 +57,7 @@ export const darkTheme = {
     contactFormBg: `rgba(33,33,33, 0.95)`,
     contactImg: `/images/milwaukee-night.jpeg`,
     gradient: `linear-gradient(30deg, ${c.purple600}, ${c.purple200})`,
+    aboutSectionBorderColor: `rgba(55, 55, 55, .1)`,
     aboutSectionBg: `linear-gradient(rgba(55, 55, 55, .1) .1em, transparent .1em), linear-gradient(90deg, rgba(55, 55, 55, .1) .1em, transparent .1em);`,
     logoSectionBg: c.grey200,
     homeImg: "/images/headers/blob-home-dark.png",
@@ -94,6 +96,7 @@ export const GlobalStyles = createGlobalStyle`
     html,
     body {
         font-size: 100%;
+        font-family: -apple-system,system-ui,blinkmacsystemfont,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif;
     }
 
     body {
@@ -102,6 +105,10 @@ export const GlobalStyles = createGlobalStyle`
         font-family: ${ vars.fontBody };
         position: relative;
         font-size: 1.2rem;
+    }
+
+    body.nav-menu-active {
+        overflow: hidden;
     }
 
     * {
@@ -121,27 +128,57 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     h1 {
-        font-size: 3.5rem;
+        font-size: 3.15rem;
     }
 
     h2 {
-        font-size: 3rem;
+        font-size: 2.36rem;
     }
 
     h3 {
-        font-size: 2rem;
+        font-size: 1.77rem;
     }
 
     h4 {
-        font-size: 1.5rem;
+        font-size: 1.33rem;
     }
 
     h5 {
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
 
     h6 {
-        font-size: 1rem;
+        font-size: 0.8rem;
+    }
+
+    @media (min-width: ${vars.breakpoint}) {
+        body {
+            font-size: 1.33rem;
+        }
+        
+        h1 {
+            font-size: 4.2rem;
+        }
+    
+        h2 {
+            font-size: 3.15rem;
+        }
+    
+        h3 {
+            font-size: 2.36rem;
+        }
+    
+        h4 {
+            font-size: 1.77rem;
+        }
+    
+        h5 {
+            font-size: 1.33rem;
+        }
+    
+        h6 {
+            font-size: 1rem;
+        }
     }
 
     p, ul, ol {
@@ -162,7 +199,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     section {
-        padding: 3rem 1rem;
+        padding: 5rem 1rem;
     }
 
     figure {
@@ -170,7 +207,7 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
         max-width: 90%;
         text-align: center;
-        font-size: 0.8rem;
+        font-size: 1rem;
 
     }
 
@@ -253,7 +290,6 @@ export const GradientText = styled.span`
 
 export const AnchorButton = styled.a`
     padding: .5rem 1.5rem;
-    margin-bottom: 4rem;
     width: max-content;
     color: ${vars.light};
     background: ${({ theme }) => theme.gradient};
@@ -286,7 +322,7 @@ export const AnchorButton = styled.a`
     }
 
     @media (min-width: ${vars.breakpoint}) {
-        font-size: 1.25rem;
+        font-size: 1.33rem;
     }
 
     &:hover {

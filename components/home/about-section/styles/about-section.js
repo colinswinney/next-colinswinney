@@ -7,6 +7,9 @@ export const AboutSectionWrap = styled.section`
     text-align: center;
     background-image: ${({theme}) => theme.aboutSectionBg};
     background-size: 2rem 2rem;
+    background-position: center;
+    border-top: 0.0625rem solid ${({ theme }) => theme.aboutSectionBorderColor};
+    border-bottom: 0.0625rem solid ${({ theme }) => theme.aboutSectionBorderColor};
 `
 
 export const FlexContainerAboutSection = styled(FlexContainer)`
@@ -29,7 +32,7 @@ export const FlexContainerAboutSection = styled(FlexContainer)`
 
 export const Text = styled.p`
     font-family: ${vars.fontBody};
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem;
     font-size: clamp(1.25rem, 1vw + 1.25rem, 3rem);
     font-weight: 100;
     line-height: 1;
@@ -42,12 +45,11 @@ export const BottomText = styled(Text)`
 `
 
 export const GridContainerAbout = styled(GridContainer)`
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     row-gap: 3vw;
     grid-template-areas:
-      "a b c d e"
-      "l t t t f"
-      "k j i h g";
+      "a b c d e f"
+      "g h i j k l";
 `
 
 export const ImageWrapGrid = styled(Wrapper)`
@@ -70,8 +72,6 @@ export const LoopTextWrap = styled.div`
     position: relative;
     height: clamp(2rem, 7vw, 4rem);
     width: 100%;
-    grid-area: t;
-    place-self: center;
 `
 
 export const LoopTextHeading = styled.h2`
@@ -81,7 +81,7 @@ export const LoopTextHeading = styled.h2`
     opacity: 0;
     transition: ${vars.transition};
     margin: auto;
-    font-size: clamp(1.5rem, 6vw, 4rem);
+    font-size: clamp(2.5rem, 7vw, 4rem);
 
     &.active {
       opacity: 1;

@@ -10,12 +10,12 @@ export const ContactSectionWrap = styled.section`
 
     ${FlexContainer} {
         flex-direction: column;
+        padding: 0;
 
         @media (min-width: ${vars.breakpointLarge}) {
             flex-direction: row;
             justify-content: space-around;
             display: flex;
-            align-items: center;
 
             ${FormEl} {
                 margin: 0;
@@ -27,18 +27,24 @@ export const ContactSectionWrap = styled.section`
 `
 
 export const LeftWrap = styled.div`
-    padding-right: 3rem;
     text-align: center;
 
-    @media (min-width: ${vars.breakpointLarge}) {
-        text-align: left;
-    }
-
     ${Wrapper} {
-        max-width: 60%;
+        display: none;
+    }
+    @media (min-width: ${vars.breakpointLarge}) {
+        padding-right: 2rem;
+
+        ${Wrapper} {
+            display: inline-block;
+            max-width: 20rem;
+        }
     }
 `
 
 export const HeadingTwo = styled.h2`
-    margin-bottom: 1rem;
+
+    @media (min-width: ${vars.breakpointLarge}) {
+        margin: 2.5rem 0 4rem;
+    }
 `

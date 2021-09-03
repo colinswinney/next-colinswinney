@@ -25,7 +25,7 @@ const ProjectsSection = ({ children, projects }) => {
                         key={project.title}
                     >
                         <Link href={`/projects/${project.slug}`} passHref>
-                            <ProjectAnchor afterTitle={project.title}/>
+                            <ProjectAnchor afterTitle={project.title} aria-label={project.title}/>
                         </Link>
                     </Cell>
                         

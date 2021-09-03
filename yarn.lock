@@ -525,6 +525,13 @@
   "resolved" "https://registry.yarnpkg.com/axe-core/-/axe-core-4.3.2.tgz"
   "version" "4.3.2"
 
+"axios@^0.21.1":
+  "integrity" "sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA=="
+  "resolved" "https://registry.npmjs.org/axios/-/axios-0.21.1.tgz"
+  "version" "0.21.1"
+  dependencies:
+    "follow-redirects" "^1.10.0"
+
 "axobject-query@^2.2.0":
   "integrity" "sha512-Td525n+iPOOyUQIeBfcASuG6uJsDOITl7Mds5gFyerkWiX7qhUTdYUBlSgNMyVqtSJqwpt1kXGLdUt6SykLMRA=="
   "resolved" "https://registry.yarnpkg.com/axobject-query/-/axobject-query-2.2.0.tgz"
@@ -1471,6 +1478,11 @@
   "resolved" "https://registry.yarnpkg.com/flatted/-/flatted-3.2.2.tgz"
   "version" "3.2.2"
 
+"follow-redirects@^1.10.0":
+  "integrity" "sha512-3MkHxknWMUtb23apkgz/83fDoe+y+qr0TdgacGIA7bew+QLBo3vdgEN2xEsuXNivpFy4CyDhBBZnNZOtalmenw=="
+  "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.3.tgz"
+  "version" "1.14.3"
+
 "foreach@^2.0.5":
   "integrity" "sha1-C+4AUBiusmDQo6865ljdATbsG5k="
   "resolved" "https://registry.yarnpkg.com/foreach/-/foreach-2.0.5.tgz"
@@ -2226,6 +2238,13 @@
     "util" "0.12.3"
     "vm-browserify" "1.1.2"
     "watchpack" "2.1.1"
+
+"nextjs-google-fonts@^3.3.2":
+  "integrity" "sha512-UMlOboDY1032G6ixp6zJGNZRX3SSFKG0YDs2rk576jepceWciCoRWRl2nhOgWhv2JihmpPkCvXGgOsh++hTQHQ=="
+  "resolved" "https://registry.npmjs.org/nextjs-google-fonts/-/nextjs-google-fonts-3.3.2.tgz"
+  "version" "3.3.2"
+  dependencies:
+    "axios" "^0.21.1"
 
 "node-fetch@~2.6.0", "node-fetch@2.6.1":
   "integrity" "sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw=="

@@ -41,6 +41,10 @@ export const AddressWrap = styled.div`
         position: absolute;
         margin: auto;
         left: 0;
-        top: 0.3175rem;
+        top: 0.1875rem;
+
+        @media (min-width: ${vars.breakpoint}) {
+            top: 0.3175rem;
+        }
     }
 `

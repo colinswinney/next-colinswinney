@@ -111,6 +111,7 @@ export const ProjectAnchor = styled.a`
 
     &:after {
         content: "${props => props.afterTitle}";
+        padding: 0 0.5rem;
         position: absolute;
         overflow-wrap: break-word;
         left: 0;

@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -8,7 +9,6 @@ import ArticleLayout from '../../components/article-layout'
 import Widget from '../../components/widget'
 import Main from '../../components/main'
 import ImageWrap from '../../components/image-wrap'
-import Wrench from '../../components/svg/wrench'
 import { getAllProjectsWithSlug, getProject } from "../../lib/api"
 
 const Project = ( { projectData } ) => {
@@ -64,7 +64,6 @@ const Project = ( { projectData } ) => {
                             {projectData.projectsPostType.techStack.map((item, i) => {
                                 return (
                                     <ListItem key={item}>
-                                        <Wrench />
                                         <Icon className="material-icons">build</Icon> {item}
                                     </ListItem>
                                 )

@@ -9,7 +9,7 @@ export const vars = {
     fontBody: `'Poppins', Helvetica, Arial, sans-serif`,
     fontHeading: `'Work Sans', Helvetica, Arial, sans-serif`,
     transition: `0.2s ease`,
-    breakpoint: `43.75rem`,
+    breakpoint: `45rem`,
     breakpointLarge: `62.5rem`
 }
 
@@ -30,6 +30,7 @@ export const lightTheme = {
     contactFormBg: `rgba(255,255,255, 0.95)`,
     contactImg: `/images/milwaukee-daylight.jpeg`,
     gradient: `linear-gradient(30deg, ${c.indigo800}, ${c.indigo300})`,
+    themeButtonGradientHover: `linear-gradient(30deg, ${c.indigo300}, ${c.indigo300})`,
     aboutSectionBorderColor: `rgba(232, 234, 246, .3)`,
     aboutSectionBg: `linear-gradient(rgba(232, 234, 246, .3) .1em, transparent .1em), linear-gradient(90deg, rgba(232, 234, 246, .3) .1em, transparent .1em)`,
     logoSectionBg: c.grey100,
@@ -37,7 +38,8 @@ export const lightTheme = {
     aboutImg: "/images/headers/blob-me.png",
     projectsImg: "/images/headers/blob-screamer.png",
     contactImg: "/images/headers/blob-telephone.png",
-    invert: `0`
+    invert: `0`,
+    giraffe: c.indigo900
 }
 //d4af37
 export const darkTheme = {
@@ -57,6 +59,7 @@ export const darkTheme = {
     contactFormBg: `rgba(33,33,33, 0.95)`,
     contactImg: `/images/milwaukee-night.jpeg`,
     gradient: `linear-gradient(30deg, ${c.purple600}, ${c.purple200})`,
+    themeButtonGradientHover: `linear-gradient(30deg, ${c.purple200}, ${c.purple200})`,
     aboutSectionBorderColor: `rgba(55, 55, 55, .1)`,
     aboutSectionBg: `linear-gradient(rgba(55, 55, 55, .1) .1em, transparent .1em), linear-gradient(90deg, rgba(55, 55, 55, .1) .1em, transparent .1em);`,
     logoSectionBg: c.grey200,
@@ -64,7 +67,8 @@ export const darkTheme = {
     aboutImg: "/images/headers/blob-me-dark.png",
     projectsImg: "/images/headers/blob-screamer-dark.png",
     contactImg: "/images/headers/blob-telephone-dark.png",
-    invert: `1`
+    invert: `1`,
+    giraffe: c.purple400
 }
 
 export const GlobalStyles = createGlobalStyle`
@@ -104,7 +108,7 @@ export const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => theme.textColor};
         font-family: ${ vars.fontBody };
         position: relative;
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     body.nav-menu-active {
@@ -153,7 +157,7 @@ export const GlobalStyles = createGlobalStyle`
 
     @media (min-width: ${vars.breakpoint}) {
         body {
-            font-size: 1.33rem;
+            font-size: 1.2rem;
         }
         
         h1 {
@@ -196,6 +200,21 @@ export const GlobalStyles = createGlobalStyle`
             text-decoration: underline;
             cursor: pointer;
         }
+
+        &:focus {
+            outline: .25rem solid ${({ theme }) => theme.linkColor};
+            outline-offset: .25rem;
+        }
+    }
+
+    button:focus {
+        outline: .25rem solid ${({ theme }) => theme.linkColor};
+        outline-offset: .5rem;
+    }
+
+    *:focus:not(.focus-visible) {
+        outline: 0 !important;
+        box-shadow: none !important;
     }
 
     section {
@@ -224,7 +243,7 @@ export const GlobalStyles = createGlobalStyle`
     .material-icons.light,
     .material-icons.dark {
         margin: 0;
-        color: ${({ theme }) => theme.textColor};
+        color: ${({ theme }) => theme.linkHoverColor};
         font-size: 2rem;
         background-image: ${({ theme }) => theme.gradient};
         background-size: 100%;
@@ -236,6 +255,10 @@ export const GlobalStyles = createGlobalStyle`
         @media (min-width: ${vars.breakpoint}) {
             font-size: 2.5rem;
         }
+
+        &:hover {
+            background-image: ${({ theme }) => theme.themeButtonGradientHover};
+        }
     }
 `
 
@@ -245,10 +268,6 @@ export const ThemeButton = styled.button`
     background: none;
     cursor: pointer;
     position: relative;
-        
-    &:hover {
-        opacity: 0.7;
-    }
 
     &:after {
         position: absolute;
@@ -261,6 +280,14 @@ export const ThemeButton = styled.button`
         right: 0;
         color: #999;
     }
+
+    // &:hover {
+
+    //     span {
+    //         opacity: 0.7;
+    //     }
+        
+    // }
 `
 
 export const Container = styled.div`

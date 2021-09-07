@@ -47,7 +47,7 @@ export const List = styled.ul`
     @media (min-width: ${vars.breakpoint}) {
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: flex-end;
         width: 100%;
     }
 `
@@ -62,7 +62,7 @@ export const ListItem = styled.li`
         margin: 0 0 0 2.5rem;
 
         &.theme-btn {
-            margin: 0 0 0 auto;
+            // margin: 0 0 0 auto;
         }
     }
 

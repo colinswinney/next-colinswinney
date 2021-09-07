@@ -45,7 +45,6 @@ export const BottomText = styled(Text)`
 `
 
 export const GridContainerAbout = styled(GridContainer)`
-    margin-bottom: 4rem;
     row-gap: 3vw;
     grid-template-areas:
       "a b c d e f"

@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Container } from '../../styles/global-styles'
 import { Navbar, NavbarInner, List, ListItem, Anchor, AnchorButtonCircle, NavToggle } from './styles/nav'
+import Logo from '../svg/logo'
+
 
 const Nav = ({ children }) => {
     const router = useRouter()
@@ -63,17 +65,23 @@ const Nav = ({ children }) => {
             <Container>
                 <NavbarInner>
                     <Link href="/" passHref>
-                        <AnchorButtonCircle className={router.pathname == "/" ? "active" : ""}>
+                        <a className={router.pathname == "/" ? "active" : ""}>
+                            <Logo />
+                        </a>
+                        {/* <AnchorButtonCircle className={router.pathname == "/" ? "active" : ""}>
                             CS
-                        </AnchorButtonCircle>
+                        </AnchorButtonCircle> */}
                     </Link>
                     <List className={isNavActive ? "active" : null}>
 
                         <ListItem className="mobile-logo">
                             <Link href="/" passHref>
-                                <AnchorButtonCircle className={router.pathname == "/" ? "active" : ""}>
+                                <a className={router.pathname == "/" ? "active" : ""}>
+                                    <Logo />
+                                </a>
+                                {/* <AnchorButtonCircle className={router.pathname == "/" ? "active" : ""}>
                                     CS
-                                </AnchorButtonCircle>
+                                </AnchorButtonCircle> */}
                             </Link>
                         </ListItem>
 

@@ -4,25 +4,34 @@ import { ThemeProvider } from 'styled-components'
 import Nav from '../components/nav'
 import Footer from '../components/footer'
 import { lightTheme, darkTheme, GlobalStyles, ThemeButton } from '../styles/global-styles'
+import { useRouter } from 'next/router'
 
 function MyApp({ Component, pageProps }) {
+
+  const router = useRouter()
   
   const [theme, setTheme] = useState('dark') 
 
   const setMode = mode => {
     window.localStorage.setItem('theme', mode)
     setTheme(mode)
-  };
+  }
 
-  const toggleTheme = () => {
+  const toggleTheme = (e) => {
     theme === 'light' ? setMode('dark') : setMode('light')
+    document.activeElement.blur()
   }
 
   useEffect(() => {
     const localTheme = window.localStorage.getItem('theme');
     localTheme && setTheme(localTheme)
-  }, []);
+  }, [])
 
+  useEffect(() => {
+    router.events.on("routeChangeComplete", () => {
+      document.activeElement.blur()
+    })
+  }, [router.events])
   
   return (
     <ThemeProvider theme={theme == 'light' ? lightTheme : darkTheme}>

@@ -98,11 +98,14 @@ export const ProjectAnchor = styled.a`
     width: 100%;
     padding: 1rem;
     height: 100%;
-    display: block;
+    display: flex;
+    align-items: flex-end;
     position: relative;
-    background: ${({ theme }) => theme.bodyBgColor};
+    background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.75) 33%, rgba(0,0,0,1) 66%);
     border: 0.125rem solid ${({ theme }) => theme.linkColor};
     font-family: ${vars.fontHeading};
+    text-align: center;
+    line-height: 1;
     opacity: 0;
     transition: ${vars.transition};
 
@@ -110,15 +113,14 @@ export const ProjectAnchor = styled.a`
         content: "${props => props.afterTitle}";
         position: absolute;
         overflow-wrap: break-word;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        left: 0;
+        right: 0;
     }
 
     &:hover,
     &:focus {
         opacity: 1;
-        color: ${({ theme }) => theme.linkColor};
+        color: ${vars.light};
     }
 
 `

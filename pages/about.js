@@ -6,9 +6,12 @@ import Jumbotron from '../components/jumbotron'
 import Main from '../components/main'
 import ArticleLayout from '../components/article-layout'
 import Widget from '../components/widget'
+import Logo from '../components/svg/logo'
 import ImageWrap from '../components/image-wrap'
 import { Container, GradientText } from '../styles/global-styles'
 import { getAboutMe } from '../lib/api'
+import { ListItem } from '../components/nav/styles/nav'
+
 
 const About = ({aboutData}) => {
 
@@ -54,11 +57,51 @@ const About = ({aboutData}) => {
             <ArticleLayout.Aside>
 
                 <Widget>
-                    <Widget.Heading>Skillz</Widget.Heading>
+                    <Logo />
+                </Widget>
+
+                <Widget>
+                    <Widget.Heading>Tools</Widget.Heading>
+                    <Widget.List>
+                      <Widget.ListItem>
+                          <Widget.Icon className="material-icons">build</Widget.Icon> HTML
+                      </Widget.ListItem>
+                      <Widget.ListItem>
+                          <Widget.Icon className="material-icons">build</Widget.Icon> CSS
+                      </Widget.ListItem>
+                      <Widget.ListItem>
+                          <Widget.Icon className="material-icons">build</Widget.Icon> JavaScript
+                      </Widget.ListItem>
+                      <Widget.ListItem>
+                          <Widget.Icon className="material-icons">build</Widget.Icon> React
+                      </Widget.ListItem>
+                      <Widget.ListItem>
+                          <Widget.Icon className="material-icons">build</Widget.Icon> Next.js
+                      </Widget.ListItem>
+                      <Widget.ListItem>
+                          <Widget.Icon className="material-icons">build</Widget.Icon> php
+                      </Widget.ListItem>
+                      <Widget.ListItem>
+                          <Widget.Icon className="material-icons">build</Widget.Icon> WordPress
+                      </Widget.ListItem>
+                      <Widget.ListItem>
+                          <Widget.Icon className="material-icons">build</Widget.Icon> WooCommerce
+                      </Widget.ListItem>
+                      <Widget.ListItem>
+                          <Widget.Icon className="material-icons">build</Widget.Icon> Shopify
+                      </Widget.ListItem>
+                      <Widget.ListItem>
+                          <Widget.Icon className="material-icons">build</Widget.Icon> Adobe
+                      </Widget.ListItem>
+                      <Widget.ListItem>
+                          <Widget.Icon className="material-icons">build</Widget.Icon> Affinity
+                      </Widget.ListItem>
+                      <Widget.ListItem>
+                          <Widget.Icon className="material-icons">build</Widget.Icon> Git
+                      </Widget.ListItem>
+                    </Widget.List>
                 </Widget>
                 
-                
-
             </ArticleLayout.Aside>
 
           </ArticleLayout>

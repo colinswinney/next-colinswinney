@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Link from 'next/link'
 import { Container, AnchorButton } from '../../styles/global-styles'
-import { AddressWrap, List, ListItem, Icon } from '../../styles/projects-slug'
 import SlugHeader from '../../components/slugHeader'
 import ArticleLayout from '../../components/article-layout'
 import Widget from '../../components/widget'
@@ -49,9 +48,9 @@ const Project = ( { projectData } ) => {
                     ?
                     <Widget>
                         <Widget.Heading>Address</Widget.Heading>
-                        <AddressWrap>
-                            <Icon className="material-icons">language</Icon> <a href={projectData.projectsPostType.websiteUrl}>{projectData.projectsPostType.websiteName}</a>
-                        </AddressWrap>
+                        <Widget.AddressWrap>
+                            <Widget.Icon className="material-icons">language</Widget.Icon> <a href={projectData.projectsPostType.websiteUrl}>{projectData.projectsPostType.websiteName}</a>
+                        </Widget.AddressWrap>
                     </Widget>
                     :
                     ``
@@ -60,15 +59,15 @@ const Project = ( { projectData } ) => {
                     
                     <Widget>
                         <Widget.Heading>Tools</Widget.Heading>
-                        <List>
+                        <Widget.List>
                             {projectData.projectsPostType.techStack.map((item, i) => {
                                 return (
-                                    <ListItem key={item}>
-                                        <Icon className="material-icons">build</Icon> {item}
-                                    </ListItem>
+                                    <Widget.ListItem key={item}>
+                                        <Widget.Icon className="material-icons">build</Widget.Icon> {item}
+                                    </Widget.ListItem>
                                 )
                             })}
-                        </List>
+                        </Widget.List>
                     </Widget>
 
                 </ArticleLayout.Aside>

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { vars, Container, AnchorButton } from '../../../styles/global-styles'
+import { LogoEl, GiraffePath } from '../../svg/logo/styles/logo'
 
 export const Navbar = styled.nav`
     background: ${({ theme }) => theme.navBgColor};
@@ -8,18 +9,23 @@ export const Navbar = styled.nav`
     ${Container} {
         box-sizing: border-box;
     }
+
+    ${LogoEl} {
+        width: 10rem;
+
+        &:hover {
+            path {
+                fill: ${({ theme }) => theme.linkColorHover};
+            }
+            ${GiraffePath} {
+                fill: ${({ theme }) => theme.linkColorHover};
+            }
+        }
+    }
 `
 
 export const NavbarInner = styled.div`
     display: flex;
-`
-
-export const NavLeft = styled.div`
-    align-self: center;
-`
-
-export const NavRight = styled.div`
-    align-self: flex-end;
 `
 
 export const List = styled.ul`
@@ -82,26 +88,5 @@ export const NavToggle = styled.span`
 
     @media (min-width: ${vars.breakpoint}) {
         display: none;
-    }
-`
-
-export const AnchorButtonCircle = styled(AnchorButton)`
-    border-radius: 100%;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 2.5rem;
-    height: 2.5rem;
-
-    &:before,
-    &:after {
-        border-radius: 100%;
-    }
-
-    @media (min-width: ${vars.breakpoint}) {
-        width: 3.25rem;
-        height: 3.25rem;
     }
 `

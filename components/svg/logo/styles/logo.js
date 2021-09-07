@@ -10,7 +10,7 @@ export const LogoEl = styled.svg`
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-miterlimit: 1.5;
-    width: 10rem;
+    width: 100%;
 
     path {
         fill: ${({ theme }) => theme.linkColor};
@@ -20,13 +20,5 @@ export const LogoEl = styled.svg`
         fill: ${({ theme }) => theme.giraffe};
     }
 
-    &:hover {
-        path {
-            fill: ${({ theme }) => theme.linkColorHover};
-        }
-        ${GiraffePath} {
-            fill: ${({ theme }) => theme.linkColorHover};
-        }
-    }
 `
 

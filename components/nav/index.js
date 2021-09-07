@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Container } from '../../styles/global-styles'
-import { Navbar, NavbarInner, List, ListItem, Anchor, AnchorButtonCircle, NavToggle } from './styles/nav'
+import { Navbar, NavbarInner, List, ListItem, NavToggle } from './styles/nav'
 import Logo from '../svg/logo'
 
 

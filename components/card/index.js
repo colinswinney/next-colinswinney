@@ -23,7 +23,7 @@ export default function Card({ children, ...restProps }) {
         visible: { 
             opacity: 1,
             transition: {
-                duration: 0.5,
+                duration: 0.2,
             }
         }
     }

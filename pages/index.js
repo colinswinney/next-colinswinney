@@ -19,7 +19,6 @@ const Home = ({ logos, projects }) => {
         <Head>
             <title>Colin Swinney</title>
             <meta name="description" content="Freelance Web Developer" />
-            <link rel="icon" href="/favicon.ico" />
         </Head>
 
         <Jumbotron className="home-jumbotron">

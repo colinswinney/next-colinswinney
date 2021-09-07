@@ -58,7 +58,7 @@ const Nav = ({ children }) => {
         else {
             document.querySelector("body").classList.remove("nav-menu-active")
         }
-    })
+    }, [])
 
     return (
         <Navbar>

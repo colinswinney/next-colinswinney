@@ -55,7 +55,7 @@ export const darkTheme = {
     guitarFillOne: c.purple800,
     guitarFillTwo: c.pink500,
     guitarFillThree: c.grey200,
-    bodyBgColorLight: `#212121`,
+    bodyBgColorLight: c.grey900,
     contactFormBg: `rgba(33,33,33, 0.95)`,
     contactImg: `/images/milwaukee-night.jpeg`,
     gradient: `linear-gradient(30deg, ${c.purple600}, ${c.purple200})`,
@@ -349,7 +349,7 @@ export const AnchorButton = styled.a`
     }
 
     @media (min-width: ${vars.breakpoint}) {
-        font-size: 1.33rem;
+        font-size: 1.2rem;
     }
 
     &:hover {

@@ -27,7 +27,7 @@ const Home = ({ logos, projects }) => {
               <Jumbotron.Heading>
                 <GradientText>Colin</GradientText> Swinney
               </Jumbotron.Heading>
-              <Jumbotron.SubHeading>I&apos;m a web developer from Milwaukee, WI.  Let&apos;s make some music.
+              <Jumbotron.SubHeading>I&apos;m a web developer from Milwaukee, WI.  Let&apos;s make great music together.
               <Link href="/projects" passHref>
                 <AnchorButton>
                   See My Work

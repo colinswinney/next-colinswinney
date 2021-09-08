@@ -1,4 +1,4 @@
-import { WidgetWrapper, Heading, List, ListItem, Icon, AddressWrap } from './styles/widget'
+import { WidgetWrapper, Heading, List, ListItem, Icon, AddressWrap, Text } from './styles/widget'
 
 export default function Widget({ children, ...restProps }) {
 
@@ -29,4 +29,8 @@ Widget.Icon = function WidgetIcon( { children, ...restProps } ) {
 
 Widget.AddressWrap = function WidgetAddressWrap( { children, ...restProps } ) {
     return <AddressWrap {...restProps}>{children}</AddressWrap>
+}
+
+Widget.Text = function WidgetText( { children, ...restProps } ) {
+    return <Text {...restProps}>{children}</Text>
 }

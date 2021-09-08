@@ -60,6 +60,13 @@ const About = ({aboutData}) => {
                 </Widget>
 
                 <Widget>
+                    <Widget.Heading>Location</Widget.Heading>
+                    <Widget.AddressWrap>
+                        <Widget.Icon className="material-icons">language</Widget.Icon> Milwaukee, WI
+                    </Widget.AddressWrap>
+                </Widget>
+
+                <Widget>
                     <Widget.Heading>Tools</Widget.Heading>
                     <Widget.List>
                       <Widget.ListItem>

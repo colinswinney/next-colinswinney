@@ -3,7 +3,7 @@ import { Container, vars } from '../../../styles/global-styles'
 
 export const Header = styled.header`
     text-align: center;
-    margin: 2rem auto;
+    margin: 4rem auto;
 `
 
 export const SlugHeaderContainer = styled(Container)`

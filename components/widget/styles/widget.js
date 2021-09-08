@@ -36,6 +36,7 @@ export const Icon = styled.span`
 export const AddressWrap = styled.div`
     position: relative;
     padding-left: 1.0625rem;
+    font-weight: bold;
 
     ${Icon} {
         position: absolute;
@@ -47,4 +48,9 @@ export const AddressWrap = styled.div`
             top: 0.3175rem;
         }
     }
+`
+
+export const Text = styled.p`
+    font-weight: bold;
+    line-height: 1.2;
 `

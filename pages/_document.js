@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import Script from 'next/script'
 import { ServerStyleSheet } from 'styled-components'
 
 class MyDocument extends Document {
@@ -48,8 +47,6 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-        <Script src="https://cdn.polyfill.io/v2/polyfill.js?features=Element.prototype.classList"></Script>
-        <Script src="https://unpkg.com/focus-visible"></Script>
       </Html>
     )
   }

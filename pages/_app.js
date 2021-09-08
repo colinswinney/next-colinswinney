@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Script from 'next/script'
 import '../normalize.css'
 import { ThemeProvider } from 'styled-components'
 import Nav from '../components/nav'
@@ -48,6 +49,8 @@ function MyApp({ Component, pageProps }) {
       </Nav>
       <Component theme={theme == 'light' ? 'light' : 'dark'} {...pageProps} />
       <Footer />
+      <Script src="https://cdn.polyfill.io/v2/polyfill.js?features=Element.prototype.classList"></Script>
+      <Script src="https://unpkg.com/focus-visible"></Script>
     </ThemeProvider>
   ) 
 }

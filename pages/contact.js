@@ -30,8 +30,8 @@ const Contact = () => {
                 <ImageWrap transparent>
                     <Image
                         src={themeContext.contactImg}
-                        height={600}
-                        width={600}
+                        height={500}
+                        width={500}
                         alt="Old telephone in a blob"
                     />
                 </ImageWrap>

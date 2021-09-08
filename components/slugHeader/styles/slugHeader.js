@@ -3,11 +3,11 @@ import { Container, vars } from '../../../styles/global-styles'
 
 export const Header = styled.header`
     text-align: center;
-    margin: 2rem auto 0;
+    margin: 2rem auto;
 `
 
 export const SlugHeaderContainer = styled(Container)`
-    background: ${({ theme }) => theme.gradient};
+    // background: ${({ theme }) => theme.gradient};
 `
 
 export const HeadingOne = styled.h1`

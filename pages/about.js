@@ -36,8 +36,8 @@ const About = ({aboutData}) => {
               <ImageWrap transparent>
                   <Image
                       src={themeContext.aboutImg}
-                      height={600}
-                      width={600}
+                      height={500}
+                      width={500}
                       alt="Colin the Cowboy"
                   />
               </ImageWrap>

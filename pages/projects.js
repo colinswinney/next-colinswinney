@@ -33,8 +33,8 @@ const Projects = ({ allProjects: { edges }}) => {
             <ImageWrap transparent>
                 <Image
                     src={themeContext.projectsImg}
-                    height={600}
-                    width={600}
+                    height={500}
+                    width={500}
                     alt="Man screaming at his computer"
                 />
             </ImageWrap>

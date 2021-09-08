@@ -5,18 +5,14 @@ import { GuitarEl } from '../../svg/guitar/styles/guitar'
 import { motion } from 'framer-motion'
 
 export const JumbotronWrapper = styled.header`
-    margin-top: 2rem;
-
-    @media (min-width: ${vars.breakpoint}) {
-        margin-top: 0;
-
-        &.home-jumbotron {
-            margin-top: 4rem;
-        }
-    }
+    min-height: calc(100vh - 5.75rem);
+    display: flex;
+    align-content: center;
+    justify-content: center;
 `
 
 export const Container = styled(GridContainer)`
+    margin-top: 4rem;
     text-align: center;
     grid-template-areas:
         "title"
@@ -25,14 +21,15 @@ export const Container = styled(GridContainer)`
 
     ${GuitarEl},
     ${Wrapper} {
-        max-width: 25rem;
-        margin: auto;
+        max-width: 20rem;
+        margin: 2rem auto 0;
         grid-area: image;
     }
 
     @media (min-width: ${vars.breakpoint}) {
+        margin-top: auto;
         text-align: left;
-        grid-template-columns: 1fr 1rem 1fr;
+        grid-template-columns: 1fr 2rem 1fr;
         grid-template-areas:
             ". . image"
             "title . image"
@@ -41,7 +38,7 @@ export const Container = styled(GridContainer)`
 
         ${GuitarEl},
         ${Wrapper} {
-            max-width: 25rem;
+            max-width: 500px;
         }
     }
 `
@@ -52,7 +49,8 @@ export const Heading = styled.h1`
 `
 
 export const SubHeading = styled.h2`
-    margin: 1.25rem 0 0;
+    margin: 1.25rem auto 0;
+    max-width: 35ch;
     font-family: ${ vars.fontBody };
     font-weight: 200;
     font-size: 1.33rem;

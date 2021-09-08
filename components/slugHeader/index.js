@@ -1,10 +1,11 @@
 import { Header, SlugHeaderContainer, HeadingOne, Triangle } from './styles/slugHeader'
+import { GradientText } from '../../styles/global-styles'
 
 const SlugHeader = ({ children, title }) => {
     return (
         <Header>
             <SlugHeaderContainer>
-                <HeadingOne>{ title }</HeadingOne>
+                <HeadingOne><GradientText>{ title }</GradientText></HeadingOne>
                 { children }
             </SlugHeaderContainer>
             <Triangle/>

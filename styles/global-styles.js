@@ -324,7 +324,7 @@ export const AnchorButton = styled.a`
     font-size: 1rem;
     box-sizing: content-box;
     position: relative;
-    text-transform: capitalize;
+    text-transform: uppercase;
 
     &:before {
         content: '';

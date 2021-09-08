@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Container, GradientText, AnchorButton } from '../../../styles/global-styles'
-import { AboutSectionWrap, GridContainerAbout, ImageWrapGrid, Text, LoopTextWrap, LoopTextHeading, BottomText } from './styles/about-section'
+import { AboutSectionWrap, AboutSectionInner, GridContainerAbout, ImageWrapGrid, Text, LoopTextWrap, LoopTextHeading, BottomText } from './styles/about-section'
 
 const AboutSection = () => {
 
@@ -117,37 +117,38 @@ const AboutSection = () => {
 
     return (
         <AboutSectionWrap>
-            <Container>
-                <Text>I really <strong>love</strong> working with...</Text>
-                <LoopTextWrap className="loop-text">
+            <AboutSectionInner>
+
+                <Container>
+                    <Text>I really <strong>love</strong> working with</Text>
+                    <LoopTextWrap className="loop-text">
+                        {images.map((image) => (
+                            <LoopTextHeading key={image.title} className="cycle-text"><GradientText>{image.title}</GradientText></LoopTextHeading>
+                        ))}
+                    </LoopTextWrap>
+                </Container>
+
+                <GridContainerAbout>
                     {images.map((image) => (
-                        <LoopTextHeading key={image.title} className="cycle-text"><GradientText>{image.title}</GradientText></LoopTextHeading>
+                        
+                        <ImageWrapGrid key={image.title} transparent className="cycle-img" gridArea={image.gridArea}>
+                            <Image
+                                src={image.path}
+                                width={100}
+                                height={100}
+                                alt={image.alt}
+                            />
+                        </ImageWrapGrid>
                     ))}
-                </LoopTextWrap>
-            </Container>
-            <GridContainerAbout>
-                
-            {/* <FlexContainerAboutSection> */}
-                {images.map((image) => (
-                    
-                    <ImageWrapGrid key={image.title} transparent className="cycle-img" gridArea={image.gridArea}>
-                        <Image
-                            src={image.path}
-                            width={100}
-                            height={100}
-                            alt={image.alt}
-                        />
-                    </ImageWrapGrid>
-                ))}
-            {/* </FlexContainerAboutSection> */}
-            </GridContainerAbout>
+                </GridContainerAbout>
 
-            <BottomText>I also love old country music and New York style pizza.</BottomText>
+                <BottomText>I also love old country music and New York style pizza.</BottomText>
 
-            <Link href="/about" passHref>
-                <AnchorButton>Find out more</AnchorButton>
-            </Link>
+                <Link href="/about" passHref>
+                    <AnchorButton>Find out more</AnchorButton>
+                </Link>
 
+            </AboutSectionInner>
         </AboutSectionWrap>
     )
 }

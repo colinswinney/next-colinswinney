@@ -4,6 +4,12 @@ import { c } from '../../../../styles/colors'
 import { vars, FlexContainer } from '../../../../styles/global-styles'
 
 export const LogoSectionWrap = styled.section`
+    display: flex;
+    background: ${({ theme }) => theme.logoSectionBg};
+
+    @media (min-width: ${vars.breakpoint}) {
+        min-height: 100vh;
+    }
 
     ${FlexContainer} {
         padding: 0;
@@ -17,6 +23,11 @@ export const LogoSectionWrap = styled.section`
             filter: invert(${({ theme }) => theme.invert});
         }
     }
+`
+
+export const LogoSectionInner = styled.div`
+    margin: auto;
+    width: 100%;
 `
 
 export const TextWrap = styled.div`

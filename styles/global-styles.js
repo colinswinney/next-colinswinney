@@ -62,7 +62,7 @@ export const darkTheme = {
     themeButtonGradientHover: `linear-gradient(30deg, ${c.purple200}, ${c.purple200})`,
     aboutSectionBorderColor: `rgba(55, 55, 55, .1)`,
     aboutSectionBg: `linear-gradient(rgba(55, 55, 55, .1) .1em, transparent .1em), linear-gradient(90deg, rgba(55, 55, 55, .1) .1em, transparent .1em);`,
-    logoSectionBg: c.grey200,
+    logoSectionBg: c.grey900,
     homeImg: "/images/headers/blob-home-dark.png",
     aboutImg: "/images/headers/blob-me-dark.png",
     projectsImg: "/images/headers/blob-screamer-dark.png",

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ProjectsSectionWrap, FlexBar, Half, Heading, Text, OneColorButton, GridContainerProjects, Cell, ProjectAnchor } from "./styles/projects-section"
+import { ProjectsSectionWrap, ProjectsSectionInner, FlexBar, Heading, GridContainerProjects, Cell, ProjectAnchor } from "./styles/projects-section"
 import { Container, GradientText, AnchorButton } from '../../../styles/global-styles'
 
 const ProjectsSection = ({ children, projects }) => {
@@ -9,37 +9,38 @@ const ProjectsSection = ({ children, projects }) => {
     
     return (
         <ProjectsSectionWrap>
+            <ProjectsSectionInner>
 
-            <FlexBar>
-                <Heading>
-                    <GradientText>Web Projects</GradientText>
-                </Heading>
-            </FlexBar>
-            
-            <GridContainerProjects>
-                {projectsArray.map((project, i) => (
-                    
-                    <Cell 
-                        className={`${i < 4 ? 'tall' : ''} ${alphabet[i].toLowerCase()}`}
-                        bgImg={project.featuredImage.node.mediaItemUrl}
-                        key={project.title}
-                    >
-                        <Link href={`/projects/${project.slug}`} passHref>
-                            <ProjectAnchor afterTitle={project.title} aria-label={project.title}/>
-                        </Link>
-                    </Cell>
+                <FlexBar>
+                    <Heading>
+                        <GradientText>Web Projects</GradientText>
+                    </Heading>
+                </FlexBar>
+
+                <GridContainerProjects>
+                    {projectsArray.map((project, i) => (
                         
-                ))}
-            </GridContainerProjects>
+                        <Cell 
+                            className={`${i < 4 ? 'tall' : ''} ${alphabet[i].toLowerCase()}`}
+                            bgImg={project.featuredImage.node.mediaItemUrl}
+                            key={project.title}
+                        >
+                            <Link href={`/projects/${project.slug}`} passHref>
+                                <ProjectAnchor afterTitle={project.title} aria-label={project.title}/>
+                            </Link>
+                        </Cell>
+                            
+                    ))}
+                </GridContainerProjects>
 
-            <FlexBar className="right-align">
-                <Link href="/projects" passHref>
-                    <AnchorButton>
-                        View All
-                    </AnchorButton>
-                </Link>
-            </FlexBar>
-            
+                <FlexBar className="right-align">
+                    <Link href="/projects" passHref>
+                        <AnchorButton>
+                            View All
+                        </AnchorButton>
+                    </Link>
+                </FlexBar>
+            </ProjectsSectionInner>
         </ProjectsSectionWrap>
     )
 }

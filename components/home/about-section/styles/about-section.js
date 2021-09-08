@@ -4,12 +4,22 @@ import { Wrapper } from '../../../image-wrap/styles/image-wrap'
 import { vars, GridContainer, FlexContainer } from '../../../../styles/global-styles'
 
 export const AboutSectionWrap = styled.section`
+    display: flex;
     text-align: center;
     background-image: ${({theme}) => theme.aboutSectionBg};
     background-size: 2rem 2rem;
     background-position: center;
     border-top: 0.0625rem solid ${({ theme }) => theme.aboutSectionBorderColor};
     border-bottom: 0.0625rem solid ${({ theme }) => theme.aboutSectionBorderColor};
+
+    @media (min-width: ${vars.breakpoint}) {
+      min-height: 100vh;
+    }
+`
+
+export const AboutSectionInner = styled.div`
+    margin: auto;
+    width: 100%;
 `
 
 export const FlexContainerAboutSection = styled(FlexContainer)`
@@ -39,9 +49,9 @@ export const Text = styled.p`
 `
 
 export const BottomText = styled(Text)`
-    margin: 2rem auto;
+    margin: 4rem auto 2rem;
     font-size: clamp(1rem, 0.5vw + 1rem, 2rem);
-    max-width: 70vw;
+    max-width: 25ch;
 `
 
 export const GridContainerAbout = styled(GridContainer)`

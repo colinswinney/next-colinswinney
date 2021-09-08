@@ -4,9 +4,11 @@ import { FormEl } from '../../../form/styles/form'
 import { Wrapper } from '../../../image-wrap/styles/image-wrap'
 
 export const ContactSectionWrap = styled.section`
-    // background-image: url('${({ theme }) => theme.contactImg}');
-    // background-size: cover;
-    // background-position: center center;
+    display: flex;
+
+    @media (min-width: ${vars.breakpoint}) {
+        min-height: 100vh;
+    }
 
     ${FlexContainer} {
         flex-direction: column;

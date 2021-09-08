@@ -4,6 +4,16 @@ import { vars, FlexContainer, GridContainer } from '../../../../styles/global-st
 export const ProjectsSectionWrap = styled.section`
     padding-left: 0;
     padding-right: 0;
+    display: flex;
+
+    @media (min-width: ${vars.breakpoint}) {
+        min-height: 100vh;
+    }
+`
+
+export const ProjectsSectionInner = styled.div`
+    margin: auto;
+    width: 100%;
 `
 
 export const FlexBar = styled(FlexContainer)`
@@ -102,7 +112,7 @@ export const ProjectAnchor = styled.a`
     align-items: flex-end;
     position: relative;
     background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.75) 33%, rgba(0,0,0,1) 66%);
-    border: 0.125rem solid ${({ theme }) => theme.linkColor};
+    border: 0.5rem solid ${({ theme }) => theme.linkColor};
     font-family: ${vars.fontHeading};
     text-align: center;
     line-height: 1;

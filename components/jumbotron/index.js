@@ -1,13 +1,13 @@
 import React from "react"
-import { JumbotronWrapper, Container, Left, Right, Heading, SubHeading } from "./styles/jumbotron"
+import { JumbotronEl, Container, Left, Right, Heading, SubHeading } from "./styles/jumbotron"
 
 export default function Jumbotron({ children, ...restProps }) {
 
     return (
 
-        <JumbotronWrapper {...restProps}>
+        <JumbotronEl {...restProps}>
             {children}
-        </JumbotronWrapper>
+        </JumbotronEl>
         
     )
 }

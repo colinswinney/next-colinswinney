@@ -18,7 +18,7 @@ const Projects = ({ allProjects: { edges }}) => {
     return (
     <>
         <Head>
-            <title>Colin Swinney</title>
+            <title>Projects | Colin Swinney</title>
             <meta name="description" content="Freelance Web Developer" />
         </Head>
 

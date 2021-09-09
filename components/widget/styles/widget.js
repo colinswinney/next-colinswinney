@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 import { vars } from '../../../styles/global-styles'
 
-export const WidgetWrapper = styled.div`
+export const WidgetEl = styled.div`
     margin-top: 0;
     margin-bottom: 3rem;
     word-wrap: break-word;
     overflow-wrap: anywhere;
     white-space: normal;
+    grid-area: ${props => props.gridArea};
 
     &:last-of-type {
         margin-bottom: 0;
@@ -26,7 +27,6 @@ export const List = styled.ul`
 `
 
 export const ListItem = styled.li`
-    font-weight: bold;
 `
 
 export const Icon = styled.span`
@@ -42,7 +42,7 @@ export const AddressWrap = styled.div`
         position: absolute;
         margin: auto;
         left: 0;
-        top: 0.1875rem;
+        top: 0.125rem;
 
         @media (min-width: ${vars.breakpoint}) {
             top: 0.3175rem;
@@ -51,6 +51,6 @@ export const AddressWrap = styled.div`
 `
 
 export const Text = styled.p`
-    font-weight: bold;
     line-height: 1.2;
+    margin: 0;
 `

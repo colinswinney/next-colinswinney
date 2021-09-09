@@ -1,12 +1,12 @@
-import { WidgetWrapper, Heading, List, ListItem, Icon, AddressWrap, Text } from './styles/widget'
+import { WidgetEl, Heading, List, ListItem, Icon, AddressWrap, Text } from './styles/widget'
 
 export default function Widget({ children, ...restProps }) {
 
     return (
 
-        <WidgetWrapper {...restProps}>
+        <WidgetEl {...restProps}>
             {children}
-        </WidgetWrapper>
+        </WidgetEl>
         
     )
 }

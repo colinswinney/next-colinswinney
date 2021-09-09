@@ -15,7 +15,7 @@ const Contact = () => {
   return (
     <>
         <Head>
-            <title>Colin Swinney</title>
+            <title>Contact | Colin Swinney</title>
             <meta name="description" content="Freelance Web Developer" />
         </Head>
 

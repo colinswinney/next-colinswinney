@@ -20,7 +20,7 @@ const About = ({aboutData}) => {
   return (
     <>
         <Head>
-            <title>Colin Swinney</title>
+            <title>About | Colin Swinney</title>
             <meta name="description" content="Freelance Web Developer" />
         </Head>
 

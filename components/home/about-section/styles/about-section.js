@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { c } from '../../../../styles/colors'
-import { Wrapper } from '../../../image-wrap/styles/image-wrap'
+import { ImageWrapEl } from '../../../image-wrap/styles/image-wrap'
 import { vars, GridContainer, FlexContainer } from '../../../../styles/global-styles'
 
 export const AboutSectionWrap = styled.section`
@@ -25,7 +25,7 @@ export const AboutSectionInner = styled.div`
 export const FlexContainerAboutSection = styled(FlexContainer)`
     flex-wrap: wrap;
 
-    ${Wrapper} {
+    ${ImageWrapEl} {
       flex: 1 0 16%;
       margin: 0 0 0.5rem;
       filter: grayscale(100) brightness(0.5);
@@ -61,7 +61,7 @@ export const GridContainerAbout = styled(GridContainer)`
       "g h i j k l";
 `
 
-export const ImageWrapGrid = styled(Wrapper)`
+export const ImageWrapGrid = styled(ImageWrapEl)`
     grid-area: ${props => props.gridArea};
     filter: grayscale(1) brightness(0.5);
     opacity: 0.75;

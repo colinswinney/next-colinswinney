@@ -1,20 +1,26 @@
 import styled from 'styled-components'
-import { Container, vars } from '../../../styles/global-styles'
+import { ImageWrapEl } from '../../image-wrap/styles/image-wrap'
+import { vars } from '../../../styles/global-styles'
 
 export const Header = styled.header`
     text-align: center;
-    margin: 4rem auto;
-`
+    margin: 0 auto;
 
-export const SlugHeaderContainer = styled(Container)`
-    // background: ${({ theme }) => theme.gradient};
+    ${ImageWrapEl} {
+        max-width: 30rem;
+        margin: auto;
+        display: block;
+    }
 `
 
 export const HeadingOne = styled.h1`
-    margin: 2rem auto;
-    color: ${vars.light};
-`
+    margin: 2rem auto 4rem;
+    border: 0.5rem solid ${({ theme }) => theme.headingColor};
+    padding: 2rem .5rem;
 
-export const Triangle = styled.div`
-    
+    @media (min-width: ${vars.breakpoint}) {
+        font-size: 5rem;
+        padding: 4rem 1rem;
+        border-width: 1rem;
+    }
 `

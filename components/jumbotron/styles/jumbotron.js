@@ -1,10 +1,10 @@
 import styled from "styled-components"
 import { vars, GridContainer, AnchorButton } from '../../../styles/global-styles'
-import { Wrapper } from '../../image-wrap/styles/image-wrap'
+import { ImageWrapEl } from '../../image-wrap/styles/image-wrap'
 import { GuitarEl } from '../../svg/guitar/styles/guitar'
 import { motion } from 'framer-motion'
 
-export const JumbotronWrapper = styled.header`
+export const JumbotronEl = styled.header`
     min-height: calc(100vh - 5.75rem);
     display: flex;
     align-content: center;
@@ -20,7 +20,7 @@ export const Container = styled(GridContainer)`
         "image";
 
     ${GuitarEl},
-    ${Wrapper} {
+    ${ImageWrapEl} {
         max-width: 20rem;
         margin: 2rem auto 0;
         grid-area: image;
@@ -37,7 +37,7 @@ export const Container = styled(GridContainer)`
             ". . image";
 
         ${GuitarEl},
-        ${Wrapper} {
+        ${ImageWrapEl} {
             max-width: 500px;
         }
     }

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { vars, FlexContainer } from '../../../../styles/global-styles'
 import { FormEl } from '../../../form/styles/form'
-import { Wrapper } from '../../../image-wrap/styles/image-wrap'
+import { ImageWrapEl } from '../../../image-wrap/styles/image-wrap'
 
 export const ContactSectionWrap = styled.section`
     display: flex;
@@ -31,13 +31,13 @@ export const ContactSectionWrap = styled.section`
 export const LeftWrap = styled.div`
     text-align: center;
 
-    ${Wrapper} {
+    ${ImageWrapEl} {
         display: none;
     }
     @media (min-width: ${vars.breakpointLarge}) {
         padding-right: 2rem;
 
-        ${Wrapper} {
+        ${ImageWrapEl} {
             display: inline-block;
             max-width: 20rem;
         }

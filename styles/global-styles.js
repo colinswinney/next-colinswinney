@@ -9,6 +9,7 @@ export const vars = {
     fontBody: `'Poppins', Helvetica, Arial, sans-serif`,
     fontHeading: `'Work Sans', Helvetica, Arial, sans-serif`,
     transition: `0.2s ease`,
+    breakpointSmall: `30rem`,
     breakpoint: `45rem`,
     breakpointLarge: `62.5rem`
 }
@@ -221,13 +222,21 @@ export const GlobalStyles = createGlobalStyle`
         padding: 5rem 1rem;
     }
 
+    img {
+        max-width: 100%;
+    }
+
     figure {
         margin: 3rem auto 2.5rem;
         padding: 0;
-        max-width: 90%;
+        max-width: 95%;
         text-align: center;
-        font-size: 1rem;
+        font-size: .75rem;
+        width: auto !important;
 
+        @media (min-width: ${vars.breakpoint}) {
+            font-size: 1rem;
+        }
     }
 
     figure img {
@@ -280,14 +289,6 @@ export const ThemeButton = styled.button`
         right: 0;
         color: #999;
     }
-
-    // &:hover {
-
-    //     span {
-    //         opacity: 0.7;
-    //     }
-        
-    // }
 `
 
 export const Container = styled.div`

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Wrapper } from '../../../image-wrap/styles/image-wrap'
+import { ImageWrapEl } from '../../../image-wrap/styles/image-wrap'
 import { c } from '../../../../styles/colors'
 import { vars, FlexContainer } from '../../../../styles/global-styles'
 
@@ -17,7 +17,7 @@ export const LogoSectionWrap = styled.section`
         justify-content: center;
         align-items: center;
 
-        ${Wrapper} {
+        ${ImageWrapEl} {
             flex: 1 0 33.33%;
             text-align: center;
             filter: invert(${({ theme }) => theme.invert});

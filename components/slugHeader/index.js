@@ -1,14 +1,16 @@
-import { Header, SlugHeaderContainer, HeadingOne, Triangle } from './styles/slugHeader'
-import { GradientText } from '../../styles/global-styles'
+import { Header, HeadingOne } from './styles/slugHeader'
+import { Container } from '../../styles/global-styles'
 
 const SlugHeader = ({ children, title }) => {
     return (
         <Header>
-            <SlugHeaderContainer>
-                <HeadingOne><GradientText>{ title }</GradientText></HeadingOne>
+            <Container>
+                
+                <HeadingOne>{ title }</HeadingOne>
+
                 { children }
-            </SlugHeaderContainer>
-            <Triangle/>
+                
+            </Container>
         </Header>
         
     )

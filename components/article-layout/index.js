@@ -1,11 +1,11 @@
-import { FlexContainerArticleLayout, Article, Content, Aside } from './styles/article-layout'
+import { GridContainerArticleLayout, Article, Content, Aside } from './styles/article-layout'
 
 export default function ArticleLayout({ children, ...restProps }) {
 
     return (
-        <FlexContainerArticleLayout {...restProps}>
+        <GridContainerArticleLayout {...restProps}>
             {children}
-        </FlexContainerArticleLayout>
+        </GridContainerArticleLayout>
     )
 }
 

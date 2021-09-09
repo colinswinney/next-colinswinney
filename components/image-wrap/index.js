@@ -1,10 +1,10 @@
 import Image from 'next/image'
-import { Wrapper } from './styles/image-wrap'
+import { ImageWrapEl } from './styles/image-wrap'
 
 const ImageWrap = ({imageObj, maxWidth, transparent, grayscale, className, children}) => {
 
     return (
-        <Wrapper className={className} maxWidth={maxWidth} transparent={transparent} grayscale={grayscale}>
+        <ImageWrapEl className={className} maxWidth={maxWidth} transparent={transparent} grayscale={grayscale}>
 
             {children ? 
                 children 
@@ -25,7 +25,7 @@ const ImageWrap = ({imageObj, maxWidth, transparent, grayscale, className, child
                     />
             }
             
-        </Wrapper>
+        </ImageWrapEl>
     )
 }
 

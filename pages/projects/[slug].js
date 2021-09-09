@@ -23,11 +23,13 @@ const Project = ( { projectData } ) => {
     return (
         <>
         <Head>
-            <title>Colin Swinney</title>
+            <title>{projectData.title} | Colin Swinney</title>
             <meta name="description" content="Freelance Web Developer" />
         </Head>
 
-        <SlugHeader title={projectData.title} />
+        <SlugHeader title={projectData.title}>
+            <ImageWrap imageObj={projectData.projectsPostType.logo} />
+        </SlugHeader>
 
         <Main>
 
@@ -35,17 +37,16 @@ const Project = ( { projectData } ) => {
 
                 <ArticleLayout.Article>
                     <ArticleLayout.Content dangerouslySetInnerHTML={{ __html: projectData.content} } />
+                    <Link href="/projects" passHref>
+                        <AnchorButton>Back to Projects</AnchorButton>
+                    </Link>
                 </ArticleLayout.Article>
 
                 <ArticleLayout.Aside>
-
-                    <Widget>
-                        <ImageWrap imageObj={projectData.projectsPostType.logo} />
-                    </Widget>
                     
                     {projectData.projectsPostType.websiteUrl 
                     ?
-                    <Widget>
+                    <Widget gridArea="address">
                         <Widget.Heading>Address</Widget.Heading>
                         <Widget.AddressWrap>
                             <Widget.Icon className="material-icons">language</Widget.Icon> <a href={projectData.projectsPostType.websiteUrl}>{projectData.projectsPostType.websiteName}</a>
@@ -55,15 +56,19 @@ const Project = ( { projectData } ) => {
                     ``
                     }
 
-                    <Widget>
+                    {projectData.projectsPostType.summary 
+                    ?
+                    <Widget gridArea="summary">
                         <Widget.Heading>Summary</Widget.Heading>
                         <Widget.Text>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.
+                        {projectData.projectsPostType.summary}
                         </Widget.Text>
                     </Widget>
+                    :
+                    ``
+                    }
                     
-                    
-                    <Widget>
+                    <Widget gridArea="tools">
                         <Widget.Heading>Tools</Widget.Heading>
                         <Widget.List>
                             {projectData.projectsPostType.techStack.map((item, i) => {
@@ -78,12 +83,6 @@ const Project = ( { projectData } ) => {
 
                 </ArticleLayout.Aside>
             </ArticleLayout>
-
-            <Container>
-                <Link href="/projects" passHref>
-                    <AnchorButton>Back to Projects</AnchorButton>
-                </Link>
-            </Container>
 
         </Main>
         

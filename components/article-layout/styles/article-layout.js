@@ -33,6 +33,7 @@ export const Content = styled.div`
 
 export const Aside = styled.aside`
     height: fit-content;
+    width: inherit;
     padding: 1rem;
     margin: 0 0 6rem 0;
     border-radius: 1rem;

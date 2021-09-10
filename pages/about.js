@@ -56,15 +56,20 @@ const About = ({aboutData}) => {
             <ArticleLayout.Aside>
 
                 <Widget>
-                    <Logo />
-                </Widget>
-
-                <Widget>
                     <Widget.Heading>Location</Widget.Heading>
                     <Widget.AddressWrap>
                         <Widget.Icon className="material-icons">language</Widget.Icon> Milwaukee, WI
                     </Widget.AddressWrap>
                 </Widget>
+
+                
+                <Widget gridArea="summary">
+                    <Widget.Heading>Summary</Widget.Heading>
+                    <Widget.Text>
+                    {aboutData.aboutMe.summary}
+                    </Widget.Text>
+                </Widget>
+                    
 
                 <Widget>
                     <Widget.Heading>Tools</Widget.Heading>

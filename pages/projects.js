@@ -7,7 +7,6 @@ import Jumbotron from '../components/jumbotron'
 import ImageWrap from '../components/image-wrap'
 import Main from '../components/main'
 import Card from '../components/card'
-import { GradientText } from '../styles/global-styles'
 import { FlexContainerProjects, Anchor } from '../styles/projects'
 import { getAllProjects } from '../lib/api'
 
@@ -26,7 +25,7 @@ const Projects = ({ allProjects: { edges }}) => {
           <Jumbotron.Container>
 
               <Jumbotron.Heading>
-                <GradientText>Web</GradientText> Projects
+                Web Projects
               </Jumbotron.Heading>
               <Jumbotron.SubHeading>What have I done?!</Jumbotron.SubHeading>
 

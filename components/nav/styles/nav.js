@@ -79,12 +79,15 @@ export const ListItem = styled.li`
     }
 `
 
-export const NavToggle = styled.span`
+export const NavToggle = styled.button`
+    padding: 0;
     position: absolute;
-    top: 1.25rem;
+    top: 1.5rem;
     right: 1rem;
     z-index: 9999;
     cursor: pointer;
+    background: none;
+    border: none;
 
     @media (min-width: ${vars.breakpoint}) {
         display: none;

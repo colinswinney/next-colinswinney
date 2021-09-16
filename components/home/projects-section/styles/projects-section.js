@@ -5,6 +5,11 @@ export const ProjectsSectionWrap = styled.section`
     padding-left: 0;
     padding-right: 0;
     display: flex;
+    background-image: ${({theme}) => theme.aboutSectionBg};
+    background-size: 2rem 2rem;
+    background-position: center;
+    border-top: 0.0625rem solid ${({ theme }) => theme.aboutSectionBorderColor};
+    border-bottom: 0.0625rem solid ${({ theme }) => theme.aboutSectionBorderColor};
 
     @media (min-width: ${vars.breakpoint}) {
         min-height: 100vh;
@@ -111,7 +116,7 @@ export const ProjectAnchor = styled.a`
     display: flex;
     align-items: flex-end;
     position: relative;
-    background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.75) 33%, rgba(0,0,0,1) 66%);
+    background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,.75) 25%, rgba(255,255,255,1) 50%);
     border: 0.5rem solid ${({ theme }) => theme.linkColor};
     font-family: ${vars.fontHeading};
     text-align: center;
@@ -131,7 +136,7 @@ export const ProjectAnchor = styled.a`
     &:hover,
     &:focus {
         opacity: 1;
-        color: ${vars.light};
+        color: ${({ theme }) => theme.linkColor};
     }
 
 `

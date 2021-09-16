@@ -113,9 +113,10 @@ const Nav = ({ children }) => {
                             { children }
                         </ListItem>
                     </List>
-                        
-                    <NavToggle onClick={handleToggle} className="material-icons dark">
+                    <NavToggle onClick={handleToggle} >
+                    <span className="material-icons dark">
                         { toggleIcon }
+                    </span>
                     </NavToggle>
                 </NavbarInner>
             </Container>

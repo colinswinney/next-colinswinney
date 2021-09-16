@@ -8,9 +8,7 @@ import ArticleLayout from '../components/article-layout'
 import Widget from '../components/widget'
 import Logo from '../components/svg/logo'
 import ImageWrap from '../components/image-wrap'
-import { Container, GradientText } from '../styles/global-styles'
 import { getAboutMe } from '../lib/api'
-import { ListItem } from '../components/nav/styles/nav'
 
 
 const About = ({aboutData}) => {
@@ -28,7 +26,7 @@ const About = ({aboutData}) => {
           <Jumbotron.Container>
 
               <Jumbotron.Heading>
-                <GradientText>About</GradientText> Me
+                  About Me
               </Jumbotron.Heading>
               {/* <Jumbotron.SubHeading>I ain&apos;t no cowboy coder.</Jumbotron.SubHeading> */}
               <Jumbotron.SubHeading>Sometimes I play dress up with my band.</Jumbotron.SubHeading>
@@ -55,7 +53,11 @@ const About = ({aboutData}) => {
 
             <ArticleLayout.Aside>
 
-                <Widget>
+                <Widget gridArea="image">
+                    <Logo />
+                </Widget>
+
+                <Widget gridArea="address">
                     <Widget.Heading>Location</Widget.Heading>
                     <Widget.AddressWrap>
                         <Widget.Icon className="material-icons">language</Widget.Icon> Milwaukee, WI
@@ -71,7 +73,7 @@ const About = ({aboutData}) => {
                 </Widget>
                     
 
-                <Widget>
+                {/* <Widget gridArea="tools">
                     <Widget.Heading>Tools</Widget.Heading>
                     <Widget.List>
                       <Widget.ListItem>
@@ -111,7 +113,7 @@ const About = ({aboutData}) => {
                           <Widget.Icon className="material-icons">build</Widget.Icon> Git
                       </Widget.ListItem>
                     </Widget.List>
-                </Widget>
+                </Widget> */}
                 
             </ArticleLayout.Aside>
 

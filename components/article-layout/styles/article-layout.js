@@ -34,11 +34,7 @@ export const Content = styled.div`
 export const Aside = styled.aside`
     height: fit-content;
     width: inherit;
-    padding: 1rem;
-    margin: 0 0 6rem 0;
-    border-radius: 1rem;
-    background: ${({ theme }) => theme.bodyBgColorLight};
-    box-shadow: 0 0.0625rem .1875rem rgba(0,0,0,0.12), 0 0.0625rem .125rem rgba(0,0,0,0.24);
+    margin: 0 0 4rem 0;
     grid-area: aside;
     display: grid;
     grid-template-areas:
@@ -51,20 +47,29 @@ export const Aside = styled.aside`
 
         grid-template-columns: 1fr 1fr 3rem 1fr;
         grid-template-areas:
+            "image . . . "
             "address address . tools"
             "summary summary . tools";
 
-            ${WidgetEl}:nth-child(2) {
-                margin-bottom: 0;
+            ${WidgetEl} {
+                margin-bottom: ${props => props.gridArea == "summary" ? "0" : "2rem"};
             }
     }
     
     @media (min-width: ${vars.breakpointLarge}) {
         margin: 4rem 0 0 auto;
+        padding: 1rem;
         display: block;
+        border-radius: 1rem;
+        background: ${({ theme }) => theme.bodyBgColorLight};
+        box-shadow: 0 0.0625rem .1875rem rgba(0,0,0,0.12), 0 0.0625rem .125rem rgba(0,0,0,0.24);
 
-        ${WidgetEl}:nth-child(2) {
+        ${WidgetEl} {
             margin-bottom: 3rem;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
         }
     }
 `

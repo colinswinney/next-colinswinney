@@ -6,11 +6,6 @@ import { vars, GridContainer, FlexContainer } from '../../../../styles/global-st
 export const AboutSectionWrap = styled.section`
     display: flex;
     text-align: center;
-    background-image: ${({theme}) => theme.aboutSectionBg};
-    background-size: 2rem 2rem;
-    background-position: center;
-    border-top: 0.0625rem solid ${({ theme }) => theme.aboutSectionBorderColor};
-    border-bottom: 0.0625rem solid ${({ theme }) => theme.aboutSectionBorderColor};
 
     @media (min-width: ${vars.breakpoint}) {
       min-height: 100vh;

@@ -29,8 +29,9 @@ export const lightTheme = {
     guitarFillThree: `#470326`,
     bodyBgColorLight: `#fff`,
     contactFormBg: `rgba(255,255,255, 0.95)`,
-    contactImg: `/images/milwaukee-daylight.jpeg`,
+    contactImgBg: `/images/milwaukee-daylight.jpeg`,
     gradient: `linear-gradient(30deg, ${c.indigo800}, ${c.indigo300})`,
+    jumboGradient: `linear-gradient(135deg, ${c.lightblue100}, ${c.lightblue50})`,
     themeButtonGradientHover: `linear-gradient(30deg, ${c.indigo300}, ${c.indigo300})`,
     aboutSectionBorderColor: `rgba(232, 234, 246, .3)`,
     aboutSectionBg: `linear-gradient(rgba(232, 234, 246, .3) .1em, transparent .1em), linear-gradient(90deg, rgba(232, 234, 246, .3) .1em, transparent .1em)`,
@@ -47,7 +48,7 @@ export const darkTheme = {
     bodyBgColor: `#121212`,
     headingColor: c.grey200,
     textColor: c.grey300,
-    textAccent: c.grey500,
+    textAccent: c.grey300,
     accentColorOne: c.purple300,
     accentColorTwo: c.purple600,
     linkColor: c.purple300,
@@ -58,8 +59,9 @@ export const darkTheme = {
     guitarFillThree: c.grey200,
     bodyBgColorLight: c.grey900,
     contactFormBg: `rgba(33,33,33, 0.95)`,
-    contactImg: `/images/milwaukee-night.jpeg`,
+    contactImgBg: `/images/milwaukee-night.jpeg`,
     gradient: `linear-gradient(30deg, ${c.purple600}, ${c.purple200})`,
+    jumboGradient: `linear-gradient(135deg, #2A0B32, #470326)`,
     themeButtonGradientHover: `linear-gradient(30deg, ${c.purple200}, ${c.purple200})`,
     aboutSectionBorderColor: `rgba(55, 55, 55, .1)`,
     aboutSectionBg: `linear-gradient(rgba(55, 55, 55, .1) .1em, transparent .1em), linear-gradient(90deg, rgba(55, 55, 55, .1) .1em, transparent .1em);`,
@@ -118,6 +120,16 @@ export const GlobalStyles = createGlobalStyle`
 
     * {
         box-sizing: border-box;
+    }
+
+    ::-moz-selection {
+        color: black;
+        background: ${({ theme }) => theme.blobColor};
+    }
+    
+    ::selection {
+        color: black;
+        background: ${({ theme }) => theme.blobColor};
     }
 
     h1,

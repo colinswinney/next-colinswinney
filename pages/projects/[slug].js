@@ -28,7 +28,7 @@ const Project = ( { projectData } ) => {
         </Head>
 
         <SlugHeader title={projectData.title}>
-            <ImageWrap imageObj={projectData.projectsPostType.logo} />
+            
         </SlugHeader>
 
         <Main>
@@ -43,6 +43,10 @@ const Project = ( { projectData } ) => {
                 </ArticleLayout.Article>
 
                 <ArticleLayout.Aside>
+
+                    <Widget gridArea="image">
+                        <ImageWrap imageObj={projectData.projectsPostType.logo} />
+                    </Widget>
                     
                     {projectData.projectsPostType.websiteUrl 
                     ?

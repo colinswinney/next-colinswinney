@@ -6,7 +6,7 @@ import Main from '../components/main'
 import Form from '../components/form'
 import Jumbotron from '../components/jumbotron'
 import ImageWrap from '../components/image-wrap'
-import { GradientText, Container } from '../styles/global-styles'
+import { Container } from '../styles/global-styles'
 
 const Contact = () => {
 
@@ -23,7 +23,7 @@ const Contact = () => {
             <Jumbotron.Container>
 
                 <Jumbotron.Heading>
-                  <GradientText>Contact</GradientText> Me
+                  Contact Me
                 </Jumbotron.Heading>
                 <Jumbotron.SubHeading>I&apos;d love to hear from you.</Jumbotron.SubHeading>
 

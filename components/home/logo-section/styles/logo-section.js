@@ -5,7 +5,7 @@ import { vars, FlexContainer } from '../../../../styles/global-styles'
 
 export const LogoSectionWrap = styled.section`
     display: flex;
-    background: ${({ theme }) => theme.logoSectionBg};
+    position: relative;
 
     @media (min-width: ${vars.breakpoint}) {
         min-height: 100vh;

@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { c } from '../../../styles/colors'
 import { vars, GridContainer, AnchorButton } from '../../../styles/global-styles'
 import { ImageWrapEl } from '../../image-wrap/styles/image-wrap'
 import { GuitarEl } from '../../svg/guitar/styles/guitar'
@@ -9,6 +10,7 @@ export const JumbotronEl = styled.header`
     display: flex;
     align-content: center;
     justify-content: center;
+    background: ${({ theme}) => theme.jumboGradient};
 `
 
 export const Container = styled(GridContainer)`
@@ -46,6 +48,7 @@ export const Container = styled(GridContainer)`
 export const Heading = styled.h1`
     margin: 0;
     grid-area: title;
+    color: ${({ theme }) => theme.headingColor};
 `
 
 export const SubHeading = styled.h2`

@@ -18,6 +18,7 @@ export const Text = styled.small`
     margin: 1rem auto;
     font-size: 0.75rem;
     width: 100%;
+    line-height: 1.4;
 `
 
 export const IconWrap = styled.div`

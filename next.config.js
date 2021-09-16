@@ -1,6 +1,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-      domains: ['local.apicolin.test']
+      domains: ['wp.colinswinney.com']
   }
 }

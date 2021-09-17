@@ -14,7 +14,7 @@ export const Header = styled.header`
 `
 
 export const HeadingOne = styled.h1`
-    margin: 2rem auto 4rem;
+    margin: 2rem auto;
     border: 0.5rem solid ${({ theme }) => theme.headingColor};
     padding: 2rem .5rem;
 

@@ -3,16 +3,19 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Link from 'next/link'
 import { Container, AnchorButton } from '../../styles/global-styles'
+import { ProjectsList, ProjectsListItem } from '../../styles/projects'
 import SlugHeader from '../../components/slugHeader'
 import ArticleLayout from '../../components/article-layout'
 import Widget from '../../components/widget'
 import Main from '../../components/main'
 import ImageWrap from '../../components/image-wrap'
-import { getAllProjectsWithSlug, getProject } from "../../lib/api"
+import { getAllProjectsWithSlug, getProject, getAllProjects } from "../../lib/api"
 
-const Project = ( { projectData } ) => {
+const Project = ( { projectData, allProjectsData } ) => {
 
     projectData.projectsPostType.techStack.sort()
+
+    const projectsLength = allProjectsData.projects.edges.length
 
     const router = useRouter();
 
@@ -39,7 +42,7 @@ const Project = ( { projectData } ) => {
                     <ArticleLayout.Content dangerouslySetInnerHTML={{ __html: projectData.content} } />
                     <Link href="/projects" passHref>
                         <AnchorButton>Back to Projects</AnchorButton>
-                    </Link>
+                    </Link>                    
                 </ArticleLayout.Article>
 
                 <ArticleLayout.Aside>
@@ -75,7 +78,7 @@ const Project = ( { projectData } ) => {
                     <Widget gridArea="tools">
                         <Widget.Heading>Tools</Widget.Heading>
                         <Widget.List>
-                            {projectData.projectsPostType.techStack.map((item, i) => {
+                            {projectData.projectsPostType.techStack.map((item) => {
                                 return (
                                     <Widget.ListItem key={item}>
                                         <Widget.Icon className="material-icons">build</Widget.Icon> {item}
@@ -87,6 +90,24 @@ const Project = ( { projectData } ) => {
 
                 </ArticleLayout.Aside>
             </ArticleLayout>
+
+            <Container>
+                <ProjectsList>
+                    {allProjectsData.projects.edges.map(({node: single}, i) => {
+                        return (
+                            single.slug == projectData.slug
+                            ?
+                            ``
+                            :
+                            <ProjectsListItem key={single.slug}>
+                                <Link href={`/projects/${single.slug}`} passHref>
+                                    <a>{single.title}</a>
+                                </Link>
+                            </ProjectsListItem>
+                        )
+                    })}
+                </ProjectsList>
+            </Container>
 
         </Main>
         
@@ -105,10 +126,12 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     const data = await getProject(params.slug);
+    const dataProjects = await getAllProjects();
 
     return {
         props: {
-            projectData: data.project
+            projectData: data.project,
+            allProjectsData: dataProjects
         }
     }
 }

@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
 
   const router = useRouter()
   
-  const [theme, setTheme] = useState('light') 
+  const [theme, setTheme] = useState('dark') 
 
   const setMode = mode => {
     window.localStorage.setItem('theme', mode)

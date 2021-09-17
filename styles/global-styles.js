@@ -124,11 +124,21 @@ export const GlobalStyles = createGlobalStyle`
 
     ::-moz-selection {
         color: black;
+        background-image: none;
+        -webkit-background-clip: initial;
+        -moz-background-clip: initial;
+        -webkit-text-fill-color: initial; 
+        -moz-text-fill-color: initial;
         background: ${({ theme }) => theme.blobColor};
     }
     
     ::selection {
         color: black;
+        background-image: none;
+        -webkit-background-clip: initial;
+        -moz-background-clip: initial;
+        -webkit-text-fill-color: initial; 
+        -moz-text-fill-color: initial;
         background: ${({ theme }) => theme.blobColor};
     }
 

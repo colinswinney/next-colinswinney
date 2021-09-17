@@ -19,12 +19,13 @@ export const Container = styled(GridContainer)`
     grid-template-areas:
         "title"
         "text"
+        "button"
         "image";
 
     ${GuitarEl},
     ${ImageWrapEl} {
         max-width: 20rem;
-        margin: 2rem auto 0;
+        margin: 2rem auto;
         grid-area: image;
     }
 
@@ -36,6 +37,7 @@ export const Container = styled(GridContainer)`
             ". . image"
             "title . image"
             "text . image"
+            "button . image"
             ". . image";
 
         ${GuitarEl},
@@ -61,17 +63,25 @@ export const SubHeading = styled.h2`
     color: ${({ theme }) => theme.textAccent};
     grid-area: text;
 
+    @media (min-width: ${vars.breakpoint}) {
+        font-size: 1.77rem;
+        margin: 2rem 0 2.5rem;
+    }
+`
+
+export const ButtonWrap = styled.div`
+    z-index: 1;
+    grid-area: button;
+
     ${AnchorButton} {
         display: block;
         margin: 1.5rem auto 2rem;
     }
 
     @media (min-width: ${vars.breakpoint}) {
-        font-size: 1.77rem;
-        margin: 2rem 0 2.5rem;
 
         ${AnchorButton} {
-            margin: 2.5rem 0 0;
+            margin: 0;
         }
     }
 `

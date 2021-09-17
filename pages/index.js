@@ -27,13 +27,16 @@ const Home = ({ logos, projects }) => {
               <Jumbotron.Heading>
                 Colin Swinney
               </Jumbotron.Heading>
-              <Jumbotron.SubHeading>I&apos;m a web developer from Milwaukee, WI.  Let&apos;s make great music together.
-              <Link href="/projects" passHref>
-                <AnchorButton>
-                  See My Work
-                </AnchorButton>
-              </Link>
+              <Jumbotron.SubHeading>
+                I&apos;m a web developer from Milwaukee, WI.  Let&apos;s make great music together.
               </Jumbotron.SubHeading>
+              <Jumbotron.ButtonWrap>
+                <Link href="/projects" passHref>
+                  <AnchorButton>
+                    See My Work
+                  </AnchorButton>
+                </Link>
+              </Jumbotron.ButtonWrap>
               
 
               <Guitar />

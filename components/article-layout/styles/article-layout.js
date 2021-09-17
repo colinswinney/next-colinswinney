@@ -47,7 +47,7 @@ export const Aside = styled.aside`
 
         grid-template-columns: 1fr 1fr 3rem 1fr;
         grid-template-areas:
-            "image . . . "
+            "image image . . "
             "address address . tools"
             "summary summary . tools";
 

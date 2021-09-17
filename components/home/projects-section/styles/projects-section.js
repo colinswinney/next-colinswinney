@@ -116,8 +116,7 @@ export const ProjectAnchor = styled.a`
     display: flex;
     align-items: flex-end;
     position: relative;
-    background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,.75) 25%, rgba(255,255,255,1) 50%);
-    border: 0.5rem solid ${({ theme }) => theme.linkColor};
+    background: ${({ theme }) => theme.blobColor};
     font-family: ${vars.fontHeading};
     text-align: center;
     line-height: 1;
@@ -136,7 +135,7 @@ export const ProjectAnchor = styled.a`
     &:hover,
     &:focus {
         opacity: 1;
-        color: ${({ theme }) => theme.linkColor};
+        color: ${vars.dark};
     }
 
 `

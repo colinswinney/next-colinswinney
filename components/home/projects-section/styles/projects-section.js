@@ -114,7 +114,7 @@ export const ProjectAnchor = styled.a`
     padding: 1rem;
     height: 100%;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     position: relative;
     background: ${({ theme }) => theme.blobColor};
     font-family: ${vars.fontHeading};

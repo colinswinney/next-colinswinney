@@ -5,6 +5,7 @@ import { ImageWrapEl } from '../../../image-wrap/styles/image-wrap'
 
 export const ContactSectionWrap = styled.section`
     display: flex;
+    background: ${({ theme}) => theme.jumboGradient};
 
     @media (min-width: ${vars.breakpoint}) {
         min-height: 100vh;

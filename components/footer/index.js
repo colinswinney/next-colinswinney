@@ -7,6 +7,7 @@ const Footer = () => {
     return (
         <FooterEl>
             <FlexContainerFooter>
+                <Text>&copy; Copyright {(new Date().getFullYear())}, Colin Swinney </Text>
                 <IconWrap>
                     <Link href="https://www.linkedin.com/in/colin-swinney/" passHref>
                         <a>
@@ -21,7 +22,6 @@ const Footer = () => {
                         </a>
                     </Link>
                 </IconWrap>
-                <Text>&copy; Copyright {(new Date().getFullYear())}<br/>Colin Swinney </Text>
             </FlexContainerFooter>
         </FooterEl>
     )

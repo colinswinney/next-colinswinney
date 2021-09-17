@@ -15,7 +15,7 @@ export default function ContactSection({ children, ...restProps }) {
             <FlexContainer>
                 <LeftWrap>
                     <HeadingTwo>
-                        <GradientText>Contact Me</GradientText>
+                        Contact Me
                     </HeadingTwo>
                     {/* <p>I&apos;d love to hear from you.</p> */}
                     <ImageWrap transparent>

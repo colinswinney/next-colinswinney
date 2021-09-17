@@ -31,7 +31,7 @@ export const lightTheme = {
     contactFormBg: `rgba(255,255,255, 0.95)`,
     contactImgBg: `/images/milwaukee-daylight.jpeg`,
     gradient: `linear-gradient(30deg, ${c.indigo800}, ${c.indigo300})`,
-    jumboGradient: `linear-gradient(135deg, #C2CBFF, #EBEEFF)`,
+    jumboGradient: `linear-gradient(135deg, ${c.blue200}, ${c.blue50})`,
     themeButtonGradientHover: `linear-gradient(30deg, ${c.indigo300}, ${c.indigo300})`,
     aboutSectionBorderColor: `rgba(232, 234, 246, .3)`,
     aboutSectionBg: `linear-gradient(rgba(232, 234, 246, .3) .1em, transparent .1em), linear-gradient(90deg, rgba(232, 234, 246, .3) .1em, transparent .1em)`,

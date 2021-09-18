@@ -68,9 +68,6 @@ const Nav = ({ children }) => {
                         <a className={router.pathname == "/" ? "active" : ""}>
                             <Logo />
                         </a>
-                        {/* <AnchorButtonCircle className={router.pathname == "/" ? "active" : ""}>
-                            CS
-                        </AnchorButtonCircle> */}
                     </Link>
                     <List className={isNavActive ? "active" : null}>
 
@@ -79,9 +76,6 @@ const Nav = ({ children }) => {
                                 <a className={router.pathname == "/" ? "active" : ""}>
                                     <Logo />
                                 </a>
-                                {/* <AnchorButtonCircle className={router.pathname == "/" ? "active" : ""}>
-                                    CS
-                                </AnchorButtonCircle> */}
                             </Link>
                         </ListItem>
 

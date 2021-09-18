@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ProjectsSectionWrap, ProjectsSectionInner, FlexBar, Heading, GridContainerProjects, Cell, ProjectAnchor } from "./styles/projects-section"
-import { Container, GradientText, AnchorButton } from '../../../styles/global-styles'
+import { Container, GradientText, AnchorButtonGradient } from '../../../styles/global-styles'
 
 const ProjectsSection = ({ children, projects }) => {
     const projectsArray = Object.values(projects)
@@ -35,9 +35,9 @@ const ProjectsSection = ({ children, projects }) => {
 
                 <FlexBar className="right-align">
                     <Link href="/projects" passHref>
-                        <AnchorButton>
+                        <AnchorButtonGradient>
                             View All
-                        </AnchorButton>
+                        </AnchorButtonGradient>
                     </Link>
                 </FlexBar>
             </ProjectsSectionInner>

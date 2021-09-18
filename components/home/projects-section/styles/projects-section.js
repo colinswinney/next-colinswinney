@@ -23,9 +23,11 @@ export const ProjectsSectionInner = styled.div`
 
 export const FlexBar = styled(FlexContainer)`
     padding: 0 1rem;
+    position: relative;
 
     &.right-align {
         justify-content: flex-end;
+        z-index: 1;
     }
 `
 

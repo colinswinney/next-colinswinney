@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { c } from '../../../styles/colors'
 import { vars, GridContainer, AnchorButton } from '../../../styles/global-styles'
 import { ImageWrapEl } from '../../image-wrap/styles/image-wrap'
 import { GuitarEl } from '../../svg/guitar/styles/guitar'
@@ -69,19 +68,32 @@ export const SubHeading = styled.h2`
     }
 `
 
+export const Button = styled(AnchorButton)`
+    background: ${({ theme }) => theme.linkColor};
+    color: ${vars.light};
+    border: .125rem solid ${({ theme }) => theme.linkColor};
+
+    &:hover {
+        color: ${({ theme }) => theme.linkColor};
+        border-color: ${({ theme }) => theme.linkColor};
+        background: transparent;
+    }
+`
+
 export const ButtonWrap = styled.div`
     z-index: 1;
     grid-area: button;
 
-    ${AnchorButton} {
+    ${Button} {
         display: block;
         margin: 1.5rem auto 2rem;
     }
 
     @media (min-width: ${vars.breakpoint}) {
 
-        ${AnchorButton} {
+        ${Button} {
             margin: 0;
         }
     }
 `
+

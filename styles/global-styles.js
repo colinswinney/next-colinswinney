@@ -22,7 +22,7 @@ export const lightTheme = {
     accentColorOne: c.indigo300,
     accentColorTwo: c.indigo800,
     linkColor: c.indigo600,
-    linkColorHover: c.indigo300,
+    linkColorHover: c.lightblue300,
     blobColor: c.orange200,
     guitarFillOne: c.indigo800,
     guitarFillTwo: c.deeporangeA700,
@@ -52,7 +52,7 @@ export const darkTheme = {
     accentColorOne: c.purple300,
     accentColorTwo: c.purple600,
     linkColor: c.purple300,
-    linkColorHover: c.purple100,
+    linkColorHover: c.deeppurple100,
     blobColor: c.teal200,
     guitarFillOne: c.purple800,
     guitarFillTwo: c.pink500,
@@ -341,13 +341,23 @@ export const GradientText = styled.span`
 export const AnchorButton = styled.a`
     padding: .5rem 1.5rem;
     width: max-content;
-    color: ${vars.light};
-    background: ${({ theme }) => theme.gradient};
-    display: inline-block;
     font-size: 1rem;
     box-sizing: content-box;
     position: relative;
     text-transform: uppercase;
+
+    @media (min-width: ${vars.breakpoint}) {
+        font-size: 1.2rem;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+`
+
+export const AnchorButtonGradient = styled(AnchorButton)`
+    color: ${vars.light};
+    background: ${({ theme }) => theme.gradient};
 
     &:before {
         content: '';
@@ -383,6 +393,5 @@ export const AnchorButton = styled.a`
         -moz-background-clip: text;
         -webkit-text-fill-color: transparent; 
         -moz-text-fill-color: transparent;
-        text-decoration: none;
     }
 `

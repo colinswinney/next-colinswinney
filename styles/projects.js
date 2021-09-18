@@ -27,26 +27,25 @@ export const Anchor = styled.a`
     }
 `
 
-export const ProjectsList = styled.ul`
-    padding: 0;
-    list-style-type: none;
-    text-align: center;
+export const ProjectsNav = styled.nav`
+    padding: 1rem;
+    margin: 4rem auto auto;   
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: ${vars.breakpointLarge};
 `
 
-export const ProjectsListItem = styled.li`
-    margin-right: 1rem;
-    display: inline-block;
+export const ProjectsListAnchor = styled.a`
+    margin: 0.5rem 1rem 0.5rem 0;
+    text-align: center;
 
     &:nth-child(n+2) {
         &:before {
-            content: '';
+            content: "\\2022";
+            padding-right: 1rem;
             display: inline-block;
-            vertical-align: middle;
-            margin-right: 1rem;
-            height: 0.25rem;
-            width: 0.25rem;
-            border-radius: 100%;
-            background: ${({ theme }) => theme.textColor};
+            color: ${({ theme }) => theme.textColor};
         }
     }
 `

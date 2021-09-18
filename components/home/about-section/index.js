@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Container, GradientText, AnchorButton } from '../../../styles/global-styles'
+import { Container, GradientText, AnchorButtonGradient } from '../../../styles/global-styles'
 import { AboutSectionWrap, AboutSectionInner, GridContainerAbout, ImageWrapGrid, Text, LoopTextWrap, LoopTextHeading, BottomText } from './styles/about-section'
 
 const AboutSection = () => {
@@ -145,7 +145,7 @@ const AboutSection = () => {
                 <BottomText>I also love old country music and New York style pizza.</BottomText>
 
                 <Link href="/about" passHref>
-                    <AnchorButton>Find out more</AnchorButton>
+                    <AnchorButtonGradient>Find out more</AnchorButtonGradient>
                 </Link>
 
             </AboutSectionInner>

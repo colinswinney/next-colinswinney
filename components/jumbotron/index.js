@@ -1,5 +1,5 @@
 import React from "react"
-import { JumbotronEl, Container, Heading, SubHeading, ButtonWrap } from "./styles/jumbotron"
+import { JumbotronEl, Container, Heading, SubHeading, ButtonWrap, Button } from "./styles/jumbotron"
 
 export default function Jumbotron({ children, ...restProps }) {
 
@@ -26,4 +26,8 @@ Jumbotron.SubHeading = function JumbotronSubTitle( { children, ...restProps } ) 
 
 Jumbotron.ButtonWrap = function JumbotronButtonWrap( { children, ...restProps } ) {
     return <ButtonWrap {...restProps}>{children}</ButtonWrap>
+}
+
+Jumbotron.Button = function JumbotronButton( { children, ...restProps } ) {
+    return <Button {...restProps}>{children}</Button>
 }

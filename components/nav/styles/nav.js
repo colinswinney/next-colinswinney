@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { vars, Container, AnchorButton } from '../../../styles/global-styles'
+import { vars, Container } from '../../../styles/global-styles'
 import { LogoEl, GiraffePath } from '../../svg/logo/styles/logo'
 
 export const Navbar = styled.nav`

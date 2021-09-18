@@ -2,8 +2,8 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Container, AnchorButton } from '../../styles/global-styles'
-import { ProjectsList, ProjectsListItem } from '../../styles/projects'
+import { Container, AnchorButtonGradient } from '../../styles/global-styles'
+import { ProjectsNav, ProjectsListAnchor } from '../../styles/projects'
 import SlugHeader from '../../components/slugHeader'
 import ArticleLayout from '../../components/article-layout'
 import Widget from '../../components/widget'
@@ -41,7 +41,7 @@ const Project = ( { projectData, allProjectsData } ) => {
                 <ArticleLayout.Article>
                     <ArticleLayout.Content dangerouslySetInnerHTML={{ __html: projectData.content} } />
                     <Link href="/projects" passHref>
-                        <AnchorButton>Back to Projects</AnchorButton>
+                        <AnchorButtonGradient>Back to Projects</AnchorButtonGradient>
                     </Link>                    
                 </ArticleLayout.Article>
 
@@ -91,23 +91,19 @@ const Project = ( { projectData, allProjectsData } ) => {
                 </ArticleLayout.Aside>
             </ArticleLayout>
 
-            <Container>
-                <ProjectsList>
-                    {allProjectsData.projects.edges.map(({node: single}, i) => {
-                        return (
-                            single.slug == projectData.slug
-                            ?
-                            ``
-                            :
-                            <ProjectsListItem key={single.slug}>
-                                <Link href={`/projects/${single.slug}`} passHref>
-                                    <a>{single.title}</a>
-                                </Link>
-                            </ProjectsListItem>
-                        )
-                    })}
-                </ProjectsList>
-            </Container>
+            <ProjectsNav>
+                {allProjectsData.projects.edges.map(({node: single}, i) => {
+                    return (
+                        single.slug == projectData.slug
+                        ?
+                        ``
+                        :
+                        <Link key={single.slug} href={`/projects/${single.slug}`} passHref>
+                            <ProjectsListAnchor>{single.title}</ProjectsListAnchor>
+                        </Link>
+                    )
+                })}
+            </ProjectsNav>
 
         </Main>
         

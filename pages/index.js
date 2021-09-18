@@ -1,7 +1,6 @@
 import { useEffect, useContext } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { GradientText, AnchorButton } from '../styles/global-styles'
 import Jumbotron from '../components/jumbotron'
 import Main from '../components/main'
 import AboutSection from '../components/home/about-section'
@@ -32,9 +31,9 @@ const Home = ({ logos, projects }) => {
               </Jumbotron.SubHeading>
               <Jumbotron.ButtonWrap>
                 <Link href="/projects" passHref>
-                  <AnchorButton>
+                  <Jumbotron.Button>
                     See My Work
-                  </AnchorButton>
+                  </Jumbotron.Button>
                 </Link>
               </Jumbotron.ButtonWrap>
               
@@ -55,6 +54,7 @@ const Home = ({ logos, projects }) => {
           <LogoSection logos={logos}/>
           
           <ContactSection />
+          
         </Main>
     </>
   )

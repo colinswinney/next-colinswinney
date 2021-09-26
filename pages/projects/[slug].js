@@ -40,9 +40,9 @@ const Project = ( { projectData, allProjectsData } ) => {
 
                 <ArticleLayout.Article>
                     <ArticleLayout.Content dangerouslySetInnerHTML={{ __html: projectData.content} } />
-                    <Link href="/projects" passHref>
+                    {/* <Link href="/projects" passHref>
                         <AnchorButtonGradient>Back to Projects</AnchorButtonGradient>
-                    </Link>                    
+                    </Link>                     */}
                 </ArticleLayout.Article>
 
                 <ArticleLayout.Aside>
@@ -92,6 +92,9 @@ const Project = ( { projectData, allProjectsData } ) => {
             </ArticleLayout>
 
             <ProjectsNav>
+                <Link href="/projects" passHref>
+                    <ProjectsListAnchor>Projects Home</ProjectsListAnchor>
+                </Link>
                 {allProjectsData.projects.edges.map(({node: single}, i) => {
                     return (
                         single.slug == projectData.slug

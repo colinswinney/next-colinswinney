@@ -1,13 +1,13 @@
 import { useEffect } from 'react'
 import { useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer';
-import { CardWrap, Top, TopBg, Bottom, Title, Text } from './styles/card'
+import { CardWrap, ImageDiv, Info, Title, Summary, ReadMore, TechList, TechListItem } from './styles/card'
 
 export default function Card({ children, ...restProps }) {
 
 
     const controls = useAnimation()
-    const { ref, inView } = useInView({ threshold: 0, triggerOnce: true })
+    const { ref, inView } = useInView({ threshold: .5, triggerOnce: true })
 
     useEffect(() => {
         if (inView) {
@@ -34,34 +34,37 @@ export default function Card({ children, ...restProps }) {
             initial="hidden"
             animate={controls}
             variants={variants}
+            {...restProps}
         >
             { children }
-                {/* <CardTop>
-                    <CardTopBg bgImg={project.node.featuredImage.node.sourceUrl}/>
-                </CardTop>
-                <CardBottom>
-                    {project.node.title}
-                </CardBottom> */}
         </CardWrap>
     )
 }
 
-Card.Top = function CardTop({ children, ...restProps }) {
-    return <Top>{ children }</Top>
+Card.ImageDiv = function CardImageDiv({ children, ...restProps }) {
+    return <ImageDiv {...restProps}>{ children }</ImageDiv>
 }
 
-Card.TopBg = function CardTopBg({ children, ...restProps }) {
-    return <TopBg {...restProps}>{ children }</TopBg>
-}
-
-Card.Bottom = function CardBottom({ children, ...restProps }) {
-    return <Bottom>{ children }</Bottom>
+Card.Info = function CardInfo({ children, ...restProps }) {
+    return <Info {...restProps}>{ children }</Info>
 }
 
 Card.Title = function CardTitle({ children, ...restProps }) {
-    return <Title>{ children }</Title>
+    return <Title {...restProps}>{ children }</Title>
 }
 
-Card.Text = function CardText({ children, ...restProps }) {
-    return <Text>{ children }</Text>
+Card.Summary = function CardSummary({ children, ...restProps }) {
+    return <Summary {...restProps}>{ children }</Summary>
+}
+
+Card.ReadMore = function CardReadMore({ children, ...restProps }) {
+    return <ReadMore {...restProps}>{ children }</ReadMore>
+}
+
+Card.TechList = function CardTechList({ children, ...restProps }) {
+    return <TechList {...restProps}>{ children }</TechList>
+}
+
+Card.TechListItem = function CardTechListItem({ children, ...restProps }) {
+    return <TechListItem {...restProps}>{ children }</TechListItem>
 }

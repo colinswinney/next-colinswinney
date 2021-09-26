@@ -16,6 +16,7 @@ export const vars = {
 
 export const lightTheme = {
     bodyBgColor: `#fafafa`,
+    bodyBgColorLight: `#fff`,
     headingColor: c.bluegrey800,
     textColor: c.bluegrey800,
     textAccent: c.bluegrey700,
@@ -27,7 +28,6 @@ export const lightTheme = {
     guitarFillOne: c.indigo800,
     guitarFillTwo: c.deeporangeA700,
     guitarFillThree: `#470326`,
-    bodyBgColorLight: `#fff`,
     contactFormBg: `rgba(255,255,255, 0.95)`,
     contactImgBg: `/images/milwaukee-daylight.jpeg`,
     gradient: `linear-gradient(30deg, ${c.indigo800}, ${c.indigo300})`,
@@ -40,12 +40,14 @@ export const lightTheme = {
     aboutImg: "/images/headers/blob-me.png",
     projectsImg: "/images/headers/blob-screamer.png",
     contactImg: "/images/headers/blob-telephone.png",
+    techStackBtn: c.bluegrey50,
     invert: `0`,
     giraffe: c.indigo900
 }
 //d4af37
 export const darkTheme = {
     bodyBgColor: `#121212`,
+    bodyBgColorLight: c.grey900,
     headingColor: c.grey200,
     textColor: c.grey300,
     textAccent: c.grey300,
@@ -57,7 +59,6 @@ export const darkTheme = {
     guitarFillOne: c.purple800,
     guitarFillTwo: c.pink500,
     guitarFillThree: c.grey200,
-    bodyBgColorLight: c.grey900,
     contactFormBg: `rgba(33,33,33, 0.95)`,
     contactImgBg: `/images/milwaukee-night.jpeg`,
     gradient: `linear-gradient(30deg, ${c.purple600}, ${c.purple200})`,
@@ -70,6 +71,7 @@ export const darkTheme = {
     aboutImg: "/images/headers/blob-me-dark.png",
     projectsImg: "/images/headers/blob-screamer-dark.png",
     contactImg: "/images/headers/blob-telephone-dark.png",
+    techStackBtn: c.grey800,
     invert: `1`,
     giraffe: c.purple400
 }

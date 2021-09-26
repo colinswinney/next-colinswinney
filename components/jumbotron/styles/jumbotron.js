@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 
 export const JumbotronEl = styled.header`
     min-height: calc(100vh - 5.75rem);
+    padding: 1rem 0;
     display: flex;
     align-content: center;
     justify-content: center;

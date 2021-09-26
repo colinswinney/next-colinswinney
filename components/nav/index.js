@@ -53,7 +53,6 @@ const Nav = ({ children }) => {
     useEffect(() => {
         if (isNavActive) {
             document.querySelector("body").classList.add("nav-menu-active")
-            console.log('active')
         }
         else {
             document.querySelector("body").classList.remove("nav-menu-active")
@@ -107,7 +106,7 @@ const Nav = ({ children }) => {
                             { children }
                         </ListItem>
                     </List>
-                    <NavToggle onClick={handleToggle} >
+                    <NavToggle onClick={handleToggle} className={isNavActive ? "active" : null}>
                     <span className="material-icons dark">
                         { toggleIcon }
                     </span>

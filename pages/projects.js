@@ -7,8 +7,8 @@ import Jumbotron from '../components/jumbotron'
 import ImageWrap from '../components/image-wrap'
 import Main from '../components/main'
 import Card from '../components/card'
-import { FlexContainerProjects, Anchor } from '../styles/projects'
 import { getAllProjects } from '../lib/api'
+import { Container } from '../styles/global-styles';
 
 const Projects = ({ allProjects: { edges }}) => {
 
@@ -42,25 +42,33 @@ const Projects = ({ allProjects: { edges }}) => {
         </Jumbotron>
 
         <Main>
-            <FlexContainerProjects>
+            <Container>
+
             {edges.map( (project, i) => (
-                <Link href={`/projects/${project.node.slug}`} key={project.node.title} passHref>
+                <Card key={project.node.title} className={ i % 2 ? 'even' : 'odd' }>
+
+                    <Card.ImageDiv bgImg={project.node.featuredImage.node.sourceUrl} />
                     
-                    <Anchor>
-                        <Card>
-                            <Card.Top>
-                                <Card.TopBg bgImg={project.node.featuredImage.node.sourceUrl} />
-                            </Card.Top>
-                            <Card.Bottom>
-                                <Card.Title>{project.node.title}</Card.Title>
-                            </Card.Bottom>
-                        </Card>
-                    </Anchor>
-                    
-                </Link>
+                    <Card.Info>
+                        <Card.Title>{project.node.title}</Card.Title>
+                        <Card.Summary>{project.node.projectsPostType.summary}</Card.Summary>
+                        <Link href={`/projects/${project.node.slug}`} passHref>
+                            <a>
+                                <Card.ReadMore>Read More</Card.ReadMore>
+                            </a>
+                        </Link>
+                        <Card.TechList>
+                            {project.node.projectsPostType.techStack.sort().map((item, i) => (
+                                <Card.TechListItem key={item}>{item}</Card.TechListItem>
+                            ))}
+                        </Card.TechList>
                         
+                    </Card.Info>
+
+                </Card>
+                          
             ))}
-            </FlexContainerProjects>
+            </Container>
         </Main>
     </>
   )

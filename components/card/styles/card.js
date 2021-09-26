@@ -1,64 +1,90 @@
 import styled from 'styled-components'
-import { vars } from '../../../styles/global-styles'
+import { vars, AnchorButtonGradient } from '../../../styles/global-styles'
 import { motion } from 'framer-motion'
 
 
 export const CardWrap = styled(motion.div)`
+    padding: 0.375rem 0;
+    margin: 3rem auto 6rem;
+    max-width: 31.25rem;
     text-align: center;
-    width: 18.75rem;
-    padding-top: 0.375rem;
+    background: ${({ theme }) => theme.gradient};
+    box-shadow: 0 0.0625rem .1875rem rgba(0,0,0,0.12), 0 0.0625rem .125rem rgba(0,0,0,0.24);
     border-radius: 0.5rem;
     overflow: hidden;
     position: relative;
-    background: ${({ theme }) => theme.gradient};
-    box-shadow: 0 0.0625rem .1875rem rgba(0,0,0,0.12), 0 0.0625rem .125rem rgba(0,0,0,0.24);
-    transition: ${vars.transition};
+    display: grid;
+    grid-template-areas:
+        "image"
+        "info";
 
-    a &:hover, 
-    a &:focus {
-        box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.25), 0 0.25rem 0.5rem rgba(0,0,0,0.22);
+    @media (min-width: ${vars.breakpoint}) {
+        margin: 3rem 1rem 6rem;
+        max-width: none;
+        grid-template-columns: 40% 60%;
+        grid-template-areas:
+            "image info";
+
+        &.even {
+            grid-template-columns: 60% 40%;
+            grid-template-areas:
+                "info image";
+        }
     }
 `
 
-export const Top = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 12.5rem;
-    overflow: hidden;
-`
-
-export const TopBg = styled.div`
+export const ImageDiv = styled.div`
+    min-height: 15rem;
     width: 100%;
-    height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-image: url('${props => props.bgImg}');
-    transition: ${vars.transition};
-
-    a ${CardWrap}:hover &,
-    a ${CardWrap}:focus & {
-        transform: scale(1.2);
-    }
+    grid-area: image;
 `
 
-export const Bottom = styled.div`
+export const Info = styled.div`
     padding: 0 1rem;
     width: 100%;
     min-height: 6.25rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background: ${({ theme }) => theme.bodyBgColorLight};
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    grid-area: info;
 `
 
-export const Title = styled.h4`
-    margin-bottom: 0;
+export const Title = styled.h3`
+    margin: 2rem 0;
 `
 
-export const Text = styled.p`
-    margin-bottom: 0;
+export const Summary = styled.p`
+    margin: 0 0 3rem;
+    line-height: 1.4;
+`
+
+export const ReadMore = styled(AnchorButtonGradient)`
+
+    &:after {
+        background: ${({ theme }) => theme.bodyBgColorLight};
+    }
+
+`
+
+export const TechList = styled.ul`
+    margin: 3rem 0 0;
+    padding: 1rem 0;
+    width: 100%;
+    list-style-type: none;
+    border-top: 0.0625rem solid ${({ theme }) => theme.techStackBtn};
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+`
+
+export const TechListItem = styled.li`
+    padding: 0.25rem .75rem;
+    font-size: .8rem;
+    background: ${({ theme }) => theme.techStackBtn};
 `

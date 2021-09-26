@@ -89,6 +89,10 @@ export const NavToggle = styled.button`
     background: none;
     border: none;
 
+    &.active {
+        position: fixed;
+    }
+
     @media (min-width: ${vars.breakpoint}) {
         display: none;
     }

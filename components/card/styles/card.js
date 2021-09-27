@@ -21,12 +21,12 @@ export const CardWrap = styled(motion.div)`
     @media (min-width: ${vars.breakpoint}) {
         margin: 3rem 1rem 6rem;
         max-width: none;
-        grid-template-columns: 40% 60%;
+        grid-template-columns: 40% 60.01%;
         grid-template-areas:
             "image info";
 
         &.even {
-            grid-template-columns: 60% 40%;
+            grid-template-columns: 60.01% 40%;
             grid-template-areas:
                 "info image";
         }

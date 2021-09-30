@@ -42,6 +42,21 @@ class MyDocument extends Document {
             <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
             <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
             <link rel="manifest" href="/site.webmanifest"></link>
+            <title>Colin Swinney</title>
+            <meta name="title" content="Colin Swinney" />
+            <meta name="description" content="I'm a frontend web developer working with HTML, CSS, JavaScript, php, WordPress and React." />
+
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://colinswinney.com/" />
+            <meta property="og:title" content="Colin Swinney" />
+            <meta property="og:description" content="I'm a frontend web developer working with HTML, CSS, JavaScript, php, WordPress and React." />
+            <meta property="og:image" content="/images/colin-swinney-logo.png" />
+
+            <meta property="twitter:card" content="summary_large_image" />
+            <meta property="twitter:url" content="https://colinswinney.com/" />
+            <meta property="twitter:title" content="Colin Swinney" />
+            <meta property="twitter:description" content="I'm a frontend web developer working with HTML, CSS, JavaScript, php, WordPress and React." />
+            <meta property="twitter:image" content="/images/colin-swinney-logo.png" />
         </Head>
         <body>
           <Main />

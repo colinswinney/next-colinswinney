@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Head from "next/head";
 import Script from 'next/script'
 import '../normalize.css'
 import { ThemeProvider } from 'styled-components'
@@ -36,6 +37,9 @@ function MyApp({ Component, pageProps }) {
   
   return (
     <ThemeProvider theme={theme == 'light' ? lightTheme : darkTheme}>
+      <Head>
+        <title>Colin Swinney | Web Developer</title>
+      </Head>
       <GlobalStyles />
       <Nav>
         <ThemeButton onClick={toggleTheme}>

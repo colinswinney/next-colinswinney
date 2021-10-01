@@ -16,7 +16,6 @@ const Contact = () => {
     <>
         <Head>
             <title>Contact | Colin Swinney</title>
-            <meta name="description" content="Freelance Web Developer" />
         </Head>
 
         <Jumbotron>

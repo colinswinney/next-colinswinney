@@ -18,7 +18,6 @@ const Projects = ({ allProjects: { edges }}) => {
     <>
         <Head>
             <title>Projects | Colin Swinney</title>
-            <meta name="description" content="Freelance Web Developer" />
         </Head>
 
         <Jumbotron>

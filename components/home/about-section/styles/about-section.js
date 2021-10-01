@@ -17,24 +17,6 @@ export const AboutSectionInner = styled.div`
     width: 100%;
 `
 
-export const FlexContainerAboutSection = styled(FlexContainer)`
-    flex-wrap: wrap;
-
-    ${ImageWrapEl} {
-      flex: 1 0 16%;
-      margin: 0 0 0.5rem;
-      filter: grayscale(100) brightness(0.5);
-      opacity: 0.75;
-      transition: ${vars.transition};
-
-      &.active {
-        opacity: 1;
-        filter: grayscale(0) brightness(1);
-      }
-
-    }
-`
-
 export const Text = styled.p`
     font-family: ${vars.fontBody};
     margin: 0 auto 1rem;
@@ -57,20 +39,17 @@ export const GridContainerAbout = styled(GridContainer)`
 `
 
 export const ImageWrapGrid = styled(ImageWrapEl)`
-    grid-area: ${props => props.gridArea};
-    filter: grayscale(1) brightness(0.5);
-    opacity: 0.75;
-    transition: ${vars.transition};
-    width: clamp(5vw, 8vw, 4rem);
-    height: clamp(5vw, 8vw, 4rem);
-    margin: auto;
+  margin: auto;
+  width: clamp(2rem, 2rem + 4vw, 4rem);
+  height: clamp(2rem, 2rem + 4vw, 4rem);
+  grid-area: ${(props) => props.gridArea};
+  filter: grayscale(1) brightness(0.5);
+  transition: ${vars.transition};
 
-    &.active {
-      opacity: 1;
-      filter: grayscale(0) brightness(1);
-      transform: scale(1.5);
-    }
-`
+  &.active-item {
+    filter: grayscale(0) brightness(1);
+  }
+`;
 
 export const LoopTextWrap = styled.div`
     position: relative;
@@ -87,7 +66,7 @@ export const LoopTextHeading = styled.h2`
     margin: auto;
     font-size: clamp(2.5rem, 7vw, 4rem);
 
-    &.active {
+    &.active-item {
       opacity: 1;
     }
 `

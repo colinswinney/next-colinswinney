@@ -19,7 +19,6 @@ const About = ({aboutData}) => {
     <>
         <Head>
             <title>About | Colin Swinney</title>
-            <meta name="description" content="Freelance Web Developer" />
         </Head>
 
         <Jumbotron>

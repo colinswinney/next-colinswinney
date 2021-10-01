@@ -89,9 +89,9 @@ const AboutSection = () => {
         let animateText = (currText, currTextIndex) => {
             let indexText = (currTextIndex + 1) % texts.length;
             if (prevText) {
-                prevText.classList.remove("active");
+                prevText.classList.remove("active-item");
             }
-            currText.classList.add("active");
+            currText.classList.add("active-item");
             prevText = currText;
             
             setTimeout(() => {
@@ -103,9 +103,9 @@ const AboutSection = () => {
         let animateImg = (currImg, currImgIndex) => {
             let indexImg = (currImgIndex + 1) % imgs.length;
             if (prevImg) {
-                prevImg.classList.remove("active");
+                prevImg.classList.remove("active-item");
             }
-            currImg.classList.add("active");
+            currImg.classList.add("active-item");
             prevImg = currImg;
             
             setTimeout(() => {

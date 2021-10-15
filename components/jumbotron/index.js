@@ -35,10 +35,9 @@ Jumbotron.Heading = function JumbotronTitle({ children, ...restProps }) {
     }, [controls, inView]);
 
     const variants = {
-        hidden: { opacity: 0, x: "-50px"},
+        hidden: { opacity: 0},
         visible: {
             opacity: 1,
-            x: "0",
             transition: {
                 duration: 0.5,
             },
@@ -72,10 +71,9 @@ Jumbotron.SubHeading = function JumbotronSubTitle({ children, ...restProps }) {
     }, [controls, inView]);
 
     const variants = {
-        hidden: { opacity: 0, x: "-50px" },
+        hidden: { opacity: 0},
         visible: {
             opacity: 1,
-            x: "0",
             transition: {
                 duration: 0.5,
             },
@@ -109,10 +107,9 @@ Jumbotron.ButtonWrap = function JumbotronButtonWrap({children, ...restProps }) {
     }, [controls, inView]);
 
     const variants = {
-        hidden: { opacity: 0, x: "-50px" },
+        hidden: { opacity: 0},
         visible: {
             opacity: 1,
-            x: "0",
             transition: {
                 duration: 0.5,
             },
@@ -150,10 +147,9 @@ Jumbotron.RightSide = function JumbotronRightSide({ children, ...restProps }) {
     }, [controls, inView]);
 
     const variants = {
-        hidden: { opacity: 0, x: "50px" },
+        hidden: { opacity: 0},
         visible: {
             opacity: 1,
-            x: "0",
             transition: {
                 duration: 0.5,
             },

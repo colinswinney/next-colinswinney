@@ -84,11 +84,13 @@ export const ButtonWrap = styled(motion.div)`
     }
 `
 export const RightSide = styled(motion.div)`
-    width: 100%;
+	margin-top: 1rem;
+	width: 100%;
 	grid-area: image;
-    justify-self: flex-end;
+	justify-self: flex-end;
 
-    @media (min-width: ${vars.breakpoint}) {
-        max-width: 500px;
-    }
+	@media (min-width: ${vars.breakpoint}) {
+		margin-top: 0;
+		max-width: 500px;
+	}
 `;

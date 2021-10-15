@@ -14,49 +14,41 @@ import { getLogos, getHomeProjects } from '../lib/api'
 const Home = ({ logos, projects }) => {
 
   return (
-    <>
-        <Head>
-            <title>Colin Swinney</title>
-        </Head>
+		<>
+			<Head>
+				<title>Colin Swinney</title>
+			</Head>
 
-        <Jumbotron className="home-jumbotron">
-          <Jumbotron.Container>
+			<Jumbotron className="home-jumbotron">
+				<Jumbotron.Container>
+					<Jumbotron.Heading>Colin Swinney</Jumbotron.Heading>
+					<Jumbotron.SubHeading>
+						I&apos;m a web developer from Milwaukee, WI. Let&apos;s make great
+						music together.
+					</Jumbotron.SubHeading>
+					<Jumbotron.ButtonWrap>
+						<Link href="/projects" passHref>
+							<Jumbotron.Button>See My Work</Jumbotron.Button>
+						</Link>
+					</Jumbotron.ButtonWrap>
 
-              <Jumbotron.Heading>
-                Colin Swinney
-              </Jumbotron.Heading>
-              <Jumbotron.SubHeading>
-                I&apos;m a web developer from Milwaukee, WI.  Let&apos;s make great music together.
-              </Jumbotron.SubHeading>
-              <Jumbotron.ButtonWrap>
-                <Link href="/projects" passHref>
-                  <Jumbotron.Button>
-                    See My Work
-                  </Jumbotron.Button>
-                </Link>
-              </Jumbotron.ButtonWrap>
-              
+					<Jumbotron.RightSide>
+						<Guitar />
+					</Jumbotron.RightSide>
+				</Jumbotron.Container>
+			</Jumbotron>
 
-              <Guitar />
+			<Main noPadding>
+				<AboutSection />
 
-          </Jumbotron.Container>
-        </Jumbotron>
+				<ProjectsSection projects={projects} />
 
-        
+				<LogoSection logos={logos} />
 
-        <Main noPadding>
-
-          <AboutSection/>
-
-          <ProjectsSection projects={projects}/>
-
-          <LogoSection logos={logos}/>
-          
-          <ContactSection />
-          
-        </Main>
-    </>
-  )
+				<ContactSection />
+			</Main>
+		</>
+	);
 }
 
 export default Home

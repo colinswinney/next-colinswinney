@@ -13,38 +13,38 @@ const Contact = () => {
   const themeContext = useContext(ThemeContext);
 
   return (
-    <>
-        <Head>
-            <title>Contact | Colin Swinney</title>
-        </Head>
+		<>
+			<Head>
+				<title>Contact | Colin Swinney</title>
+			</Head>
 
-        <Jumbotron>
-            <Jumbotron.Container>
+			<Jumbotron>
+				<Jumbotron.Container>
+					<Jumbotron.Heading>Contact Me</Jumbotron.Heading>
+					<Jumbotron.SubHeading>
+						I&apos;d love to hear from you.
+					</Jumbotron.SubHeading>
 
-                <Jumbotron.Heading>
-                  Contact Me
-                </Jumbotron.Heading>
-                <Jumbotron.SubHeading>I&apos;d love to hear from you.</Jumbotron.SubHeading>
+					<Jumbotron.RightSide>
+						<ImageWrap transparent>
+							<Image
+								src={themeContext.contactImg}
+								height={500}
+								width={500}
+								alt="Old telephone in a blob"
+							/>
+						</ImageWrap>
+					</Jumbotron.RightSide>
+				</Jumbotron.Container>
+			</Jumbotron>
 
-                <ImageWrap transparent>
-                    <Image
-                        src={themeContext.contactImg}
-                        height={500}
-                        width={500}
-                        alt="Old telephone in a blob"
-                    />
-                </ImageWrap>
-
-            </Jumbotron.Container>
-          </Jumbotron>
-            
-        <Main>
-          <Container>
-            <Form />
-          </Container>
-        </Main>
-    </>
-  )
+			<Main>
+				<Container>
+					<Form />
+				</Container>
+			</Main>
+		</>
+	);
 }
 
 export default Contact

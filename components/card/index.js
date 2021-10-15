@@ -5,7 +5,6 @@ import { CardWrap, ImageDiv, Info, Title, Summary, ReadMore, TechList, TechListI
 
 export default function Card({ children, ...restProps }) {
 
-
     const controls = useAnimation()
     const { ref, inView } = useInView({ threshold: .5, triggerOnce: true })
 

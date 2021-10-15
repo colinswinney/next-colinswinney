@@ -1,7 +1,5 @@
 import styled from "styled-components"
 import { vars, GridContainer, AnchorButton } from '../../../styles/global-styles'
-import { ImageWrapEl } from '../../image-wrap/styles/image-wrap'
-import { GuitarEl } from '../../svg/guitar/styles/guitar'
 import { motion } from 'framer-motion'
 
 export const JumbotronEl = styled.header`
@@ -22,13 +20,6 @@ export const Container = styled(GridContainer)`
         "button"
         "image";
 
-    ${GuitarEl},
-    ${ImageWrapEl} {
-        max-width: 20rem;
-        margin: 2rem auto;
-        grid-area: image;
-    }
-
     @media (min-width: ${vars.breakpoint}) {
         margin-top: auto;
         text-align: left;
@@ -39,21 +30,16 @@ export const Container = styled(GridContainer)`
             "text . image"
             "button . image"
             ". . image";
-
-        ${GuitarEl},
-        ${ImageWrapEl} {
-            max-width: 500px;
-        }
     }
 `
 
-export const Heading = styled.h1`
+export const Heading = styled(motion.h1)`
     margin: 0;
     grid-area: title;
     color: ${({ theme }) => theme.headingColor};
 `
 
-export const SubHeading = styled.h2`
+export const SubHeading = styled(motion.h2)`
     margin: 1.25rem auto 0;
     max-width: 35ch;
     font-family: ${ vars.fontBody };
@@ -81,7 +67,7 @@ export const Button = styled(AnchorButton)`
     }
 `
 
-export const ButtonWrap = styled.div`
+export const ButtonWrap = styled(motion.div)`
     z-index: 1;
     grid-area: button;
 
@@ -97,4 +83,12 @@ export const ButtonWrap = styled.div`
         }
     }
 `
+export const RightSide = styled(motion.div)`
+    width: 100%;
+	grid-area: image;
+    justify-self: flex-end;
 
+    @media (min-width: ${vars.breakpoint}) {
+        max-width: 500px;
+    }
+`;

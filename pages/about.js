@@ -16,63 +16,59 @@ const About = ({aboutData}) => {
   const themeContext = useContext(ThemeContext);
 
   return (
-    <>
-        <Head>
-            <title>About | Colin Swinney</title>
-        </Head>
+		<>
+			<Head>
+				<title>About | Colin Swinney</title>
+			</Head>
 
-        <Jumbotron>
-          <Jumbotron.Container>
+			<Jumbotron>
+				<Jumbotron.Container>
+					<Jumbotron.Heading>About Me</Jumbotron.Heading>
+					{/* <Jumbotron.SubHeading>I ain&apos;t no cowboy coder.</Jumbotron.SubHeading> */}
+					<Jumbotron.SubHeading>
+						Sometimes I play dress up with my band.
+					</Jumbotron.SubHeading>
 
-              <Jumbotron.Heading>
-                  About Me
-              </Jumbotron.Heading>
-              {/* <Jumbotron.SubHeading>I ain&apos;t no cowboy coder.</Jumbotron.SubHeading> */}
-              <Jumbotron.SubHeading>Sometimes I play dress up with my band.</Jumbotron.SubHeading>
+					<Jumbotron.RightSide>
+						<ImageWrap transparent>
+							<Image
+								src={themeContext.aboutImg}
+								height={500}
+								width={500}
+								alt="Colin the Cowboy"
+							/>
+						</ImageWrap>
+					</Jumbotron.RightSide>
+				</Jumbotron.Container>
+			</Jumbotron>
 
-              <ImageWrap transparent>
-                  <Image
-                      src={themeContext.aboutImg}
-                      height={500}
-                      width={500}
-                      alt="Colin the Cowboy"
-                  />
-              </ImageWrap>
+			<Main>
+				<ArticleLayout>
+					<ArticleLayout.Article>
+						<ArticleLayout.Content
+							dangerouslySetInnerHTML={{ __html: aboutData.content }}
+						/>
+					</ArticleLayout.Article>
 
-          </Jumbotron.Container>
-        </Jumbotron>
+					<ArticleLayout.Aside>
+						<Widget gridArea="image">
+							<Logo />
+						</Widget>
 
-        <Main>
+						<Widget gridArea="address">
+							<Widget.Heading>Location</Widget.Heading>
+							<Widget.AddressWrap>
+								<Widget.Icon className="material-icons">language</Widget.Icon>{" "}
+								Milwaukee, WI
+							</Widget.AddressWrap>
+						</Widget>
 
-          <ArticleLayout>
+						<Widget gridArea="summary">
+							<Widget.Heading>Summary</Widget.Heading>
+							<Widget.Text>{aboutData.aboutMe.summary}</Widget.Text>
+						</Widget>
 
-            <ArticleLayout.Article>
-                <ArticleLayout.Content dangerouslySetInnerHTML={{ __html: aboutData.content} } />
-            </ArticleLayout.Article>
-
-            <ArticleLayout.Aside>
-
-                <Widget gridArea="image">
-                    <Logo />
-                </Widget>
-
-                <Widget gridArea="address">
-                    <Widget.Heading>Location</Widget.Heading>
-                    <Widget.AddressWrap>
-                        <Widget.Icon className="material-icons">language</Widget.Icon> Milwaukee, WI
-                    </Widget.AddressWrap>
-                </Widget>
-
-                
-                <Widget gridArea="summary">
-                    <Widget.Heading>Summary</Widget.Heading>
-                    <Widget.Text>
-                    {aboutData.aboutMe.summary}
-                    </Widget.Text>
-                </Widget>
-                    
-
-                {/* <Widget gridArea="tools">
+						{/* <Widget gridArea="tools">
                     <Widget.Heading>Tools</Widget.Heading>
                     <Widget.List>
                       <Widget.ListItem>
@@ -113,14 +109,11 @@ const About = ({aboutData}) => {
                       </Widget.ListItem>
                     </Widget.List>
                 </Widget> */}
-                
-            </ArticleLayout.Aside>
-
-          </ArticleLayout>
-
-        </Main>
-    </>
-  )
+					</ArticleLayout.Aside>
+				</ArticleLayout>
+			</Main>
+		</>
+	);
 }
 
 export default About

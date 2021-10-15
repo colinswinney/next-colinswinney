@@ -15,62 +15,61 @@ const Projects = ({ allProjects: { edges }}) => {
     const themeContext = useContext(ThemeContext);
 
     return (
-    <>
-        <Head>
-            <title>Projects | Colin Swinney</title>
-        </Head>
+			<>
+				<Head>
+					<title>Projects | Colin Swinney</title>
+				</Head>
 
-        <Jumbotron>
-          <Jumbotron.Container>
+				<Jumbotron>
+					<Jumbotron.Container>
+						<Jumbotron.Heading>Web Projects</Jumbotron.Heading>
+						<Jumbotron.SubHeading>What have I done?!</Jumbotron.SubHeading>
 
-              <Jumbotron.Heading>
-                Web Projects
-              </Jumbotron.Heading>
-              <Jumbotron.SubHeading>What have I done?!</Jumbotron.SubHeading>
+						<Jumbotron.RightSide>
+							<ImageWrap transparent>
+								<Image
+									src={themeContext.projectsImg}
+									height={500}
+									width={500}
+									alt="Man screaming at his computer"
+								/>
+							</ImageWrap>
+						</Jumbotron.RightSide>
+					</Jumbotron.Container>
+				</Jumbotron>
 
-            <ImageWrap transparent>
-                <Image
-                    src={themeContext.projectsImg}
-                    height={500}
-                    width={500}
-                    alt="Man screaming at his computer"
-                />
-            </ImageWrap>
+				<Main>
+					<Container>
+						{edges.map((project, i) => (
+							<Card key={project.node.title} className={i % 2 ? "even" : "odd"}>
+								<Card.ImageDiv
+									bgImg={project.node.featuredImage.node.sourceUrl}
+								/>
 
-          </Jumbotron.Container>
-        </Jumbotron>
-
-        <Main>
-            <Container>
-
-            {edges.map( (project, i) => (
-                <Card key={project.node.title} className={ i % 2 ? 'even' : 'odd' }>
-
-                    <Card.ImageDiv bgImg={project.node.featuredImage.node.sourceUrl} />
-                    
-                    <Card.Info>
-                        <Card.Title>{project.node.title}</Card.Title>
-                        <Card.Summary>{project.node.projectsPostType.summary}</Card.Summary>
-                        <Link href={`/projects/${project.node.slug}`} passHref>
-                            <a>
-                                <Card.ReadMore>Read More</Card.ReadMore>
-                            </a>
-                        </Link>
-                        <Card.TechList>
-                            {project.node.projectsPostType.techStack.sort().map((item, i) => (
-                                <Card.TechListItem key={item}>{item}</Card.TechListItem>
-                            ))}
-                        </Card.TechList>
-                        
-                    </Card.Info>
-
-                </Card>
-                          
-            ))}
-            </Container>
-        </Main>
-    </>
-  )
+								<Card.Info>
+									<Card.Title>{project.node.title}</Card.Title>
+									<Card.Summary>
+										{project.node.projectsPostType.summary}
+									</Card.Summary>
+									<Link href={`/projects/${project.node.slug}`} passHref>
+										<a>
+											<Card.ReadMore>Read More</Card.ReadMore>
+										</a>
+									</Link>
+									<Card.TechList>
+										{project.node.projectsPostType.techStack
+											.sort()
+											.map((item, i) => (
+												<Card.TechListItem key={item}>{item}</Card.TechListItem>
+											))}
+									</Card.TechList>
+								</Card.Info>
+							</Card>
+						))}
+					</Container>
+				</Main>
+			</>
+		);
 }
 
 export default Projects

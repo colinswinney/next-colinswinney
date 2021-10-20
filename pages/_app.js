@@ -6,6 +6,8 @@ import { ThemeProvider } from "styled-components";
 import useDarkMode from "use-dark-mode";
 import Nav from "../components/nav";
 import Footer from "../components/footer";
+import Moon from "../components/svg/moon";
+import Sun from "../components/svg/sun";
 import {
 	lightTheme,
 	darkTheme,
@@ -39,11 +41,7 @@ function MyApp({ Component, pageProps }) {
 			<GlobalStyles />
 			<Nav>
 				<ThemeButton onClick={darkmode.toggle}>
-					{!darkmode.value ? (
-						<span className="material-icons light">dark_mode</span>
-					) : (
-						<span className="material-icons dark">wb_sunny</span>
-					)}
+					{!darkmode.value ? <Moon /> : <Sun />}
 				</ThemeButton>
 			</Nav>
 			{isMounted && <Component {...pageProps} />}

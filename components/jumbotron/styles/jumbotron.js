@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {
 	vars,
 	GridContainer,
-	AnchorButton,
+	AnchorButtonHomeJumbo,
 } from "../../../styles/global-styles";
 import { motion } from "framer-motion";
 
@@ -59,29 +59,17 @@ export const SubHeading = styled(motion.h2)`
 	}
 `;
 
-export const Button = styled(AnchorButton)`
-	background: ${({ theme }) => theme.linkColor};
-	color: ${vars.light};
-	border: 0.125rem solid ${({ theme }) => theme.linkColor};
-
-	&:hover {
-		color: ${({ theme }) => theme.linkColor};
-		border-color: ${({ theme }) => theme.linkColor};
-		background: transparent;
-	}
-`;
-
 export const ButtonWrap = styled(motion.div)`
 	z-index: 1;
 	grid-area: button;
 
-	${Button} {
+	${AnchorButtonHomeJumbo} {
 		display: block;
 		margin: 1.5rem auto 2rem;
 	}
 
 	@media (min-width: ${vars.breakpoint}) {
-		${Button} {
+		${AnchorButtonHomeJumbo} {
 			margin: 0;
 		}
 	}

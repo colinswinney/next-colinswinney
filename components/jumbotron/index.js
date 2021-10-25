@@ -128,10 +128,6 @@ Jumbotron.ButtonWrap = function JumbotronButtonWrap({
 	);
 };
 
-Jumbotron.Button = function JumbotronButton({ children, ...restProps }) {
-	return <Button {...restProps}>{children}</Button>;
-};
-
 Jumbotron.RightSide = function JumbotronRightSide({ children, ...restProps }) {
 	const controls = useAnimation();
 	const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true });

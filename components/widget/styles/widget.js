@@ -26,7 +26,10 @@ export const List = styled.ul`
 	list-style-type: none;
 `;
 
-export const ListItem = styled.li``;
+export const ListItem = styled.li`
+	padding-left: 1.0625rem;
+	position: relative;
+`;
 
 export const Icon = styled.span`
 	font-size: 0.8rem !important;

@@ -10,6 +10,7 @@ import Guitar from "../components/svg/guitar";
 import ContactSection from "../components/home/contact-section";
 import Form from "../components/form";
 import { getLogos, getHomeProjects } from "../lib/api";
+import { AnchorButtonHomeJumbo } from "../styles/global-styles";
 
 const Home = ({ logos, projects }) => {
 	return (
@@ -27,7 +28,9 @@ const Home = ({ logos, projects }) => {
 					</Jumbotron.SubHeading>
 					<Jumbotron.ButtonWrap>
 						<Link href="/projects" passHref>
-							<Jumbotron.Button>See My Work</Jumbotron.Button>
+							<AnchorButtonHomeJumbo>
+								See My Work
+							</AnchorButtonHomeJumbo>
 						</Link>
 					</Jumbotron.ButtonWrap>
 

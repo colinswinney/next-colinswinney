@@ -272,27 +272,6 @@ export const GlobalStyles = createGlobalStyle`
     strong {
         font-weight: bold;
     }
-
-    .material-icons.light,
-    .material-icons.dark {
-        margin: 0;
-        color: ${({ theme }) => theme.linkHoverColor};
-        font-size: 2rem;
-        background-image: ${({ theme }) => theme.gradient};
-        background-size: 100%;
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        -webkit-text-fill-color: transparent; 
-        -moz-text-fill-color: transparent;
-
-        @media (min-width: ${vars.breakpoint}) {
-            font-size: 2.5rem;
-        }
-
-        &:hover {
-            background-image: ${({ theme }) => theme.themeButtonGradientHover};
-        }
-    }
 `;
 
 export const ThemeButton = styled.button`
@@ -395,5 +374,17 @@ export const AnchorButtonGradient = styled(AnchorButton)`
 		-moz-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		-moz-text-fill-color: transparent;
+	}
+`;
+
+export const AnchorButtonHomeJumbo = styled(AnchorButton)`
+	background: ${({ theme }) => theme.linkColor};
+	color: ${vars.light};
+	border: 0.125rem solid ${({ theme }) => theme.linkColor};
+
+	&:hover {
+		color: ${({ theme }) => theme.linkColor};
+		border-color: ${({ theme }) => theme.linkColor};
+		background: transparent;
 	}
 `;

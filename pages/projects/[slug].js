@@ -2,12 +2,13 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Link from "next/link";
-import { Container, AnchorButtonGradient } from "../../styles/global-styles";
 import { ProjectsNav, ProjectsListAnchor } from "../../styles/projects";
 import SlugHeader from "../../components/slugHeader";
 import ArticleLayout from "../../components/article-layout";
 import Widget from "../../components/widget";
 import Main from "../../components/main";
+import Globe from "../../components/svg/globe";
+import Wrench from "../../components/svg/wrench";
 import ImageWrap from "../../components/image-wrap";
 import {
 	getAllProjectsWithSlug,
@@ -59,9 +60,7 @@ const Project = ({ projectData, allProjectsData }) => {
 							<Widget gridArea="address">
 								<Widget.Heading>Address</Widget.Heading>
 								<Widget.AddressWrap>
-									<Widget.Icon className="material-icons">
-										language
-									</Widget.Icon>{" "}
+									<Globe />{" "}
 									<a
 										href={
 											projectData.projectsPostType
@@ -97,10 +96,7 @@ const Project = ({ projectData, allProjectsData }) => {
 									(item) => {
 										return (
 											<Widget.ListItem key={item}>
-												<Widget.Icon className="material-icons">
-													build
-												</Widget.Icon>{" "}
-												{item}
+												<Wrench /> {item}
 											</Widget.ListItem>
 										);
 									}

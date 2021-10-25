@@ -33,10 +33,7 @@ class MyDocument extends Document {
 			<Html lang="en">
 				<Head>
 					<link href="/fonts/fonts.css" rel="stylesheet" />
-					<link
-						rel="stylesheet"
-						href="https://fonts.googleapis.com/icon?family=Material+Icons"
-					/>
+
 					<link
 						rel="apple-touch-icon"
 						sizes="180x180"

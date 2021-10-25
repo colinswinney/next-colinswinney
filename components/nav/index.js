@@ -61,7 +61,7 @@ const Nav = ({ children }) => {
 				<NavbarInner>
 					<Link href="/" passHref>
 						<a className={router.pathname == "/" ? "active" : ""}>
-							Test
+							<Logo />
 						</a>
 					</Link>
 					<List className={isNavActive ? "active" : null}>
@@ -72,7 +72,7 @@ const Nav = ({ children }) => {
 										router.pathname == "/" ? "active" : ""
 									}
 								>
-									Test
+									<Logo />
 								</a>
 							</Link>
 						</ListItem>

@@ -1,110 +1,92 @@
-import { useForm, ValidationError } from '@formspree/react'
-import { FormEl, Legend, Input, Label, TextArea, SubmitWrap, SubmitButton } from './styles/form'
+import { useForm, ValidationError } from "@formspree/react";
+import {
+	FormEl,
+	Legend,
+	Input,
+	Label,
+	TextArea,
+	SubmitWrap,
+	SubmitButton,
+} from "./styles/form";
 
 const Form = () => {
+	const [state, handleSubmit] = useForm("mzbjezon");
+	if (state.succeeded) {
+		return <p>Thank you, I will be in touch as soon as possible!</p>;
+	}
+	return (
+		<FormEl onSubmit={handleSubmit}>
+			<Legend>
+				Email me at{" "}
+				<a href="mailto:colinjswinney@gmail.com?subject=Hi Colin!">
+					colinjswinney@gmail.com
+				</a>
+				<br />
+				or send a message below!
+			</Legend>
 
-  const [state, handleSubmit] = useForm("mzbjezon");
-  if (state.succeeded) {
-      return <p>Thank you, I will be in touch as soon as possible!</p>;
-  }
-  return (
-    <FormEl onSubmit={handleSubmit}>
-        
-        <Legend>Email me at <a href="mailto:colinjswinney@gmail.com?subject=Hi Colin!">colinjswinney@gmail.com</a><br/>or send a message below!</Legend>
-
-        {/* <label htmlFor="name">
+			{/* <label htmlFor="name">
         Name
         </label> */}
 
-        <Input
-        id="name"
-        type="name" 
-        name="name"
-        placeholder="Name"
-        />
+			<Input id="name" type="name" name="name" placeholder="Name" />
 
+			<ValidationError prefix="name" field="name" errors={state.errors} />
 
-        <ValidationError 
-        prefix="name" 
-        field="name"
-        errors={state.errors}
-        />
-
-        {/* <label htmlFor="email">
+			{/* <label htmlFor="email">
         Email
         </label> */}
 
-        <Input
-        id="email"
-        type="email" 
-        name="email"
-        placeholder="Email"
-        />
+			<Input id="email" type="email" name="email" placeholder="Email" />
 
+			<ValidationError
+				prefix="Email"
+				field="email"
+				errors={state.errors}
+			/>
 
-        <ValidationError 
-        prefix="Email" 
-        field="email"
-        errors={state.errors}
-        />
-
-        {/* <label htmlFor="phone">
+			{/* <label htmlFor="phone">
         Phone
         </label> */}
 
-        <Input
-        id="phone"
-        type="tel" 
-        name="phone"
-        placeholder="Phone"
-        />
+			<Input id="phone" type="tel" name="phone" placeholder="Phone" />
 
+			<ValidationError
+				prefix="phone"
+				field="phone"
+				errors={state.errors}
+			/>
 
-        <ValidationError 
-        prefix="phone" 
-        field="phone"
-        errors={state.errors}
-        />
+			<Input
+				id="company"
+				type="text"
+				name="company"
+				placeholder="Company"
+			/>
 
-        
-        <Input
-        id="company"
-        type="text" 
-        name="company"
-        placeholder="Company"
-        />
+			<ValidationError
+				prefix="company"
+				field="company"
+				errors={state.errors}
+			/>
 
+			<Label htmlFor="message">Message</Label>
 
-        <ValidationError 
-        prefix="company" 
-        field="company"
-        errors={state.errors}
-        />
+			<TextArea id="message" name="message" />
 
-        <Label htmlFor="message">
-        Message
-        </Label>
+			<ValidationError
+				prefix="Message"
+				field="message"
+				errors={state.errors}
+			/>
 
-        <TextArea
-        id="message"
-        name="message"
-        />
-        
-
-        <ValidationError 
-        prefix="Message" 
-        field="message"
-        errors={state.errors}
-        />
-
-        <SubmitWrap>
-          <SubmitButton type="submit" disabled={state.submitting}>
-            <span>Submit</span>
-          </SubmitButton>
-        </SubmitWrap>
-        
-    </FormEl>
-  );
-}
+			<SubmitWrap>
+				<SubmitButton type="submit" disabled={state.submitting}>
+					<span>Submit</span>
+				</SubmitButton>
+			</SubmitWrap>
+		</FormEl>
+	);
+};
 
 export default Form;

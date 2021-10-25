@@ -1,95 +1,115 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { ServerStyleSheet } from 'styled-components'
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { ServerStyleSheet } from "styled-components";
 
 class MyDocument extends Document {
+	static async getInitialProps(ctx) {
+		const sheet = new ServerStyleSheet();
+		const originalRenderPage = ctx.renderPage;
 
-  static async getInitialProps(ctx) {
-    const sheet = new ServerStyleSheet()
-    const originalRenderPage = ctx.renderPage
+		try {
+			ctx.renderPage = () =>
+				originalRenderPage({
+					enhanceApp: (App) => (props) =>
+						sheet.collectStyles(<App {...props} />),
+				});
 
-    try {
-      ctx.renderPage = () =>
-        originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
-        })
+			const initialProps = await Document.getInitialProps(ctx);
+			return {
+				...initialProps,
+				styles: (
+					<>
+						{initialProps.styles}
+						{sheet.getStyleElement()}
+					</>
+				),
+			};
+		} finally {
+			sheet.seal();
+		}
+	}
 
-      const initialProps = await Document.getInitialProps(ctx)
-      return {
-        ...initialProps,
-        styles: (
-          <>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ),
-      }
-    } finally {
-      sheet.seal()
-    }
-  }
+	render() {
+		return (
+			<Html lang="en">
+				<Head>
+					<link href="/fonts/fonts.css" rel="stylesheet" />
+					<link
+						rel="stylesheet"
+						href="https://fonts.googleapis.com/icon?family=Material+Icons"
+					/>
+					<link
+						rel="apple-touch-icon"
+						sizes="180x180"
+						href="/apple-touch-icon.png"
+					/>
+					<link
+						rel="icon"
+						type="image/png"
+						sizes="32x32"
+						href="/favicon-32x32.png"
+					/>
+					<link
+						rel="icon"
+						type="image/png"
+						sizes="16x16"
+						href="/favicon-16x16.png"
+					/>
+					<link rel="manifest" href="/site.webmanifest"></link>
+					<meta
+						name="title"
+						content="Colin Swinney | Web Developer"
+					/>
+					<meta
+						name="description"
+						content="I'm a frontend web developer from Milwaukee, WI working with HTML, CSS, JavaScript, php, WordPress and React."
+					/>
 
-  render() {
-    return (
-      <Html lang="en">
-        <Head>
-          <link href="/fonts/fonts.css" rel="stylesheet" />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/apple-touch-icon.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/favicon-32x32.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/favicon-16x16.png"
-          />
-          <link rel="manifest" href="/site.webmanifest"></link>
-          <meta name="title" content="Colin Swinney | Web Developer" />
-          <meta
-            name="description"
-            content="I'm a frontend web developer from Milwaukee, WI working with HTML, CSS, JavaScript, php, WordPress and React."
-          />
+					<meta property="og:type" content="website" />
+					<meta
+						property="og:url"
+						content="https://colinswinney.com/"
+					/>
+					<meta
+						property="og:title"
+						content="Colin Swinney | Web Developer"
+					/>
+					<meta
+						property="og:description"
+						content="I'm a frontend web developer from Milwaukee, WI working with HTML, CSS, JavaScript, php, WordPress and React."
+					/>
+					<meta
+						property="og:image"
+						content="/images/colin-swinney-logo.png"
+					/>
 
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://colinswinney.com/" />
-          <meta property="og:title" content="Colin Swinney | Web Developer" />
-          <meta
-            property="og:description"
-            content="I'm a frontend web developer from Milwaukee, WI working with HTML, CSS, JavaScript, php, WordPress and React."
-          />
-          <meta property="og:image" content="/images/colin-swinney-logo.png" />
-
-          <meta property="twitter:card" content="summary_large_image" />
-          <meta property="twitter:url" content="https://colinswinney.com/" />
-          <meta property="twitter:title" content="Colin Swinney | Web Developer" />
-          <meta
-            property="twitter:description"
-            content="I'm a frontend web developer from Milwaukee, WI working with HTML, CSS, JavaScript, php, WordPress and React."
-          />
-          <meta
-            property="twitter:image"
-            content="/images/colin-swinney-logo.png"
-          />
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
+					<meta
+						property="twitter:card"
+						content="summary_large_image"
+					/>
+					<meta
+						property="twitter:url"
+						content="https://colinswinney.com/"
+					/>
+					<meta
+						property="twitter:title"
+						content="Colin Swinney | Web Developer"
+					/>
+					<meta
+						property="twitter:description"
+						content="I'm a frontend web developer from Milwaukee, WI working with HTML, CSS, JavaScript, php, WordPress and React."
+					/>
+					<meta
+						property="twitter:image"
+						content="/images/colin-swinney-logo.png"
+					/>
+				</Head>
+				<body>
+					<Main />
+					<NextScript />
+				</body>
+			</Html>
+		);
+	}
 }
 
-export default MyDocument
+export default MyDocument;

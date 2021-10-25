@@ -1,21 +1,19 @@
-import { useEffect, useContext } from 'react'
-import Head from 'next/head'
-import Image from 'next/image'
-import { ThemeContext } from 'styled-components';
-import Jumbotron from '../components/jumbotron'
-import Main from '../components/main'
-import ArticleLayout from '../components/article-layout'
-import Widget from '../components/widget'
-import Logo from '../components/svg/logo'
-import ImageWrap from '../components/image-wrap'
-import { getAboutMe } from '../lib/api'
+import { useEffect, useContext } from "react";
+import Head from "next/head";
+import Image from "next/image";
+import { ThemeContext } from "styled-components";
+import Jumbotron from "../components/jumbotron";
+import Main from "../components/main";
+import ArticleLayout from "../components/article-layout";
+import Widget from "../components/widget";
+import Logo from "../components/svg/logo";
+import ImageWrap from "../components/image-wrap";
+import { getAboutMe } from "../lib/api";
 
+const About = ({ aboutData }) => {
+	const themeContext = useContext(ThemeContext);
 
-const About = ({aboutData}) => {
-
-  const themeContext = useContext(ThemeContext);
-
-  return (
+	return (
 		<>
 			<Head>
 				<title>About | Colin Swinney</title>
@@ -46,7 +44,9 @@ const About = ({aboutData}) => {
 				<ArticleLayout>
 					<ArticleLayout.Article>
 						<ArticleLayout.Content
-							dangerouslySetInnerHTML={{ __html: aboutData.content }}
+							dangerouslySetInnerHTML={{
+								__html: aboutData.content,
+							}}
 						/>
 					</ArticleLayout.Article>
 
@@ -58,14 +58,18 @@ const About = ({aboutData}) => {
 						<Widget gridArea="address">
 							<Widget.Heading>Location</Widget.Heading>
 							<Widget.AddressWrap>
-								<Widget.Icon className="material-icons">language</Widget.Icon>{" "}
+								<Widget.Icon className="material-icons">
+									language
+								</Widget.Icon>{" "}
 								Milwaukee, WI
 							</Widget.AddressWrap>
 						</Widget>
 
 						<Widget gridArea="summary">
 							<Widget.Heading>Summary</Widget.Heading>
-							<Widget.Text>{aboutData.aboutMe.summary}</Widget.Text>
+							<Widget.Text>
+								{aboutData.aboutMe.summary}
+							</Widget.Text>
 						</Widget>
 
 						{/* <Widget gridArea="tools">
@@ -114,15 +118,15 @@ const About = ({aboutData}) => {
 			</Main>
 		</>
 	);
-}
+};
 
-export default About
+export default About;
 
 export async function getStaticProps() {
-  const aboutData = await getAboutMe();
-  return {
-      props: {
-        aboutData: aboutData.page
-      }
-  };
+	const aboutData = await getAboutMe();
+	return {
+		props: {
+			aboutData: aboutData.page,
+		},
+	};
 }

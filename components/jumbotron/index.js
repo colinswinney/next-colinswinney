@@ -8,11 +8,10 @@ import {
 	SubHeading,
 	ButtonWrap,
 	Button,
-    RightSide
+	RightSide,
 } from "./styles/jumbotron";
 
 export default function Jumbotron({ children, ...restProps }) {
-
 	return <JumbotronEl {...restProps}>{children}</JumbotronEl>;
 }
 
@@ -21,28 +20,27 @@ Jumbotron.Container = function JumbotronContainer({ children, ...restProps }) {
 };
 
 Jumbotron.Heading = function JumbotronTitle({ children, ...restProps }) {
+	const controls = useAnimation();
+	const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true });
 
-    const controls = useAnimation();
-    const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true });
+	useEffect(() => {
+		if (inView) {
+			controls.start("visible");
+		}
+		if (!inView) {
+			controls.start("hidden");
+		}
+	}, [controls, inView]);
 
-    useEffect(() => {
-        if (inView) {
-            controls.start("visible");
-        }
-        if (!inView) {
-            controls.start("hidden");
-        }
-    }, [controls, inView]);
-
-    const variants = {
-        hidden: { opacity: 0},
-        visible: {
-            opacity: 1,
-            transition: {
-                duration: 0.5,
-            },
-        },
-    };
+	const variants = {
+		hidden: { opacity: 0 },
+		visible: {
+			opacity: 1,
+			transition: {
+				duration: 0.5,
+			},
+		},
+	};
 	return (
 		<Heading
 			ref={ref}
@@ -57,28 +55,27 @@ Jumbotron.Heading = function JumbotronTitle({ children, ...restProps }) {
 };
 
 Jumbotron.SubHeading = function JumbotronSubTitle({ children, ...restProps }) {
+	const controls = useAnimation();
+	const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true });
 
-    const controls = useAnimation();
-    const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true });
+	useEffect(() => {
+		if (inView) {
+			controls.start("visible");
+		}
+		if (!inView) {
+			controls.start("hidden");
+		}
+	}, [controls, inView]);
 
-    useEffect(() => {
-        if (inView) {
-            controls.start("visible");
-        }
-        if (!inView) {
-            controls.start("hidden");
-        }
-    }, [controls, inView]);
-
-    const variants = {
-        hidden: { opacity: 0},
-        visible: {
-            opacity: 1,
-            transition: {
-                duration: 0.5,
-            },
-        },
-    };
+	const variants = {
+		hidden: { opacity: 0 },
+		visible: {
+			opacity: 1,
+			transition: {
+				duration: 0.5,
+			},
+		},
+	};
 	return (
 		<SubHeading
 			ref={ref}
@@ -92,29 +89,31 @@ Jumbotron.SubHeading = function JumbotronSubTitle({ children, ...restProps }) {
 	);
 };
 
-Jumbotron.ButtonWrap = function JumbotronButtonWrap({children, ...restProps }) {
+Jumbotron.ButtonWrap = function JumbotronButtonWrap({
+	children,
+	...restProps
+}) {
+	const controls = useAnimation();
+	const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true });
 
-    const controls = useAnimation();
-    const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true });
+	useEffect(() => {
+		if (inView) {
+			controls.start("visible");
+		}
+		if (!inView) {
+			controls.start("hidden");
+		}
+	}, [controls, inView]);
 
-    useEffect(() => {
-        if (inView) {
-            controls.start("visible");
-        }
-        if (!inView) {
-            controls.start("hidden");
-        }
-    }, [controls, inView]);
-
-    const variants = {
-        hidden: { opacity: 0},
-        visible: {
-            opacity: 1,
-            transition: {
-                duration: 0.5,
-            },
-        },
-    };
+	const variants = {
+		hidden: { opacity: 0 },
+		visible: {
+			opacity: 1,
+			transition: {
+				duration: 0.5,
+			},
+		},
+	};
 
 	return (
 		<ButtonWrap
@@ -134,27 +133,27 @@ Jumbotron.Button = function JumbotronButton({ children, ...restProps }) {
 };
 
 Jumbotron.RightSide = function JumbotronRightSide({ children, ...restProps }) {
-    const controls = useAnimation();
-    const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true });
+	const controls = useAnimation();
+	const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true });
 
-    useEffect(() => {
-        if (inView) {
-            controls.start("visible");
-        }
-        if (!inView) {
-            controls.start("hidden");
-        }
-    }, [controls, inView]);
+	useEffect(() => {
+		if (inView) {
+			controls.start("visible");
+		}
+		if (!inView) {
+			controls.start("hidden");
+		}
+	}, [controls, inView]);
 
-    const variants = {
-        hidden: { opacity: 0},
-        visible: {
-            opacity: 1,
-            transition: {
-                duration: 0.5,
-            },
-        },
-    };
+	const variants = {
+		hidden: { opacity: 0 },
+		visible: {
+			opacity: 1,
+			transition: {
+				duration: 0.5,
+			},
+		},
+	};
 	return (
 		<RightSide
 			ref={ref}

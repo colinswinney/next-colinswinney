@@ -78,11 +78,6 @@ export const darkTheme = {
 
 export const GlobalStyles = createGlobalStyle`
 
-@font-face {
-      font-family: 'Material Icons';
-      font-display: block;
-    }
-
     @keyframes guitarBody {
         0% {
             fill: ${({ theme }) => theme.guitarFillOne};
@@ -283,7 +278,6 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0;
         color: ${({ theme }) => theme.linkHoverColor};
         font-size: 2rem;
-        font-family: 'Material Icons' !important;
         background-image: ${({ theme }) => theme.gradient};
         background-size: 100%;
         -webkit-background-clip: text;

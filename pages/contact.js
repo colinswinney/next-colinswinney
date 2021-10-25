@@ -1,18 +1,17 @@
-import { useEffect, useContext } from 'react'
-import Head from 'next/head'
-import Image from 'next/image'
-import { ThemeContext } from 'styled-components'
-import Main from '../components/main'
-import Form from '../components/form'
-import Jumbotron from '../components/jumbotron'
-import ImageWrap from '../components/image-wrap'
-import { Container } from '../styles/global-styles'
+import { useEffect, useContext } from "react";
+import Head from "next/head";
+import Image from "next/image";
+import { ThemeContext } from "styled-components";
+import Main from "../components/main";
+import Form from "../components/form";
+import Jumbotron from "../components/jumbotron";
+import ImageWrap from "../components/image-wrap";
+import { Container } from "../styles/global-styles";
 
 const Contact = () => {
+	const themeContext = useContext(ThemeContext);
 
-  const themeContext = useContext(ThemeContext);
-
-  return (
+	return (
 		<>
 			<Head>
 				<title>Contact | Colin Swinney</title>
@@ -45,6 +44,6 @@ const Contact = () => {
 			</Main>
 		</>
 	);
-}
+};
 
-export default Contact
+export default Contact;

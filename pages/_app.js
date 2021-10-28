@@ -20,8 +20,9 @@ function MyApp({ Component, pageProps }) {
 	const router = useRouter();
 
 	const [isMounted, setIsMounted] = useState(false);
-	const darkmode = useDarkMode(true);
-	const theme = darkmode.value ? darkTheme : lightTheme;
+	// const darkmode = useDarkMode(true);
+	// const theme = darkmode.value ? darkTheme : lightTheme;
+	const theme = darkTheme;
 
 	useEffect(() => {
 		setIsMounted(true);
@@ -40,9 +41,9 @@ function MyApp({ Component, pageProps }) {
 			</Head>
 			<GlobalStyles />
 			<Nav>
-				<ThemeButton onClick={darkmode.toggle}>
+				{/* <ThemeButton onClick={darkmode.toggle}>
 					{!darkmode.value ? <Moon /> : <Sun />}
-				</ThemeButton>
+				</ThemeButton> */}
 			</Nav>
 			{isMounted && <Component {...pageProps} />}
 			<Footer />

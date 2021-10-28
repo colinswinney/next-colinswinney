@@ -31,6 +31,7 @@ const Contact = () => {
 								height={500}
 								width={500}
 								alt="Old telephone in a blob"
+								priority
 							/>
 						</ImageWrap>
 					</Jumbotron.RightSide>

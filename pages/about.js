@@ -35,6 +35,7 @@ const About = ({ aboutData }) => {
 								height={500}
 								width={500}
 								alt="Colin the Cowboy"
+								priority
 							/>
 						</ImageWrap>
 					</Jumbotron.RightSide>

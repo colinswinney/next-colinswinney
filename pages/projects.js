@@ -33,6 +33,7 @@ const Projects = ({ allProjects: { edges } }) => {
 								height={500}
 								width={500}
 								alt="Man screaming at his computer"
+								priority
 							/>
 						</ImageWrap>
 					</Jumbotron.RightSide>

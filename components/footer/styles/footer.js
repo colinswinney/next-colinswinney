@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FlexContainer } from "../../../styles/global-styles";
 import { GitHubEl } from "../../svg/github/styles/github";
+import { CodepenEl } from "../../svg/codepen/styles/codepen";
 import { LinkedInEl } from "../../svg/linkedin/styles/linkedin";
 
 export const FooterEl = styled.footer``;
@@ -21,7 +22,8 @@ export const IconWrap = styled.div`
 	margin: 0 0.5rem;
 
 	${GitHubEl},
-	${LinkedInEl} {
+	${LinkedInEl},
+	${CodepenEl} {
 		fill: ${({ theme }) => theme.linkColor};
 
 		&:hover {

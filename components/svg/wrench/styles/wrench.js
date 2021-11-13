@@ -8,6 +8,7 @@ export const WrenchEl = styled.svg`
 	margin: auto;
 	left: 0;
 	top: 0.5rem;
+	fill: ${({ theme }) => theme.textColor};
 
 	@media (min-width: ${vars.breakpoint}) {
 		top: 0.75rem;

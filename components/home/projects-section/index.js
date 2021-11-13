@@ -13,38 +13,10 @@ import {
 	GradientText,
 	AnchorButtonGradient,
 } from "../../../styles/global-styles";
+import Card from "../../card";
 
 const ProjectsSection = ({ children, projects }) => {
 	const projectsArray = Object.values(projects);
-
-	const alphabet = [
-		"A",
-		"B",
-		"C",
-		"D",
-		"E",
-		"F",
-		"G",
-		"H",
-		"I",
-		"J",
-		"K",
-		"L",
-		"M",
-		"N",
-		"O",
-		"P",
-		"Q",
-		"R",
-		"S",
-		"T",
-		"U",
-		"V",
-		"W",
-		"X",
-		"Y",
-		"Z",
-	];
 
 	return (
 		<ProjectsSectionWrap>
@@ -55,26 +27,44 @@ const ProjectsSection = ({ children, projects }) => {
 					</Heading>
 				</FlexBar>
 
-				<GridContainerProjects>
+				<Container>
 					{projectsArray.map((project, i) => (
-						<Cell
-							className={`${i < 4 ? "tall" : ""} ${alphabet[
-								i
-							].toLowerCase()}`}
-							bgImg={project.featuredImage.node.mediaItemUrl}
+						<Card
 							key={project.title}
+							className={i % 2 ? "even" : "odd"}
 						>
-							<Link href={`/projects/${project.slug}`} passHref>
-								<ProjectAnchor
-									afterTitle={project.title}
-									aria-label={project.title}
-								/>
-							</Link>
-						</Cell>
-					))}
-				</GridContainerProjects>
+							<Card.ImageDiv
+								bgImg={project.featuredImage.node.sourceUrl}
+							/>
 
-				<FlexBar className="right-align">
+							<Card.Info>
+								<Card.Title>{project.title}</Card.Title>
+								<Card.Summary>
+									{project.projectsPostType.summary}
+								</Card.Summary>
+								<Link
+									href={`/projects/${project.slug}`}
+									passHref
+								>
+									<a>
+										<Card.ReadMore>Read More</Card.ReadMore>
+									</a>
+								</Link>
+								<Card.TechList>
+									{project.projectsPostType.techStack
+										.sort()
+										.map((item, i) => (
+											<Card.TechListItem key={item}>
+												{item}
+											</Card.TechListItem>
+										))}
+								</Card.TechList>
+							</Card.Info>
+						</Card>
+					))}
+				</Container>
+
+				<FlexBar className="bottom">
 					<Link href="/projects" passHref>
 						<AnchorButtonGradient>View All</AnchorButtonGradient>
 					</Link>

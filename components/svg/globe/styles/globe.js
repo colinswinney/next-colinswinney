@@ -8,6 +8,7 @@ export const GlobeEl = styled.svg`
 	margin: auto;
 	left: 0;
 	top: 0.125rem;
+	fill: ${({ theme }) => theme.textColor};
 
 	@media (min-width: ${vars.breakpoint}) {
 		top: 0.3175rem;

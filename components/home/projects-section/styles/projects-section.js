@@ -29,14 +29,18 @@ export const ProjectsSectionInner = styled.div`
 export const FlexBar = styled(FlexContainer)`
 	padding: 0 1rem;
 	position: relative;
+	text-align: center;
+	justify-content: center;
 
-	&.right-align {
-		justify-content: flex-end;
+	&.bottom {
+		margin-top: -1rem;
 		z-index: 1;
 	}
 `;
 
-export const Heading = styled.h2``;
+export const Heading = styled.h2`
+	margin-bottom: 0;
+`;
 
 export const Text = styled.p``;
 

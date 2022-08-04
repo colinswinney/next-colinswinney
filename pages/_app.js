@@ -3,7 +3,7 @@ import Head from "next/head";
 import Script from "next/script";
 import "../normalize.css";
 import { ThemeProvider } from "styled-components";
-import useDarkMode from "use-dark-mode";
+import useDarkMode from "@fisch0920/use-dark-mode";
 import Nav from "../components/nav";
 import Footer from "../components/footer";
 import Moon from "../components/svg/moon";
@@ -20,9 +20,8 @@ function MyApp({ Component, pageProps }) {
 	const router = useRouter();
 
 	const [isMounted, setIsMounted] = useState(false);
-	// const darkmode = useDarkMode(true);
-	// const theme = darkmode.value ? darkTheme : lightTheme;
-	const theme = darkTheme;
+	const darkmode = useDarkMode(true);
+	const theme = darkmode.value ? darkTheme : lightTheme;
 
 	useEffect(() => {
 		setIsMounted(true);
@@ -41,9 +40,9 @@ function MyApp({ Component, pageProps }) {
 			</Head>
 			<GlobalStyles />
 			<Nav>
-				{/* <ThemeButton onClick={darkmode.toggle}>
+				<ThemeButton onClick={darkmode.toggle}>
 					{!darkmode.value ? <Moon /> : <Sun />}
-				</ThemeButton> */}
+				</ThemeButton>
 			</Nav>
 			{isMounted && <Component {...pageProps} />}
 			<Footer />

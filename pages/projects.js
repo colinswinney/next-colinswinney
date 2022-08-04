@@ -62,7 +62,7 @@ const Projects = ({ allProjects: { edges } }) => {
 									href={`/projects/${project.node.slug}`}
 									passHref
 								>
-									<a>
+									<a className="no-hover-decoration">
 										<Card.ReadMore>Read More</Card.ReadMore>
 									</a>
 								</Link>

@@ -46,7 +46,7 @@ const ProjectsSection = ({ children, projects }) => {
 									href={`/projects/${project.slug}`}
 									passHref
 								>
-									<a>
+									<a className="no-hover-decoration">
 										<Card.ReadMore>Read More</Card.ReadMore>
 									</a>
 								</Link>
@@ -66,7 +66,9 @@ const ProjectsSection = ({ children, projects }) => {
 
 				<FlexBar className="bottom">
 					<Link href="/projects" passHref>
-						<AnchorButtonGradient>View All</AnchorButtonGradient>
+						<a className="no-hover-decoration">
+							<AnchorButtonGradient>View All</AnchorButtonGradient>
+						</a>
 					</Link>
 				</FlexBar>
 			</ProjectsSectionInner>

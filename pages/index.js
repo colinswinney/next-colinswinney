@@ -28,9 +28,11 @@ const Home = ({ logos, projects }) => {
 					</Jumbotron.SubHeading>
 					<Jumbotron.ButtonWrap>
 						<Link href="/projects" passHref>
-							<AnchorButtonHomeJumbo>
-								See My Work
-							</AnchorButtonHomeJumbo>
+							<a className="no-hover-decoration">
+								<AnchorButtonHomeJumbo>
+									See My Work
+								</AnchorButtonHomeJumbo>
+							</a>
 						</Link>
 					</Jumbotron.ButtonWrap>
 

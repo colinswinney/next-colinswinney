@@ -129,17 +129,19 @@ export const GlobalStyles = createGlobalStyle`
         background-image: none;
         -webkit-background-clip: initial;
         -moz-background-clip: initial;
-        -webkit-text-fill-color: initial; 
+		background-clip: text;
+        -webkit-text-fill-color: initial;
         -moz-text-fill-color: initial;
         background: ${({ theme }) => theme.blobColor};
     }
-    
+
     ::selection {
         color: black;
         background-image: none;
         -webkit-background-clip: initial;
         -moz-background-clip: initial;
-        -webkit-text-fill-color: initial; 
+		background-clip: text;
+        -webkit-text-fill-color: initial;
         -moz-text-fill-color: initial;
         background: ${({ theme }) => theme.blobColor};
     }
@@ -184,27 +186,27 @@ export const GlobalStyles = createGlobalStyle`
         body {
             font-size: 1.2rem;
         }
-        
+
         h1 {
             font-size: 4.2rem;
         }
-    
+
         h2 {
             font-size: 3.15rem;
         }
-    
+
         h3 {
             font-size: 2.36rem;
         }
-    
+
         h4 {
             font-size: 1.77rem;
         }
-    
+
         h5 {
             font-size: 1.33rem;
         }
-    
+
         h6 {
             font-size: 1rem;
         }
@@ -220,7 +222,15 @@ export const GlobalStyles = createGlobalStyle`
         text-decoration: none;
         font-weight: 700;
 
-        &:hover {
+		&.no-hover-decoration {
+			&:hover,
+			&:focus {
+				text-decoration: none;
+			}
+		}
+
+        &:hover,
+		&:focus-visible {
             color: ${({ theme }) => theme.linkColorHover};
             text-decoration: underline;
             cursor: pointer;
@@ -272,6 +282,16 @@ export const GlobalStyles = createGlobalStyle`
     strong {
         font-weight: bold;
     }
+
+	.sr-only:not(:focus):not(:active) {
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
+	}
 `;
 
 export const ThemeButton = styled.button`
@@ -315,14 +335,16 @@ export const GradientText = styled.span`
 	background-size: 100%;
 	-webkit-background-clip: text;
 	-moz-background-clip: text;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	-moz-text-fill-color: transparent;
 `;
 
-export const AnchorButton = styled.a`
+export const AnchorButton = styled.span`
 	padding: 0.5rem 1.5rem;
 	width: max-content;
 	font-size: 1rem;
+	font-weight: 700;
 	box-sizing: content-box;
 	position: relative;
 	text-transform: uppercase;
@@ -372,6 +394,7 @@ export const AnchorButtonGradient = styled(AnchorButton)`
 		background-size: 100%;
 		-webkit-background-clip: text;
 		-moz-background-clip: text;
+		background-clip: text;
 		-webkit-text-fill-color: transparent;
 		-moz-text-fill-color: transparent;
 	}

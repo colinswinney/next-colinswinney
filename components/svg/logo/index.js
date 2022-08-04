@@ -1,12 +1,13 @@
 import { LogoEl, GiraffePath } from "./styles/logo";
 
-const Logo = () => {
+const Logo = ({...restProps}) => {
 	return (
 		<LogoEl
 			viewBox="0 0 602 202"
 			version="1.1"
 			xmlns="http://www.w3.org/2000/svg"
 			xmlSpace="preserve"
+			{...restProps}
 		>
 			<g transform="matrix(0.864213,0,0,0.864213,15.0823,-620.12)">
 				<g transform="matrix(1,0,0,1,0,82.8237)">

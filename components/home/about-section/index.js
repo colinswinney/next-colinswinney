@@ -170,7 +170,9 @@ const AboutSection = () => {
 				</BottomText>
 
 				<Link href="/about" passHref>
-					<AnchorButtonGradient>Find out more</AnchorButtonGradient>
+					<a className="no-hover-decoration">
+						<AnchorButtonGradient>Find out more</AnchorButtonGradient>
+					</a>
 				</Link>
 			</AboutSectionInner>
 		</AboutSectionWrap>

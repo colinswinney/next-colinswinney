@@ -1,8 +1,8 @@
 import { CodepenEl } from "./styles/codepen";
 
-const Codepen = () => {
+const Codepen = ({...restProps}) => {
 	return (
-		<CodepenEl viewBox="0 0 125 125" xmlns="http://www.w3.org/2000/svg">
+		<CodepenEl viewBox="0 0 125 125" xmlns="http://www.w3.org/2000/svg" {...restProps}>
 			<g
 				id="Layer-1"
 				transform="matrix(0.264218,0,0,0.264218,-3.83779,-2.94725)"

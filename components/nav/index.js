@@ -41,9 +41,15 @@ const Nav = ({ children }) => {
 		setShowMobileNav(!showMobileNav);
 	};
 
+	const handleLinkClick = (routerPath, linkHref) => {
+		if (routerPath === linkHref) {
+			setNavActive(false);
+		}
+	}
+
 	useEffect(() => {
 		if (isNavActive) {
-			setNavActive(!isNavActive);
+			setNavActive(isNavActive => !isNavActive);
 		}
 	}, [router.asPath]);
 
@@ -60,19 +66,23 @@ const Nav = ({ children }) => {
 			<Container>
 				<NavbarInner>
 					<Link href="/" passHref>
-						<a className={router.pathname == "/" ? "active" : ""}>
-							<Logo />
+						<a
+							className={router.pathname == "/" ? "active" : ""}
+							onClick={() => handleLinkClick(router.pathname, "/")}
+						>
+							<Logo aria-hidden="true" />
+							<span className="sr-only">Home</span>
 						</a>
 					</Link>
 					<List className={isNavActive ? "active" : null}>
 						<ListItem className="mobile-logo">
 							<Link href="/" passHref>
 								<a
-									className={
-										router.pathname == "/" ? "active" : ""
-									}
+									className={router.pathname == "/" ? "active" : ""}
+									onClick={() => handleLinkClick(router.pathname, "/")}
 								>
-									<Logo />
+									<Logo aria-hidden="true" />
+									<span className="sr-only">Home</span>
 								</a>
 							</Link>
 						</ListItem>
@@ -80,9 +90,8 @@ const Nav = ({ children }) => {
 						<ListItem>
 							<Link href="/projects" passHref>
 								<a
-									className={
-										router.pathname == "/" ? "active" : ""
-									}
+									className={router.pathname == "/projects" ? "active" : ""}
+									onClick={() => handleLinkClick(router.pathname, "/projects")}
 								>
 									Projects
 								</a>
@@ -92,11 +101,8 @@ const Nav = ({ children }) => {
 						<ListItem>
 							<Link href="/about" passHref>
 								<a
-									className={
-										router.pathname == "/about"
-											? "active"
-											: ""
-									}
+									className={router.pathname == "/about" ? "active" : ""}
+									onClick={() => handleLinkClick(router.pathname, "/about")}
 								>
 									About
 								</a>
@@ -106,11 +112,8 @@ const Nav = ({ children }) => {
 						<ListItem>
 							<Link href="/contact" passHref>
 								<a
-									className={
-										router.pathname == "/contact"
-											? "active"
-											: ""
-									}
+									className={router.pathname == "/contact" ? "active" : ""}
+									onClick={() => handleLinkClick(router.pathname, "/contact")}
 								>
 									Contact
 								</a>

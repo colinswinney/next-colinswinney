@@ -15,11 +15,16 @@ export const Text = styled.small`
 	display: flex;
 	font-size: 0.75rem;
 	width: 100%;
-	line-height: 1.4;
+	line-height: 1.5;
 `;
 
 export const IconWrap = styled.div`
 	margin: 0 0.5rem;
+	display: inline-flex;
+
+	a {
+		display: inline-flex;
+	}
 
 	${GitHubEl},
 	${LinkedInEl},

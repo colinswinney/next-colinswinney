@@ -108,7 +108,7 @@ const AboutSection = () => {
 
 			setTimeout(() => {
 				animateText(texts[indexText], indexText);
-			}, 1750);
+			}, 3000);
 		};
 		animateText(texts[0], 0);
 
@@ -122,7 +122,7 @@ const AboutSection = () => {
 
 			setTimeout(() => {
 				animateImg(imgs[indexImg], indexImg);
-			}, 1750);
+			}, 3000);
 		};
 		animateImg(imgs[0], 0);
 	}, []);

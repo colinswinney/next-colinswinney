@@ -17,21 +17,24 @@ const Footer = () => {
 						passHref
 					>
 						<a>
-							<LinkedIn />
+							<LinkedIn aria-hidden="true" />
+							<span className="sr-only">LinkedIn</span>
 						</a>
 					</Link>
 				</IconWrap>
 				<IconWrap>
 					<Link href="https://github.com/colinswinney" passHref>
 						<a>
-							<GitHub />
+							<GitHub aria-hidden="true" />
+							<span className="sr-only">GitHub</span>
 						</a>
 					</Link>
 				</IconWrap>
 				<IconWrap>
 					<Link href="https://codepen.io/colinswinney" passHref>
 						<a>
-							<Codepen />
+							<Codepen aria-hidden="true" />
+							<span className="sr-only">GitCodepenHub</span>
 						</a>
 					</Link>
 				</IconWrap>

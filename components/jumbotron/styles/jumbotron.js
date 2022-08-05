@@ -64,7 +64,7 @@ export const ButtonWrap = styled(motion.div)`
 	grid-area: button;
 
 	${AnchorButtonHomeJumbo} {
-		display: block;
+		display: inline-flex;
 		margin: 1.5rem auto 2rem;
 	}
 
@@ -72,6 +72,11 @@ export const ButtonWrap = styled(motion.div)`
 		${AnchorButtonHomeJumbo} {
 			margin: 0;
 		}
+	}
+
+	&:focus {
+		outline: .25rem solid ${({ theme }) => theme.linkColor};
+		outline-offset: .5rem;
 	}
 `;
 export const RightSide = styled(motion.div)`

@@ -25,19 +25,17 @@ const Form = () => {
 				or send a message below!
 			</Legend>
 
-			{/* <label htmlFor="name">
-        Name
-        </label> */}
-
-			<Input id="name" type="name" name="name" placeholder="Name" />
+			<Label>
+				<span className="sr-only"></span>
+				<Input id="name" type="name" name="name" placeholder="Name" />
+			</Label>
 
 			<ValidationError prefix="name" field="name" errors={state.errors} />
 
-			{/* <label htmlFor="email">
-        Email
-        </label> */}
-
-			<Input id="email" type="email" name="email" placeholder="Email" />
+			<Label>
+				<span className="sr-only">Email</span>
+				<Input id="email" type="email" name="email" placeholder="Email" />
+			</Label>
 
 			<ValidationError
 				prefix="Email"
@@ -45,11 +43,10 @@ const Form = () => {
 				errors={state.errors}
 			/>
 
-			{/* <label htmlFor="phone">
-        Phone
-        </label> */}
-
-			<Input id="phone" type="tel" name="phone" placeholder="Phone" />
+			<Label>
+				<span className="sr-only">Phone</span>
+				<Input id="phone" type="tel" name="phone" placeholder="Phone" />
+			</Label>
 
 			<ValidationError
 				prefix="phone"
@@ -57,12 +54,10 @@ const Form = () => {
 				errors={state.errors}
 			/>
 
-			<Input
-				id="company"
-				type="text"
-				name="company"
-				placeholder="Company"
-			/>
+			<Label>
+				<span className="sr-only">Company</span>
+				<Input id="company" type="text" name="company" placeholder="Company"/>
+			</Label>
 
 			<ValidationError
 				prefix="company"

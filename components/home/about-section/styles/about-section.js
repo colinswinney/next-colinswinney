@@ -26,7 +26,7 @@ export const Text = styled.p`
 	margin: 0 auto 1rem;
 	font-size: clamp(1.25rem, 1vw + 1.25rem, 3rem);
 	font-weight: 100;
-	line-height: 1;
+	line-height: 1.5;
 `;
 
 export const BottomText = styled(Text)`

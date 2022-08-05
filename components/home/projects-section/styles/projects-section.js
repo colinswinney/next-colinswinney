@@ -32,6 +32,10 @@ export const FlexBar = styled(FlexContainer)`
 	text-align: center;
 	justify-content: center;
 
+	a {
+		display: inline-flex;
+	}
+
 	&.bottom {
 		margin-top: -1rem;
 		z-index: 1;

@@ -40,6 +40,6 @@ export const TextWrap = styled.div`
 
 	p {
 		margin-bottom: 1rem;
-		line-height: 1.2;
+		line-height: 1.5;
 	}
 `;

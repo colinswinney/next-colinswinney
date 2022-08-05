@@ -6,6 +6,10 @@ export const Navbar = styled.nav`
 	background: ${({ theme }) => theme.navBgColor};
 	font-size: 1.33rem;
 
+	a {
+		display: inline-flex;
+	}
+
 	${Container} {
 		box-sizing: border-box;
 	}
@@ -85,6 +89,7 @@ export const NavToggle = styled.button`
 	top: 1.5rem;
 	right: 1rem;
 	z-index: 9999;
+	display: inline-flex;
 	cursor: pointer;
 	background: none;
 	border: none;

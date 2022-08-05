@@ -53,6 +53,6 @@ export const AddressWrap = styled.div`
 `;
 
 export const Text = styled.p`
-	line-height: 1.4;
+	line-height: 1.5;
 	margin: 0;
 `;

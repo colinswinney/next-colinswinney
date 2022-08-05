@@ -125,6 +125,7 @@ const Nav = ({ children }) => {
 					<NavToggle
 						onClick={handleToggle}
 						className={isNavActive ? "active" : null}
+						aria-label="Toggle navigation"
 					>
 						{isNavActive ? <Close /> : <Menu />}
 					</NavToggle>

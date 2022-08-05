@@ -46,7 +46,7 @@ const ProjectsSection = ({ children, projects }) => {
 									href={`/projects/${project.slug}`}
 									passHref
 								>
-									<a className="no-hover-decoration">
+									<a className="no-hover-decoration" aria-label={`Read more about ${project.title}`}>
 										<Card.ReadMore>Read More</Card.ReadMore>
 									</a>
 								</Link>

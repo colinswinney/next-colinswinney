@@ -35,6 +35,7 @@ export const Legend = styled.legend`
 export const Input = styled.input`
 	margin: 2rem 0 0;
 	padding: 0;
+	width: 100%;
 	border: none;
 	border-radius: 0;
 	background: none;
@@ -42,7 +43,8 @@ export const Input = styled.input`
 	border-bottom: 0.0125rem solid ${({ theme }) => theme.linkColor};
 
 	&:focus {
-		outline: none;
+		outline: 0.25rem solid ${({ theme }) => theme.linkColor};
+		outline-offset: 0.5rem;
 	}
 
 	::placeholder {
@@ -66,8 +68,13 @@ export const Input = styled.input`
 
 export const Label = styled.label`
 	color: ${({ theme }) => theme.textColor};
-	opacity: 0.8;
-	margin: 2rem 0 0.125rem;
+	margin: 0 0 0.125rem;
+	width: 100%;
+
+	&:last-of-type {
+		margin: 2rem 0 0.125rem;
+		opacity: 0.8;
+	}
 `;
 
 export const TextArea = styled.textarea`
@@ -83,7 +90,8 @@ export const TextArea = styled.textarea`
 	color: ${({ theme }) => theme.textColor};
 
 	&:focus {
-		outline: none;
+		outline: 0.25rem solid ${({ theme }) => theme.linkColor};
+		outline-offset: 0.5rem;
 	}
 
 	::placeholder {
@@ -118,13 +126,15 @@ export const SubmitButton = styled.button`
 	padding: 0.5rem 1.5rem;
 	margin-bottom: 1.5rem;
 	width: max-content;
-	color: ${vars.light};
-	background: ${({ theme }) => theme.gradient};
 	display: inline-block;
-	font-size: 1rem;
-	box-sizing: content-box;
 	position: relative;
+	color: ${vars.light};
+	font-size: 1rem;
 	font-weight: 900;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	box-sizing: content-box;
+	background: ${({ theme }) => theme.gradient};
 	border: none;
 	cursor: pointer;
 
@@ -160,6 +170,7 @@ export const SubmitButton = styled.button`
 		background-size: 100%;
 		-webkit-background-clip: text;
 		-moz-background-clip: text;
+		background-clip: text;
 		-webkit-text-fill-color: transparent;
 		-moz-text-fill-color: transparent;
 		text-decoration: none;

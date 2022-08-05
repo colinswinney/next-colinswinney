@@ -58,7 +58,7 @@ export const Title = styled.h3`
 
 export const Summary = styled.p`
 	margin: 0 0 3rem;
-	line-height: 1.4;
+	line-height: 1.5;
 `;
 
 export const ReadMore = styled(AnchorButtonGradient)`

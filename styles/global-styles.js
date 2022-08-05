@@ -44,7 +44,7 @@ export const lightTheme = {
 	invert: `0`,
 	giraffe: c.indigo900,
 };
-//d4af37
+
 export const darkTheme = {
 	bodyBgColor: `#121212`,
 	bodyBgColorLight: c.grey900,
@@ -238,18 +238,13 @@ export const GlobalStyles = createGlobalStyle`
 
         &:focus {
             outline: .25rem solid ${({ theme }) => theme.linkColor};
-            outline-offset: .25rem;
+            outline-offset: .5rem;
         }
     }
 
     button:focus {
         outline: .25rem solid ${({ theme }) => theme.linkColor};
         outline-offset: .5rem;
-    }
-
-    *:focus:not(.focus-visible) {
-        outline: 0 !important;
-        box-shadow: none !important;
     }
 
     section {
@@ -283,7 +278,7 @@ export const GlobalStyles = createGlobalStyle`
         font-weight: bold;
     }
 
-	.sr-only:not(:focus):not(:active) {
+	.sr-only {
 		clip: rect(0 0 0 0);
 		clip-path: inset(50%);
 		height: 1px;
@@ -348,6 +343,7 @@ export const AnchorButton = styled.span`
 	box-sizing: content-box;
 	position: relative;
 	text-transform: uppercase;
+	letter-spacing: 0.05em;
 
 	@media (min-width: ${vars.breakpoint}) {
 		font-size: 1.2rem;

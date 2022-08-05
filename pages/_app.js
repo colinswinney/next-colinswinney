@@ -3,16 +3,16 @@ import Head from "next/head";
 import Script from "next/script";
 import "../normalize.css";
 import { ThemeProvider } from "styled-components";
-import useDarkMode from "@fisch0920/use-dark-mode";
+// import useDarkMode from "@fisch0920/use-dark-mode";
 import Nav from "../components/nav";
 import Footer from "../components/footer";
-import Moon from "../components/svg/moon";
-import Sun from "../components/svg/sun";
+// import Moon from "../components/svg/moon";
+// import Sun from "../components/svg/sun";
 import {
-	lightTheme,
+	// lightTheme,
 	darkTheme,
 	GlobalStyles,
-	ThemeButton,
+	// ThemeButton,
 } from "../styles/global-styles";
 import { useRouter } from "next/router";
 
@@ -20,8 +20,9 @@ function MyApp({ Component, pageProps }) {
 	const router = useRouter();
 
 	const [isMounted, setIsMounted] = useState(false);
-	const darkmode = useDarkMode(true);
-	const theme = darkmode.value ? darkTheme : lightTheme;
+	// const darkmode = useDarkMode(true);
+	// const theme = darkmode.value ? darkTheme : lightTheme;
+	const theme = darkTheme;
 
 	useEffect(() => {
 		setIsMounted(true);
@@ -40,9 +41,9 @@ function MyApp({ Component, pageProps }) {
 			</Head>
 			<GlobalStyles />
 			<Nav>
-				<ThemeButton onClick={darkmode.toggle}>
+				{/* <ThemeButton onClick={darkmode.toggle} aria-label="Light / Dark Theme Toggle">
 					{!darkmode.value ? <Moon /> : <Sun />}
-				</ThemeButton>
+				</ThemeButton> */}
 			</Nav>
 			{isMounted && <Component {...pageProps} />}
 			<Footer />
